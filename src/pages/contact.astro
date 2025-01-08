@@ -1,0 +1,78 @@
+---
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import client from "@data/client.json";
+---
+
+<BaseLayout title="Contact" description={"Get in contact with " + client.name}>
+  <section id="content" class="mb-20">
+    <div class="py-10 px-3 gap-4 flex flex-col text-justify max-w-4xl mx-auto">
+      <div>
+        <h2 id="Get in Touch">Get in Touch</h2>
+        <p class="text-justify">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus
+          elementum ullamcorper ipsum porttitor aliquam. Id magna urna ultrices
+          odio pulvinar. Sed ut.
+        </p>
+      </div>
+      <div class="flex flex-col text-justify max-w-4xl mx-auto">
+        <form
+          class="flex flex-col gap-4"
+          id="contact-form"
+          name="contact"
+          data-netlify="true"
+          method="post"
+        >
+          <label>
+            Name
+            <input
+              required
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+            />
+          </label>
+          <label>
+            Email
+            <input
+              required
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Email"
+            />
+          </label>
+          <label>
+            Phone
+            <input
+              required
+              type="text"
+              id="phone"
+              name="phone"
+              placeholder="Phone"
+            />
+          </label>
+          <label>
+            Message
+            <textarea
+              required
+              name="Message"
+              id="message"
+              placeholder="Write message..."></textarea>
+          </label>
+          <button class="button !no-underline" type="submit">Submit Message</button>
+        </form>
+      </div>
+    </div>
+    <div class="py-10 px-3 gap-8 flex flex-col text-center max-w-4xl mx-auto">
+      <div>
+        <p>Email</p>
+        <a href={`mailto:${client.email}`}>{client.email}</a>
+      </div>
+      <div>
+        <p>Phone</p>
+        <a href={`tel:${client.phoneForTel}`}>{client.phoneFormatted}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

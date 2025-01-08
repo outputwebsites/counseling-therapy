@@ -1,0 +1,47 @@
+---
+export interface Props {
+  post: {
+    slug: string;
+    data: {
+      image?: {
+        src: string;
+        width: number;
+        height: number;
+      };
+      imageAlt?: string;
+      title: string;
+    };
+    body: string;
+  };
+}
+
+const { post } = Astro.props;
+---
+
+<article id={post.slug} class="flex flex-col gap-4 max-w-2xl border border-lifeBorder p-4 rounded-lg text-left">
+  {
+    post.data.image && (
+      <img
+        src={post.data.image.src}
+        alt={post.data.imageAlt ? post.data.imageAlt : post.data.title}
+        width={post.data.image.width}
+        height={post.data.image.height}
+        decoding="async"
+        loading="lazy"
+      />
+    )
+  }
+  <h2 id={post.data.title}>{post.data.title}</h2>
+  <p>
+    {
+      post.body
+        .split(" ")
+        .slice(0, 20)
+        .join(" ")
+        .replace(/[#*_\`]/g, "")
+        .replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1")
+        .trim() + (post.body.split(" ").length > 20 && "...")
+    }
+  </p>
+  <a href={'blog/' + post.slug} title={post.data.title}>Continue Reading...</a>
+</article>

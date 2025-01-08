@@ -1,0 +1,46 @@
+---
+import client from "@data/client.json";
+import navData from "@data/navData.json";
+import { Icon } from "astro-icon/components";
+---
+
+<header>
+  <div class="flex gap-2 justify-between items-center w-full justify-end">
+    <a
+      href="/"
+      aria-label="Home"
+      class="max-[460px]:hidden flex justify-between items-center"
+    >
+      <img
+        src="/assets/svgs/logo.svg"
+        alt=""
+        width="75"
+        height="75"
+        aria-hidden="true"
+        decoding="async"
+      />
+    </a>
+    <div id="navName" class="w-full flex flex-col text-black">
+      <p class="no-underline max-[460px]:text-lg max-[375px]:text-base">{client.nameShort1}</p>
+      <p class="no-underline max-[460px]:text-lg max-[375px]:text-base">{client.nameShort2}</p>
+    </div>
+    <button class="navMenu">
+      <label for="dropdown">
+        <i class="menuIcon menuBars"><Icon name="menu" /></i>
+        <i class="menuIcon menuX"><Icon name="x" /></i>
+      </label>
+      <input type="checkbox" id="dropdown" />
+    </button>
+  </div>
+  <ul class="navigation list-none">
+    {
+      navData.map((item) => (
+        <li>
+          <a href={item.href} title={item.title} class="py-2 px-4 w-full h-full flex justify-center items-center text-center text-lg break-keep no-underline">
+            {item.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</header>

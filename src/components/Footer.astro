@@ -1,0 +1,94 @@
+---
+import client from "@data/client.json";
+import navData from "@data/navData.json";
+import { getCurrentYear } from "@js/utils";
+
+const currentYear = getCurrentYear();
+---
+
+<footer
+  id="footer"
+  class="bg-lifeBackground border-t border-lifeBorder pt-10 pb-2 px-3 flex flex-col justify-center items-center"
+>
+  <div id="footer-container" class="flex flex-col w-full gap-8">
+    <div id="footer-logo" class="flex flex-col items-center gap-4">
+      <a href="/">
+        <img
+          loading="lazy"
+          decoding="async"
+          src="/assets/svgs/logotype.svg"
+          alt=""
+          width="300"
+          height="300"
+        />
+      </a>
+    </div>
+    <div id="footer-links" class="flex text-center mb-8">
+      <div class="flex flex-col mx-auto text-center">
+        <ul
+          class="list-none flex flex-row max-[640px]:flex-col gap-x-12 gap-y-4 text-center"
+        >
+          {
+            navData.map((entry) => (
+              <li>
+                <a href={entry.href} title={entry.title}>
+                  {entry.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+    <div
+      id="footer-contact"
+      class="flex flex-col gap-x-4 gap-y-8 justify-between w-full mx-auto"
+    >
+      <div class="flex flex-col gap-x-4 gap-y-8 mx-auto text-center">
+        <ul class="list-none flex flex-row max-[640px]:flex-col gap-x-4 gap-y-8 text-center">
+          <li>
+            <a href={`tel:${client.phoneForTel}`}>
+              {client.phoneFormatted}
+            </a>
+          </li>
+          <li>
+            <a href={`mailto:${client.email}`}>
+              {client.email}
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-x-4 gap-y-8 mx-auto text-center">
+        <ul class="list-none">
+          <li class="flex flex-col gap-1 text-left">
+            <a href="/contact">
+              {client.address.lineOne}<br />
+              {client.address.lineTwo}<br />
+              {client.address.city}, {client.address.state}
+              {client.address.zip}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-credits" class="flex flex-col text-center mt-10 py-8 px-3">
+    <p class="text-sm text-stone-600">
+      <a
+        href="https://outputwebsites.com"
+        target="_blank"
+        rel="noopener"
+        class="text-stone-600 text-sm">Website Output</a
+      > by <a
+        href="https://derek-perry.com"
+        target="_blank"
+        rel="noopener"
+        class="text-stone-600 text-sm">Derek Perry</a
+      >
+    </p>
+    <p id="copyright" class="text-sm text-stone-600">
+      Copyright 2024 - {currentYear}
+    </p>
+  </div>
+</footer>

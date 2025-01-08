@@ -1,0 +1,96 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import client from "@data/client.json";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import "@fontsource-variable/albert-sans";
+import albertSansWoff2 from "@fontsource-variable/albert-sans/files/albert-sans-latin-wght-normal.woff2?url";
+
+import "@styles/globals.css";
+
+const { description, title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <!-- View Transitions support -->
+    <ViewTransitions />
+
+    <!-- Preloads font -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href={albertSansWoff2}
+      crossorigin="anonymous"
+    />
+
+    <!-- Standard meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+
+    <!-- SEO meta tags -->
+    <meta name="keywords" content={client.keywords} />
+    <link
+      rel="canonical"
+      href={`https://${client.domain}${Astro.url.pathname}`}
+    />
+    <title>
+      {
+        Astro.url.pathname === "/"
+          ? `${client.name}`
+          : `${title} | ${client.name}`
+      }
+    </title>
+    <meta property="og:title" content={title} />
+    <meta property="og:site_name" content={title} />
+    <meta name="application-name" content={title} />
+    <meta name="apple-mobile-web-app-title" content={title} />
+    <meta name="twitter:title" content={title} />
+    <meta name="description" content={description} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:description" content={description} />
+    <meta
+      property="og:url"
+      content={`https://${client.domain}${Astro.url.pathname}`}
+    />
+    <meta property="og:image" content="/assets/images/banner.png" />
+    <meta
+      property="og:image:secure_url"
+      content="/assets/images/banner.png"
+    />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:image:alt" content={title} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/assets/images/banner.png" />
+    <meta name="twitter:image:width" content="1920" />
+    <meta name="twitter:image:height" content="1080" />
+    <meta name="twitter:image:alt" content={title} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content={client.name} />
+    <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+    <!-- Screen reader skip main nav -->
+    <a class="skip" aria-label="skip to main content" href="#main"
+      >Click To Skip To Main Content</a
+    >
+
+    <Header />
+    <main id="main" class="mt-24">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+</script>

@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply mx-0;
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl sm:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl sm:text-2xl;
+  }
+
+  h5 {
+    @apply text-lg sm:text-xl;
+  }
+
+  h6 {
+    @apply text-lg;
+  }
+}
+
+/* For the base HTML and body tags: set padding/margin, font, etc */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Albert Sans Variable", sans-serif;
+  letter-spacing: 0.2px;
+  scroll-behavior: smooth;
+}
+
+/* Adjust scroll-padding-top to give padding before the #linked content */
+html {
+  scroll-padding-top: 2.5rem;
+  /* 40px */
+}
+
+/* Change selection background */
+::selection {
+  @apply bg-lifeMainDarker text-white;
+  text-shadow: none;
+}
+
+/* Increase paragraph tag size default to tailwind-xl */
+p {
+  font-size: 1.25rem;
+  /* 20px - xl */
+  line-height: 1.75rem;
+  /* 28px - xl */
+}
+
+/* Link Tags */
+a {
+  @apply text-lifeMainDark;
+  font-size: 1.25rem;
+  /* 20px - xl */
+  line-height: 1.75rem;
+  /* 28px - xl */
+  text-decoration: underline;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 100ms;
+}
+
+a:hover {
+  @apply text-lifeMain;
+  text-decoration: none;
+}
+
+a:focus {
+  @apply text-lifeMainDarker;
+  text-decoration: underline;
+}
+
+a:active {
+  @apply text-lifeMainDarker;
+  text-decoration: underline;
+}
+
+/* Button */
+.button {
+  @apply bg-gray-200 hover:bg-gray-100 text-gray-800 py-2 px-4 rounded-md;
+  font-size: 1.25rem;
+  /* 20px - xl */
+  line-height: 1.75rem;
+  /* 28px - xl */
+  text-decoration: underline;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 100ms;
+}
+
+.button:hover {
+  @apply text-lifeMain;
+  text-decoration: none;
+}
+
+.button:focus {
+  @apply text-lifeMainDarker;
+  text-decoration: underline;
+}
+
+.button:active {
+  @apply text-lifeMainDarker;
+  text-decoration: underline;
+}
+
+/* HR/Dividing Lines */
+hr {
+  margin-top: 0.5rem;
+  /* 8px */
+  margin-bottom: 0.5rem;
+  /* 8px */
+}
+
+/* Lists */
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+  counter-reset: item;
+}
+
+ul ul,
+ol ul {
+  list-style-type: circle;
+  list-style-position: inside;
+  margin-left: 1rem;
+  /* 16px */
+}
+
+ol ol,
+ul ol {
+  list-style-type: lower-latin;
+  list-style-position: inside;
+  margin-left: 1rem;
+  /* 16px */
+}
+
+li>p,
+li>h1,
+li>h2,
+li>h3,
+li>h4,
+li>h5,
+li>h6 {
+  display: inline-block;
+}
+
+ol>li {
+  counter-increment: item;
+}
+
+ol ol>li {
+  display: block;
+}
+
+ol ol>li:before {
+  content: counters(item, ".") " ";
+}
+
+dfn>abbr[title]::after {
+  content: " (" attr(title) ")";
+}
+
+@media only screen and (min-width: 0em) {
+  .skip {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1111111;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.navMenu {
+  display: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: #e0dcd638 1px solid;
+  background-color: #fff8f0e8;
+  backdrop-filter: blur(10px);
+  transition: all 0.125s ease;
+}
+
+.navigation {
+  display: flex;
+  gap: 1rem 0.2rem;
+}
+
+@media screen and (max-width: 885px) {
+  header {
+    display: block;
+  }
+
+  .navigation {
+    height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.125s ease;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menuIcon {
+    cursor: pointer;
+  }
+
+  .menuIcon [data-icon] {
+    height: 40px;
+    width: 40px;
+  }
+
+  .navMenu {
+    display: block;
+  }
+
+  .menuX {
+    display: none;
+  }
+
+  #dropdown {
+    display: none;
+  }
+
+  header:has(.navMenu input[type="checkbox"]:checked) .navigation {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    height: auto;
+  }
+
+  header:has(.navMenu input[type="checkbox"]:checked) .menuBars {
+    display: none;
+  }
+
+  header:has(.navMenu input[type="checkbox"]:checked) .menuX {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .menuIcon [data-icon] {
+    height: 32px;
+    width: 32px;
+  }
+
+  #navName {
+    max-width: 214px;
+  }
+}

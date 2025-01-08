@@ -1,0 +1,30 @@
+---
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import client from "@data/client.json";
+import { getCollection } from "astro:content";
+import FeaturedPost from "@components/FeaturedPost.astro";
+import CardPost from "@components/CardPost.astro";
+
+const posts = await getCollection("blog");
+posts.sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
+);
+---
+
+<BaseLayout title="Blog" description={"Blog Posts from " + client.name}>
+  <div id="blog-page">
+    <div id="blog-posts">
+      {posts.length === 0 && <h1>No Recent Posts</h1>}
+      {
+        posts.length >= 1 && (
+          <div class="w-full flex flex-col justify-center items-center text-center gap-8">
+            {posts.map((post) => (
+              <CardPost post={post} />
+            ))}
+          </div>
+        )
+      }
+    </div>
+    <FeaturedPost />
+  </div>
+</BaseLayout>
