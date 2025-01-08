@@ -43,5 +43,5 @@ const { post } = Astro.props;
         .trim() + (post.body.split(" ").length > 20 && "...")
     }
   </p>
-  <a href={'blog/' + post.slug} title={post.data.title}>Continue Reading...</a>
+  <a href={post.slug} title={post.data.title}>Continue Reading...</a>
 </article>
