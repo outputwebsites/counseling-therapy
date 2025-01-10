@@ -5,6 +5,24 @@ import client from "@data/client.json";
 
 <BaseLayout title={client.name} description={client.description}>
   <section id="content">
+    <section id="hero" class="w-full border-b">
+      <div id="hero-container" class="w-full max-w-[1000px] m-auto">
+        <div
+          id="hero-content"
+          class="text-white w-full flex flex-1 flex-col justify-center h-[666px] bg-center bg-cover bg-local bg-no-repeat bg-[url('/assets/images/canada.jpg')]"
+        >
+          <div class="flex flex-col gap-6 mx-auto align-middle items-top justify-center text-center max-w-[580px] px-12 py-6 text-xl bg-[#00000054] rounded-xl">
+            <p class="tracking-wide leading-normal">
+              Therapy is about where you are and where you want to go. It is
+              about acceptance of your values and the goals that you seek.
+            </p>
+            <p class="tracking-wide leading-normal">
+              At Counseling-Therapy of NSB, Port Orange and Daytona, our goal is to help you reach your goal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
     <div class="flex flex-col text-center py-10 px-3 gap-4">
       <h1 id={client.nameShort1}>Welcome to {client.nameShort1}</h1>
       <div class="flex flex-col text-justify max-w-4xl mx-auto">
@@ -42,7 +60,9 @@ import client from "@data/client.json";
           things might be, together.
         </p>
 
-        <p class="text-lg font-bold my-8">We are looking forward to meeting you.</p>
+        <p class="text-lg font-bold my-8">
+          We are looking forward to meeting you.
+        </p>
 
         <p class="text-lg font-bold my-8">FL License #4896</p>
 
@@ -50,6 +70,109 @@ import client from "@data/client.json";
           Sessions may be scheduled in person or on-line. Children will only be
           seen in person.
         </p>
+      </div>
+
+      <hr class="my-10" />
+
+      <div class="flex flex-col text-justify max-w-4xl mx-auto">
+        <h2 id="treatment">Treatment Types and Specialties/Expertise</h2>
+        <div class="flex flex-col text-justify max-w-4xl mx-auto">
+          <p class="text-lg font-bold my-8">Types</p>
+          <ul>
+            <li>Clinical Supervision and Licensed Supervisors</li>
+            <li>Cognitive Behavioral (CBT)</li>
+            <li>Dialectical Behavior (DBT)</li>
+            <li>EMDR</li>
+            <li>Family / Marital</li>
+            <li>Family Systems</li>
+            <li>Person-Centered</li>
+            <li>Solution Focused Brief (SFBT)</li>
+            <li>Structural Family Therapy</li>
+            <li>Trauma Focused</li>
+          </ul>
+        </div>
+        <div class="flex flex-col text-justify max-w-4xl mx-auto">
+          <p class="text-lg font-bold my-8">Specialties/Expertise</p>
+          <ul>
+            <li>ADHD</li>
+            <li>Anxiety</li>
+            <li>Behavioral Issues</li>
+            <li>Child</li>
+            <li>Codependency</li>
+            <li>Coping Skills</li>
+            <li>Depression</li>
+            <li>Family Conflict</li>
+            <li>Geriatric and Seniors</li>
+            <li>Grief</li>
+            <li>Marital and Premarital</li>
+            <li>Mood Disorders</li>
+            <li>Obsessive-Compulsive (OCD)</li>
+            <li>Relationship Issues</li>
+            <li>Self Esteem</li>
+            <li>Spirituality</li>
+            <li>Stress</li>
+            <li>Thinking Disorders</li>
+            <li>Trauma and PTSD</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="my-10" />
+
+      <div class="flex flex-col text-justify max-w-4xl mx-auto">
+        <h2 id="finances">Finances</h2>
+        <p class="text-lg font-bold my-2">
+          <em>
+            NOTE:
+            <em>
+              Not all therapists take all insurances; please check with the
+              office!
+            </em>
+          </em>
+        </p>
+
+        <div class="flex flex-col text-justify max-w-4xl mx-auto">
+          <ul>
+            <li>Aetna</li>
+            <li>Anthem</li>
+            <li>BlueCross</li>
+            <li>BlueShield</li>
+            <li>Cigna</li>
+            <li>Evernorth</li>
+            <li>Florida Blue</li>
+            <li>Health Advocate</li>
+            <li>Humana</li>
+            <li>Magellan</li>
+            <li>Medicare</li>
+            <li>Optum</li>
+            <li>TRICARE</li>
+            <li>United Medical Resources (UMR)</li>
+            <li>UnitedHealthcare (UHC | UBH)</li>
+          </ul>
+
+          <p class="text-lg font-bold my-8">
+            <em>
+              NOTE:
+              <em>
+                Not all therapists take all insurances; please check with the
+                office!
+              </em>
+            </em>
+          </p>
+        </div>
+      </div>
+
+      <hr class="my-10" />
+
+      <div class="flex flex-col text-justify max-w-4xl mx-auto">
+        <a
+          href="https://therapyportal.com/p/counseling32127"
+          title="Client Portal"
+          class="button !no-underline"
+          target="_blank"
+        >
+          Client Portal
+        </a>
       </div>
     </div>
   </section>

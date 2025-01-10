@@ -103,7 +103,7 @@ a:active {
   /* 20px - xl */
   line-height: 1.75rem;
   /* 28px - xl */
-  text-decoration: underline;
+  text-decoration: none;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 100ms;
