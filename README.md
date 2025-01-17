@@ -11,8 +11,8 @@ _[Website, Web Design]_
 
 ## Links
 
-* **Website:** [TherapyofVolusia.com](https://therapyofvolusia.com "TherapyofVolusia.com Homepage")
-* **Website GitHub:** [github.com/outputwebsites/counseling-therapy](https://github.com/outputwebsites/counseling-therapy "TherapyofVolusia.com GitHub Repository")
+* **Website:** [Counseling-Therapy.org](https://counseling-therapy.org "Counseling-Therapy.org Homepage")
+* **Website GitHub:** [github.com/outputwebsites/counseling-therapy](https://github.com/outputwebsites/counseling-therapy "Counseling-Therapy.org GitHub Repository")
 * **Output Websites Website:** [OutputWebsites.com](https://OutputWebsites.com "OutputWebsites.com Homepage")
 * **Website By:** [Derek Perry - derek-perry.com](https://derek-perry.com "Derek-Perry.com Homepage")
 
@@ -20,11 +20,11 @@ _[Website, Web Design]_
 
 ## Copyright/License Information
 
-**Copyright © 2025 [Counseling-Therapy: NSB - Port Orange - Daytona](https://therapyofvolusia.com "TherapyofVolusia.com")**
+**Copyright © 2025 [Counseling-Therapy: NSB - Port Orange - Daytona](https://counseling-therapy.org "Counseling-Therapy.org")**
 
 **Some rights reserved.**
 
-Use of [the code for the TherapyofVolusia.com Website](https://github.com/outputwebsites/stater "TherapyofVolusia.com GitHub Repository") is licensed under the [MIT License](https://mit.edu/~amini/LICENSE.md "Official MIT License").
+Use of [the code for the Counseling-Therapy.org Website](https://github.com/outputwebsites/stater "Counseling-Therapy.org GitHub Repository") is licensed under the [MIT License](https://mit.edu/~amini/LICENSE.md "Official MIT License").
 
 This website uses the [Output Starter Kit](https://github.com/outputwebsites/stater "Output Starter Kit GitHub Repository"). Use of [the code for the Output Starter Kit](https://github.com/outputwebsites/stater "Output Starter Kit GitHub Repository") is licensed under the [MIT License](https://mit.edu/~amini/LICENSE.md "Official MIT License").
 

@@ -5,7 +5,7 @@ import icon from "astro-icon";
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: "https://therapyofvolusia.com",
+  site: "https://counseling-therapy.org",
   integrations: [
     icon(),
     sitemap({
