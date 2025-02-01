@@ -18,7 +18,10 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<article id={post.slug} class="flex flex-col gap-4 max-w-2xl border border-lifeBorder p-4 rounded-lg text-left">
+<article
+  id={post.slug}
+  class="flex flex-col gap-4 max-w-2xl border border-lifeBorder p-4 rounded-lg text-left"
+>
   {
     post.data.image && (
       <img

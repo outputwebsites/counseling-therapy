@@ -1,1 +1,23 @@
-
+# Redirects from what the browser requests to what we serve
+/home                /
+/homepage            /
+/us                  /clinicians
+/about               /clinicians
+/clinician           /clinicians
+/team                /clinicians
+/therapist           /clinicians
+/therapists          /clinicians
+/counselor           /clinicians
+/counselors          /clinicians
+/finance             /finances
+/pricing             /finances
+/insurance           /finances
+/insurances          /finances
+/posts               /blog
+/blogs               /blog
+/articles            /blog
+/news                /blog
+/email               /contact
+/contactus           /contact
+/contact-us          /contact
+/help                /contact

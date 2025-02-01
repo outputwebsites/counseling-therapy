@@ -13,11 +13,12 @@ posts.sort(
 
 <BaseLayout title="Blog" description={"Blog Posts from " + client.name}>
   <div id="blog-page">
-    <div id="blog-posts">
+    <div id="blog-posts" class="w-full mx-0 my-20">
       {posts.length === 0 && <h1>No Recent Posts</h1>}
       {
         posts.length >= 1 && (
-          <div class="w-full flex flex-col justify-center items-center text-center gap-8">
+          <div class="pt-12 w-full flex flex-col justify-center items-center text-center gap-8">
+            <h1>Blog Posts</h1>
             {posts.map((post) => (
               <CardPost post={post} />
             ))}

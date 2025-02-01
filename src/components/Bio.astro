@@ -1,0 +1,111 @@
+---
+import { marked } from "marked";
+
+export interface Props {
+  name: string;
+  photo?: {
+    src: string;
+    width: number;
+    height: number;
+    format: "png" | "jpg" | "jpeg" | "tiff" | "webp" | "gif" | "svg" | "avif";
+  };
+  qualification: string;
+  email: string;
+  link_psychology_today: string;
+  link_linkedin: string;
+  link_vitadox: string;
+  biography: string;
+  slugLong: string;
+  slugShort: string;
+}
+
+const {
+  photo,
+  name,
+  qualification,
+  email,
+  link_psychology_today,
+  link_linkedin,
+  link_vitadox,
+  biography,
+  slugLong,
+  slugShort,
+} = Astro.props;
+const content = await marked.parse(biography.replace(/\n(?=\n)/g, "\n\n<br/>\n"));
+
+function capitalizeEmail(str) {
+  const [localPart, domain] = str.split('@');
+  const capitalizedDomain = domain === 'counseling-therapy.org' ? 'Counseling-Therapy.org' : domain;
+  return localPart.charAt(0).toUpperCase() + localPart.slice(1).toLowerCase() + '@' + capitalizedDomain;
+}
+---
+
+<div id={slugLong} class="flex flex-col gap-6">
+  <div
+    id={slugShort + "-details"}
+    class="flex flex-row gap-4 items-center justify-center max-[745px]:flex-col"
+  >
+    {
+      photo && (
+        <img
+          src={photo.src}
+          alt={name}
+          width={photo.width}
+          height={photo.height}
+          decoding="async"
+          loading="lazy"
+        />
+      )
+    }
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-row items-end gap-2 max-[745px]:text-center max-[745px]:justify-center">
+        <h3 id={slugShort}>{name}</h3>
+        <p class="text-gray-600 text-md">{qualification}</p>
+      </div>
+      <div class="flex flex-row max-[920px]:flex-col text-center gap-4">
+        {
+          email && (
+            <a class="button" class="break-all" href={"mailto:" + email} title={email}>
+              {capitalizeEmail(email)}
+            </a>
+          )
+        }
+      </div>
+      <div class="flex flex-row max-[920px]:flex-col text-center gap-4">
+        {
+          link_psychology_today && (
+            <a
+              class="button"
+              href={link_psychology_today}
+              title="Psychology Today"
+            >
+              Psychology Today
+            </a>
+          )
+        }
+        {
+          link_linkedin && (
+            <a class="button" href={link_linkedin} title="LinkedIn">
+              LinkedIn
+            </a>
+          )
+        }
+        {
+          link_vitadox && (
+            <a class="button" href={link_vitadox} title="Vitadox">
+              Vitadox
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+
+  {
+    biography && (
+      <section id={slugShort + "-bio"} class="text-justify">
+        <p set:html={content} />
+      </section>
+    )
+  }
+</div>

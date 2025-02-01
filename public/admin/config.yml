@@ -31,13 +31,19 @@ collections:
 - name: "author" # Used in routes, e.g., /admin/collections/blog. Is also the key when fetching data from the CMS.
   label: "Authors" # Used in the admin dashboard UI
   label_singular: 'Author' # Used in the admin dashboard UI
-  description: "Authors are used to properly attribute blog posts." # Used in the admin dashboard UI
+  description: "Authors are used to properly attribute blog posts and to populate the clinicians page." # Used in the admin dashboard UI
   identifier_field: name # The field that will be used to identify the document in the CMS
   folder: "src/content/author" # The path to the folder where the documents are stored
   create: true # Allow users to create new documents in this collection
   fields:
   # The fields for each document
   - { label: "Name", name: "name", widget: "string", hint: "Enter your full name." }
-  - { label: "Portrait Image", name: "photo", widget: "image", required: false, hint: "Add a square portrait image featuring a color head shot." }
-  - { label: "Short Bio", name: "bio", widget: "string", required: false, hint: "Add a short biography to display under your author credits." }
-  - { label: "Bio", name: "biography", widget: "string", required: false, hint: "Add a full biography for use on an author page." }
+  - { label: "Portrait Image", name: "photo", widget: "image", hint: "Add a square portrait image featuring a color head shot." }
+  - { label: "Qualification(s)", name: "qualifications", widget: "string", hint: "List your qualifications as abbreviations that are comma separated." }
+  - { label: "Email", name: "email", widget: "string", hint: "Add your public contact email." }
+  - { label: "Psychology Today Link", name: "link_psychology_today", widget: "string", hint: "Add a link to your Psychology Today page." }
+  - { label: "LinkedIn Link", name: "link_linkedin", widget: "string", hint: "Add a link to your LinkedIn page." }
+  - { label: "Vitadox Link", name: "link_vitadox", widget: "string", hint: "Add a link to your Vitadox page." }
+  - { label: "Short Bio", name: "bio", widget: "string", hint: "Add a short biography to display under your author credits." }
+  - { label: "Long Bio", name: "biography", widget: "markdown", hint: "Add a full biography for use on an author page." }
+  - { label: "Order", name: "order", widget: "string", hint: "Set the order of clinicians on the clinicians page. 1 = first, 2 = seconds, and so on..." }

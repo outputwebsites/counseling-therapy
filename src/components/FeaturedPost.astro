@@ -8,9 +8,20 @@ const featuredPosts = posts.filter((post) =>
 );
 ---
 
-<div id="blog-featured-posts" class="w-full flex flex-col flex-wrap justify-center items-center text-center gap-8 my-20 border-t border-lifeBorder py-8">
-  <h2><strong>Featured Posts</strong></h2>
-  <div class="flex flex-col gap-8">
-    {featuredPosts.map((post) => <CardPost post={post} />)}
-  </div>
-</div>
+{
+  featuredPosts && featuredPosts.length > 0 && (
+    <div
+      id="blog-featured-posts"
+      class="w-full flex flex-col flex-wrap justify-center items-center text-center gap-8 my-20 border-t border-lifeBorder py-8"
+    >
+      <h2>
+        <strong>Featured Posts</strong>
+      </h2>
+      <div class="flex flex-col gap-8">
+        {featuredPosts.map((post) => (
+          <CardPost post={post} />
+        ))}
+      </div>
+    </div>
+  )
+}

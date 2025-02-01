@@ -22,8 +22,15 @@ const authorsCollection = defineCollection({
 	schema: ({ image }) =>
 		z.object({
 			name: z.string(),
-			bio: z.string(),
 			photo: image().or(z.string()),
+			qualifications: z.string(),
+			email: z.string(),
+			link_psychology_today: z.string(),
+			link_linkedin: z.string(),
+			link_vitadox: z.string(),
+			bio: z.string(),
+			biography: z.string(),
+			order: z.number(),
 		}),
 });
 

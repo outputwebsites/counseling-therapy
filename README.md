@@ -343,7 +343,7 @@ This code will be inserted into the `<slot />` component in BaseLayout.astro.
 ### Built-in Astro components: `<Image />` and `<Picture />`
 
 This kit demonstrates the use of the built-in `<Picture />` component, [for which you can read the documentation here](https://docs.astro.build/en/guides/images/#picture-). However, not all native HTML `<picture>` elements from CodeStitch blocks have been replaced with Astro's `<Picture />` components. CodeStich users will have to decide which one they want to use:
- * CodeStich blocks already have fully-functioning `<picture>` elements that perform very well. However, the developper will have to do a time-consuming job with resizing and reformatting assets.
+ * CodeStich blocks already have fully-functioning `<picture>` elements that perform very well. However, the developer will have to do a time-consuming job with resizing and reformatting assets.
  * Astro's `<Picture />` components must be manually written to replace stitches. On the other hand, they automatically process and optimize assets, which allows the developer to skip the resizing and reformatting preparation work.
 
 #### Custompicturecomponent

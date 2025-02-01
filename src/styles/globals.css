@@ -229,7 +229,7 @@ header {
   gap: 1rem 0.2rem;
 }
 
-@media screen and (max-width: 885px) {
+@media screen and (max-width: 920px) {
   header {
     display: block;
   }

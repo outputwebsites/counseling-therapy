@@ -1,6 +1,12 @@
 ---
 name: Angela Baldwin
-bio: "The inner machinations of my mind are an enigma."
-biography: "The inner machinations of my mind are an enigma."
 photo: src/assets/images/media/angela.png
+qualifications: LMHC
+email: angela@counseling-therapy.org
+link_psychology_today: n/a
+link_linkedin: https://linkedin.com/in/angela-baldwin-2930338a
+link_vitadox: https://vitadox.com/doctor/daytona-beach-fl-32117/angela-baldwin-ma-rmhci/7NFfcrffmG6LLFg7Zzn6Rn
+bio: "I have a passion for helping others and I am dedicated to providing a safe and supportive environment for my clients. I believe that everyone has the ability to heal and grow and I am here to support you on your journey to wellness."
+biography: "I have experience working with children, adolescents, and adults in individual and group settings. I have experience working with clients who have experienced trauma, anxiety, depression, and other mental health concerns. I have a passion for helping others and I am dedicated to providing a safe and supportive environment for my clients. I believe that everyone has the ability to heal and grow and I am here to support you on your journey to wellness."
+order: 4
 ---

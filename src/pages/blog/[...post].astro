@@ -1,4 +1,5 @@
 ---
+import { marked } from "marked";
 import { getCollection, getEntries } from "astro:content";
 import { Image } from "astro:assets";
 import BaseLayout from "src/layouts/BaseLayout.astro";
@@ -14,7 +15,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const content = await marked.parse(post.body.replace(/\n(?=\n)/g, "\n\n<br/>\n"));
 
 const authors = await getEntries(post.data.author);
 ---
@@ -44,13 +45,13 @@ const authors = await getEntries(post.data.author);
       )
     }
 
-    <div id="blog-post-details" class="mt-8">
+    <div id="blog-post-details" class="mt-8 flex flex-col gap-4">
       <h1 id={post.data.title}>{post.data.title}</h1>
       <div>
         {
           post.data.date && (
             <p>
-              {formatDate(post.data.date)} by 
+              {formatDate(post.data.date)} by
               {authors.map((author) => (
                 <span>{author.data.name}</span>
               ))}
@@ -61,16 +62,14 @@ const authors = await getEntries(post.data.author);
     </div>
 
     <section id="blog-post-content" class="my-8">
-      <Content />
+      <p set:html={content} />
     </section>
 
     <section id="blog-post-authors">
       {
         authors.map((author) => (
-          <div class="flex flex-col gap-4 mx-auto max-w-xl border border-lifeBorder p-4 rounded-lg text-left">
-            <span class="italic">
-              Author
-            </span>
+          <div class="flex flex-col gap-4 max-w-xl border border-lifeBorder p-4 rounded-lg text-left">
+            <span class="italic">Author</span>
 
             <div class="flex flex-wrap items-center gap-4">
               <img
@@ -88,16 +87,13 @@ const authors = await getEntries(post.data.author);
                 decoding="async"
                 loading="lazy"
               />
-              <p
-                itemprop="author"
-                class="text-2xl font-bold"
-              >
+              <p itemprop="author" class="text-2xl font-bold">
                 {author.data.name}
               </p>
             </div>
 
             <div>
-                <p>{author.data.bio}</p>
+              <p>{author.data.bio}</p>
             </div>
           </div>
         ))

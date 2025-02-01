@@ -1,45 +1,77 @@
 ---
-title: Intrusive Thoughts
+title: Thoughts on Intrusive Thoughts
 author:
   - marilyn-deluera
-image: src/assets/images/media/canada.jpg
+image: src/assets/images/media/water.jpg
 date: 2025-01-10T03:49:00.000Z
 ---
-Can you trust your brain?  Here are some things your brain may tell you from time to time:  “You can’t do anything right!”  “You’ll never be as good an Zi!”  “Your dad was right when he was drunk and said…”!”   “You’re setting yourself up to make a real fool of yourself!”   “You’re just not good enough!”  Your brain has your best interests at heart and you should listen to it, right?”
+***YOUR FEELINGS ARE VALID*** - the happy ones, the hopeful ones, the enthusiastic ones, the proud ones, even the feelings that scream or whisper: afraid, angry, sad, abandoned, resentful, unfair, the sky is falling. The parade of fearful and negative feelings goes on and on. Where do all these thoughts come from? It’s enough to be depressing!
 
-\
-Let’s decide what a habit is!
+So, some words about where these thoughts and feelings come from. To do this, I have to talk about trauma.
 
-\
-After earning a Master’s Degree in Social Work in 2006, I began working in Community Mental Health with children and their parents.  From this perspective, it was clear that though there are patterns of behavior connected to environments and inherited characteristics, behavioral patterns  are complicated  and are a combination of genetics and environment.  Genetics and environment merge and blend; there is no line to mark where one ends and the other begins.
+Many of us define trauma as a car wreck or being shot at or a sudden death or being arrested or something that happened in war: thoughts of these life-threatening events that keep coming back in terms of images, behaviors and physical sensations.
 
-\
-The only true fact is this: none of us are islands unto ourselves.  We need human connection, we need contact, we need each other.  Without each other, we are often feel lost, battling the world by ourselves!
+One of the definitions of trauma requires that an experience involve “actual or threatened death, serious injury or sexual violence.” However, for the sake of argument, do you think that a 5-year-old might interpret the threat of threatened death differently than, say, someone who is 35? What about an 8-year-old who is threatened by a group of bullies on the way home from school? Do you think imminent danger would be an appropriate description? What about a teenager who has been told throughout life that he/she is stupid and unlovable? How frightening is the monster of abandonment when no one wants to sit with them at lunch? Is this trauma? How often do these thoughts come back – either quietly or with a roar? What if the unwanted thoughts are still coming back 50 years later? I have talked to many people whose unwanted thoughts become ever more urgent with the years.
 
-\
-We want things to change, we want our relationships and connections to be better, and we wait for a miracle from outside ourselves to give us the life that we long for, but it doesn’t happen.   We cannot wait for an outside force to save us or to be perfect or to be better than we are, right now, so people will like us or so that we can have satisfying relationships.  We have to reach out, to connect with others, to bond with other human beings.  Our pain, our loneliness, our aching wounds will not be healed if we wait for external forces to save us before deciding it is safe to reach out.  We have to be the agents of change in our lives!  We have to reach out and build the relationships we want!  Healing of relationships, of whatever it is that we long for, works in reverse to waiting for the initial step to come from outside us!  We have to reach out first, we have to believe that we are worthy of connection and of healing to take place.
+What about the impact of poverty, racism, or unfairness? Are those feelings dangerous to the health of our Self-images, to our concepts of Ourselves, to who we are? Are we who they say we are? If others label us, do we label ourselves? “There’s something wrong with me; I need to fix myself but I don’t know how! If I go to a doctor or shrink, they’ll give me pills or tell me to get a grip! Normal people don’t have these thoughts and they’ll think I’m crazy!”
 
-\
-You are worthy of connection!  You are worthy of respect and healing and love.  I believe that Life  is a Journey and not a destination.  You are not who those negative voices say you are!
+The nature of trauma is that it enters our bodies through our eyes, ears and skin, going down into that oldest and most primitive part of our brain, the Amygdala. The Amygdala keeps us alive by telling us when there is something to fear – but it also gets carried away!
 
-\
-Whether you are somewhere in the middle of life, nearer the end or just beginning, I would like to work with you.
-How can I help you?
+“An event becomes traumatic when there is nothing we can do to stave off the inevitable and our bodies automatically focus on the danger, going into the state of flight, fight or freeze.”
 
-\
-**Marilyn DeLuera**\
-Licensed Clinical Social Worker\
-FL License #9846
+The effects of trauma are long and we continue to react to mild(er) stressors as if our lives are still in danger; we become hyperreactive. (Not hyperactive but hyper-**re**active.) Someone may irritate us in a restaurant or at a turn signal or on the road. We may have trouble putting up with childish or immature behavior from our kids or partners. Most of us are barely aware that we are reacting to feelings that are rooted in similar experiences from long before. Those events are over, but we’re reacting as if we’re still in danger. We don’t feel safe, so we fly off the handle; we react out of proportion to the small thing that ignites our frustration or inappropriate action! We don’t feel safe in our bodies or environment!
 
-*Specializing in:*
+The first step in healing ourselves is to find a place where we can talk about these feelings, where we can say, “Oh, this happened to me, I’ve been wounded, I’m not odd or untreatable or garbage!” Having self-compassion and knowing that our reactions are understandable and are rooted in the past are an important and major part of healing. Most of us are survivors of one thing or another and we are worthy that our wounds be healed.
 
-* Women’s Issues
-* Co-dependence
-* Trauma & PTSD
-* Children of elementary age
+This explanation of trauma and behavior is taken from the video, ‘The Body Keeps the Score’ by Dr. Bessel van der Kolk, Psychiatrist, Neuroscientist and trauma researcher for 50 years. Dr van der Kolk is with Boston University and more of his videos can be found on YouTube.
 
-\
-Clients may be seen in person or on-line.  Children will only be seen in person.
+- - -
 
-\
-Please look for my Blog articles each month on this website. New articles appear at the top and older articles are  archived by title and date.
+**WOKENESS**
+
+I don’t have many friends\
+&nbsp; Because I’m picky.\
+I want friends who will talk about\
+&nbsp; Ideas and plans,\
+&nbsp; Science and the planet,\
+&nbsp; Dinosaurs and extinctions,\
+&nbsp; Life and stages of living,\
+&nbsp; Art and Music\
+&nbsp; And history and ages.\
+I want friends who will discuss\
+&nbsp; The developing connections\
+&nbsp; Between science and religion\
+&nbsp; And death and life!
+
+People who are not Woke\
+&nbsp; Cannot do this\
+&nbsp; Because they’re too busy\
+&nbsp; Squabbling about how right they are –\
+&nbsp; About how their way is better\
+&nbsp; And how to make everyone else\
+&nbsp; &nbsp; Do that they want\
+&nbsp; Because they’re right\
+&nbsp; &nbsp; And you’re not.\
+&nbsp; The world will be better\
+&nbsp; &nbsp; If they control it\
+&nbsp; &nbsp; And control you –\
+&nbsp; &nbsp; Tell you what to think\
+&nbsp; &nbsp; And what to do\
+&nbsp; &nbsp; And build fences to\
+&nbsp; &nbsp; keep you out – or in.\
+&nbsp; &nbsp; Tell you what do read\
+&nbsp; &nbsp; &nbsp; Because you ight\
+&nbsp; &nbsp; &nbsp; Upset their able-cart\
+&nbsp; &nbsp; &nbsp; And threaten their power!
+
+&nbsp; &nbsp; Being WOKE\
+&nbsp; &nbsp; &nbsp; Is about justice\
+&nbsp; &nbsp; &nbsp; And fairness\
+&nbsp; &nbsp; &nbsp; And welcoming\
+&nbsp; &nbsp; &nbsp; Ideas and change\
+&nbsp; &nbsp; &nbsp; And the huddled masses yearning to breathe free!\
+&nbsp; &nbsp; &nbsp; Or at least helping them to figure out\
+&nbsp; &nbsp; &nbsp; How to live better!
+
+&nbsp; &nbsp; WOKE is about tolerance and forbearance\
+&nbsp; &nbsp; And making the world a better, not meaner, place!
