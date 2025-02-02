@@ -14,7 +14,7 @@ collections:
 # Define the collections that will be available in the CMS. Collections Docs = https://decapcms.org/docs/collection-folder  |  Widgets Docs = https://decapcms.org/docs/widgets
 - name: "blog" # Used in routes, e.g., /admin/collections/blog. Is also the key when fetching data from the CMS.
   label: "Blog Posts" # Used in the admin dashboard UI
-  label_singular: 'Blog Post' # Used in the admin dashboard UI
+  label_singular: "Blog Post" # Used in the admin dashboard UI
   description: "Blog posts show up on the blog page and help SEO. --- NOTE: Do not create blog posts with the same title; keep titles unique!" # Used in the admin dashboard UI
   identifier_field: title # The field that will be used to identify the document in the CMS
   folder: "src/content/blog" # The path to the folder where the documents are stored
@@ -22,15 +22,15 @@ collections:
   fields:
   # The fields for each document
   - { label: "Title", name: "title", widget: "string", hint: "Keep titles brief yet descriptive." }
-  - { label: "Author", name: 'author', widget: relation, collection: author, multiple: true, search_fields: [ "name" ], display_fields: [ "name" ], value_field: "{{slug}}", hint: "Select the author(s) of the blog post." }
+  - { label: "Author", name: "author", widget: relation, collection: author, multiple: true, search_fields: [ "name" ], display_fields: [ "name" ], value_field: "{{slug}}", hint: "Select the author(s) of the blog post." }
   - { label: "Body", name: "body", widget: "markdown", hint: "Write your blog post content in the box above." }
   - { label: "Featured Image", name: "image", widget: "image", hint: "Add a photo to display at the top of the post." }
   - { label: "Featured Image Caption", name: "imageAlt", widget: "string", required: false, hint: "Add a caption to describe the featured image." }
-  - { label: "Publish Date", name: "date", widget: "datetime", default: '{{now}}', hint: "Choose the date and time the post was published or written." }
-  - { label: "Tags", name: "tags", widget: "list", required: false, hint: "Add comma-separated tags to help categorize your post. (Don't press space!)" }
+  - { label: "Publish Date", name: "date", widget: "datetime", default: "{{now}}", hint: "Choose the date and time the post was published or written." }
+  - { label: "Tags", name: "tags", widget: "list", required: false, hint: "Add comma-separated tags to help categorize your post. (Don"t press space!)" }
 - name: "author" # Used in routes, e.g., /admin/collections/blog. Is also the key when fetching data from the CMS.
   label: "Authors" # Used in the admin dashboard UI
-  label_singular: 'Author' # Used in the admin dashboard UI
+  label_singular: "Author" # Used in the admin dashboard UI
   description: "Authors are used to properly attribute blog posts and to populate the clinicians page." # Used in the admin dashboard UI
   identifier_field: name # The field that will be used to identify the document in the CMS
   folder: "src/content/author" # The path to the folder where the documents are stored

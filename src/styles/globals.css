@@ -98,15 +98,7 @@ a:active {
 
 /* Button */
 .button {
-  @apply bg-gray-200 hover:bg-gray-100 text-gray-800 py-2 px-4 rounded-md;
-  font-size: 1.25rem;
-  /* 20px - xl */
-  line-height: 1.75rem;
-  /* 28px - xl */
-  text-decoration: none;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 100ms;
+  @apply bg-stone-100 p-2 rounded-md border border-stone-300 focus:outline-none focus:ring focus:ring-blue-200 focus:border-blue-500 transition-all duration-200 ease-in-out shadow-sm hover:shadow-md hover:border-stone-400 hover:ring-blue-300 hover:bg-stone-200 hover:text-stone-800 cursor-pointer text-lifeMainDark no-underline text-lg;
 }
 
 .button:hover {
@@ -122,6 +114,56 @@ a:active {
 .button:active {
   @apply text-lifeMainDarker;
   text-decoration: underline;
+}
+
+/* Code */
+code {
+  font-family: "Fira Code", monospace;
+  font-size: 1rem;
+  /* 16px */
+  line-height: 1.5rem;
+  /* 24px */
+  background-color: #f5f5f5;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  font-family: "Fira Code", monospace;
+  font-size: 1rem;
+  /* 16px */
+  line-height: 1.5rem;
+  /* 24px */
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+/* Blockquote */
+blockquote {
+  font-size: 1.5rem;
+  /* 24px */
+  line-height: 2rem;
+  /* 32px */
+  font-style: italic;
+  border-left: 0.25rem solid #e0dcd6;
+  padding-left: 1rem;
+}
+
+/* Images */
+img {
+  @apply bg-lifeBackground flex align-middle items-center justify-center text-center text-stone-200 overflow-hidden;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Inputs */
+.inputText {
+  @apply w-full bg-stone-100 p-2 rounded-md border border-stone-300 focus:outline-none focus:ring focus:ring-blue-200 focus:border-blue-500 transition-all duration-200 ease-in-out shadow-sm hover:shadow-md hover:border-stone-400 hover:ring-blue-300 hover:bg-stone-200 hover:text-stone-800;
+}
+
+.inputTextArea {
+  @apply w-full bg-stone-100 p-2 rounded-md border border-stone-300 focus:outline-none focus:ring focus:ring-blue-200 focus:border-blue-500 transition-all duration-200 ease-in-out shadow-sm hover:shadow-md hover:border-stone-400 hover:ring-blue-300 hover:bg-stone-200 hover:text-stone-800;
 }
 
 /* HR/Dividing Lines */

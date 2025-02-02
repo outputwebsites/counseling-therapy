@@ -18,6 +18,7 @@ import { Icon } from "astro-icon/components";
         height="75"
         aria-hidden="true"
         decoding="async"
+        class="bg-transparent"
       />
     </a>
     <div id="navName" class="w-full flex flex-col text-black">
@@ -28,7 +29,7 @@ import { Icon } from "astro-icon/components";
         {client.nameShort2}
       </p>
     </div>
-    <button class="navMenu">
+    <button class="navMenu" title="Menu">
       <label for="dropdown">
         <i class="menuIcon menuBars"><Icon name="menu" /></i>
         <i class="menuIcon menuX"><Icon name="x" /></i>

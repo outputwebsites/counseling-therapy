@@ -31,12 +31,20 @@ const {
   slugLong,
   slugShort,
 } = Astro.props;
-const content = await marked.parse(biography.replace(/\n(?=\n)/g, "\n\n<br/>\n"));
+const content = await marked.parse(
+  biography.replace(/\n(?=\n)/g, "\n\n<br/>\n"),
+);
 
 function capitalizeEmail(str) {
-  const [localPart, domain] = str.split('@');
-  const capitalizedDomain = domain === 'counseling-therapy.org' ? 'Counseling-Therapy.org' : domain;
-  return localPart.charAt(0).toUpperCase() + localPart.slice(1).toLowerCase() + '@' + capitalizedDomain;
+  const [localPart, domain] = str.split("@");
+  const capitalizedDomain =
+    domain === "counseling-therapy.org" ? "Counseling-Therapy.org" : domain;
+  return (
+    localPart.charAt(0).toUpperCase() +
+    localPart.slice(1).toLowerCase() +
+    "@" +
+    capitalizedDomain
+  );
 }
 ---
 
@@ -54,18 +62,26 @@ function capitalizeEmail(str) {
           height={photo.height}
           decoding="async"
           loading="lazy"
+          class="rounded-full"
         />
       )
     }
     <div class="flex flex-col gap-4">
-      <div class="flex flex-row items-end gap-2 max-[745px]:text-center max-[745px]:justify-center">
+      <div
+        class="flex flex-row items-end gap-2 max-[745px]:text-center max-[745px]:justify-center"
+      >
         <h3 id={slugShort}>{name}</h3>
-        <p class="text-gray-600 text-md">{qualification}</p>
+        <p class="text-stone-600 text-md">{qualification}</p>
       </div>
       <div class="flex flex-row max-[920px]:flex-col text-center gap-4">
         {
           email && (
-            <a class="button" class="break-all" href={"mailto:" + email} title={email}>
+            <a
+              class="button"
+              class="break-all"
+              href={"mailto:" + email}
+              title={email}
+            >
               {capitalizeEmail(email)}
             </a>
           )
