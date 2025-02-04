@@ -1,7 +1,11 @@
 ---
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import client from "@data/client.json";
+import { getCollection } from "astro:content";
+import CardTerm from "@components/CardTerm.astro";
 import { Icon } from "astro-icon/components";
+
+const terms = await getCollection("terms");
 ---
 
 <BaseLayout title={client.name} description={client.description}>
@@ -15,7 +19,9 @@ import { Icon } from "astro-icon/components";
           <div
             class="flex flex-col gap-6 mt-6 mx-auto align-middle items-center text-center max-w-[730px] px-12 py-6 text-xl bg-[#00000054] rounded-sm"
           >
-            <p class="tracking-wide leading-normal max-[730px]:text-lg max-[668px]:max-w-[310px] max-[400px]:max-w-[200px]">
+            <p
+              class="tracking-wide leading-normal max-[730px]:text-lg max-[668px]:max-w-[310px] max-[400px]:max-w-[200px]"
+            >
               Therapy is about where you are and where you want to go. <br />It
               is about acceptance of your values and the goals that you seek.
             </p>
@@ -37,14 +43,18 @@ import { Icon } from "astro-icon/components";
 
     <section id="welcome" class="flex flex-col text-center px-3 gap-4">
       <h1 class="mt-32 max-[380px]:text-3xl" id={client.nameShort1}>
-        <strong>Welcome to <br/>{client.nameShort1}</strong>
+        <strong>Welcome to <br />{client.nameShort1}</strong>
       </h1>
       <div
         class="flex flex-col text-center justify-center items-center mt-8 max-w-[710px] mx-auto"
       >
-        <h2 class="my-8 max-[694px]:text-3xl max-[580px]:max-w-[326px]">We are looking forward to meeting you.</h2>
+        <h2 class="my-8 max-[694px]:text-3xl max-[580px]:max-w-[326px]">
+          We are looking forward to meeting you.
+        </h2>
 
-        <h2 class="text-3xl max-[710px]:text-2xl max-[578px]:text-xl max-[394px]:max-w-[190px] my-8">
+        <h2
+          class="text-3xl max-[710px]:text-2xl max-[578px]:text-xl max-[394px]:max-w-[190px] my-8"
+        >
           Schedule sessions in person or on-line. <br />Children will only be
           seen in person.
         </h2>
@@ -68,137 +78,28 @@ import { Icon } from "astro-icon/components";
             <li>Trauma Focused</li>
           </ul>
         </div>
-        <div class="flex flex-col text-justify mt-8 max-w-[625px] mx-auto">
-          <h2 id="specialties-expertise" class="mt-8 mb-2">
-            Specialties/Expertise
-          </h2>
-          <ul>
-            <li>
-              <strong>ADHD (Attention-Deficit/Hyperactivity Disorder):</strong> A
-              neurodevelopmental disorder characterized by symptoms of inattention,
-              impulsivity, and hyperactivity that can affect daily functioning and
-              performance at school or work. It often manifests in childhood but
-              can continue into adulthood.
-            </li>
-            <li>
-              <strong>Anxiety:</strong> A feeling of unease, worry, or fear that
-              can range from mild to severe. It can manifest as general anxiety,
-              panic attacks, or phobias, and often disrupts daily life and functioning.
-            </li>
-            <li>
-              <strong>Over Thinking:</strong> Having thoughts circle around in your
-              head can be distracting and interfere with things we need to do and
-              relationships we have.
-            </li>
-            <li>
-              <strong>Coping Skills:</strong> Strategies or techniques used to manage
-              stress, emotions, and difficult situations. Healthy coping mechanisms
-              might include mindfulness, problem-solving, or seeking social support.
-            </li>
-            <li>
-              <strong>Depression:</strong> A mood disorder characterized by persistent
-              feelings of sadness, hopelessness, and a lack of interest in daily
-              activities. It can affect one's ability to function in daily life and
-              often includes physical symptoms like fatigue or changes in appetite
-              and sleep.
-            </li>
-            <li>
-              <strong>Family Conflict:</strong> Disagreements or tensions within
-              a family that can involve communication issues, misunderstandings,
-              or unmet needs. These conflicts can lead to emotional distress and
-              affect family dynamics.
-            </li>
-            <li>
-              <strong>Geriatric and Seniors:</strong> Refers to mental health and
-              well-being concerns of elderly individuals. It includes issues such
-              as dementia, depression, isolation, and the challenges of aging.
-            </li>
-            <li>
-              <strong>Grief:</strong> The emotional response to the loss of a loved
-              one, which can manifest as sadness, anger, guilt, or confusion. Grieving
-              is a natural process, but it can also lead to mental health concerns
-              if it’s prolonged or complicated.
-            </li>
-            <li>
-              <strong>Marital and Premarital:</strong> These refer to relationship
-              dynamics within marriage or before marriage, focusing on communication,
-              conflict resolution, intimacy, and other issues that might arise in
-              a couple’s relationship.
-            </li>
-            <li>
-              <strong>Mood Disorders:</strong> A group of mental health conditions
-              characterized by significant disturbances in mood, including depression,
-              bipolar disorder, and other conditions that cause severe mood swings
-              or emotional distress.
-            </li>
-            <li>
-              <strong>Obsessive-Compulsive Disorder (OCD):</strong> A disorder characterized
-              by intrusive, unwanted thoughts (obsessions) and repetitive behaviors
-              or rituals (compulsions) performed to alleviate anxiety or prevent
-              a feared event.
-            </li>
-            <li>
-              <strong>Relationship Issues:</strong> Problems or conflicts that arise
-              in interpersonal relationships, whether romantic, familial, or platonic.
-              These might involve communication problems, trust issues, or differing
-              values.
-            </li>
-            <li>
-              <strong>Self-Esteem:</strong> Refers to the way individuals perceive
-              and value themselves. Low self-esteem can lead to feelings of inadequacy
-              or insecurity, while healthy self-esteem fosters confidence and a positive
-              sense of self.
-            </li>
-            <li>
-              <strong>Stress:</strong> A physical and emotional response to demands
-              or pressures. While some stress is natural and can motivate action,
-              chronic stress can have negative effects on health and well-being.
-            </li>
-            <li>
-              <strong>Trauma and PTSD (Post-Traumatic Stress Disorder):</strong>
-              Trauma refers to the emotional, psychological, or physical response
-              to a deeply distressing or disturbing event. PTSD is a condition that
-              can develop after experiencing trauma, characterized by flashbacks,
-              nightmares, and heightened anxiety.
-            </li>
-          </ul>
+        <div id="terms">
+          <div id="term-definitions" class="w-full mx-0">
+            {
+              terms.length >= 1 && (
+                <div class="flex flex-col text-justify mt-8 max-w-[625px] mx-auto">
+                  <h2 id="specialties-expertise" class="mt-8 mb-2">
+                    Specialties/Expertise
+                  </h2>
+                  {terms.map((term) => (
+                    <CardTerm term={term} />
+                  ))}
+                </div>
+              )
+            }
+          </div>
         </div>
-      </div>
 
-      <hr class="my-10" />
+        <hr class="my-10" />
 
-      <div class="flex flex-col text-justify max-w-[625px] mx-auto">
-        <h2 id="finances">Finances</h2>
-        <p class="text-lg font-bold my-2">
-          <em>
-            NOTE:
-            <em>
-              Not all therapists take all insurances; please check with the
-              office!
-            </em>
-          </em>
-        </p>
-
-        <div class="flex flex-col text-justify mx-auto">
-          <ul>
-            <li>Aetna</li>
-            <li>Anthem</li>
-            <li>BlueCross</li>
-            <li>BlueShield</li>
-            <li>Cigna</li>
-            <li>Evernorth</li>
-            <li>Florida Blue</li>
-            <li>Health Advocate</li>
-            <li>Humana</li>
-            <li>Magellan</li>
-            <li>Medicare</li>
-            <li>Optum</li>
-            <li>TRICARE</li>
-            <li>United Medical Resources (UMR)</li>
-            <li>UnitedHealthcare (UHC | UBH)</li>
-          </ul>
-
-          <p class="text-lg font-bold mt-8 mb-20">
+        <div class="flex flex-col text-justify max-w-[625px] mx-auto">
+          <h2 id="finances">Finances</h2>
+          <p class="text-lg font-bold my-2">
             <em>
               NOTE:
               <em>
@@ -207,6 +108,36 @@ import { Icon } from "astro-icon/components";
               </em>
             </em>
           </p>
+
+          <div class="flex flex-col text-justify mx-auto">
+            <ul>
+              <li>Aetna</li>
+              <li>Anthem</li>
+              <li>BlueCross</li>
+              <li>BlueShield</li>
+              <li>Cigna</li>
+              <li>Evernorth</li>
+              <li>Florida Blue</li>
+              <li>Health Advocate</li>
+              <li>Humana</li>
+              <li>Magellan</li>
+              <li>Medicare</li>
+              <li>Optum</li>
+              <li>TRICARE</li>
+              <li>United Medical Resources (UMR)</li>
+              <li>UnitedHealthcare (UHC | UBH)</li>
+            </ul>
+
+            <p class="text-lg font-bold mt-8 mb-20">
+              <em>
+                NOTE:
+                <em>
+                  Not all therapists take all insurances; please check with the
+                  office!
+                </em>
+              </em>
+            </p>
+          </div>
         </div>
       </div>
     </section>

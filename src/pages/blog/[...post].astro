@@ -3,6 +3,7 @@ import { marked } from "marked";
 import { getCollection, getEntries } from "astro:content";
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import FeaturedPost from "@components/FeaturedPost.astro";
+import CardAuthor from "@components/CardAuthor.astro";
 import { Image } from "astro:assets";
 import { formatDate } from "@js/utils";
 
@@ -54,12 +55,52 @@ const authors = await getEntries(post.data.author);
           post.data.date && (
             <p>
               {formatDate(post.data.date)} by
-                {authors.length === 1
-                ? authors[0].data.name
-                : authors.length === 2
-                ? `${authors[0].data.name} and ${authors[1].data.name}`
-                : authors.slice(0, -1).map((author) => author.data.name).join(", ") + 
-                  `${authors.length > 2 ? "," : ""} and ${authors[authors.length - 1].data.name}`}
+              {authors.length === 1 ? (
+                <a
+                  href={"/clinicians#" + authors[0].data.name}
+                  title={authors[0].data.name}
+                >
+                  <span
+                    itemprop="author"
+                    id={authors[0].data.name + "-name"}
+                  >
+                    <strong>{authors[0].data.name}</strong>
+                  </span>
+                </a>
+              ) : authors.length === 2 ? (
+                <a
+                  href={"/clinicians#" + authors[0].data.name}
+                  title={authors[0].data.name}
+                >
+                  <span
+                    itemprop="author"
+                    id={authors[0].data.name + "-name"}
+                  ><strong>{authors[0].data.name}</strong></span></a> <span>and</span> <a
+                  href={"/clinicians#" + authors[1].data.name}
+                  title={authors[1].data.name}
+                >
+                  <span
+                    itemprop="author"
+                    id={authors[1].data.name + "-name"}
+                  >
+                    <strong>{authors[1].data.name}</strong>
+                  </span>
+                </a>
+              ) : (
+                authors.map((author, index) => (
+                  <span>
+                  <a
+                    href={"/clinicians#" + author.data.name}
+                    title={author.data.name}
+                  ><span
+                    itemprop="author"
+                    id={author.data.name + "-name"}
+                    ><strong>{author.data.name}</strong></span></a>
+                  {index < authors.length - 2 && ", "}
+                  {index === authors.length - 2 && ", and "}
+                  </span>
+                ))
+              )}
             </p>
           )
         }
@@ -71,40 +112,7 @@ const authors = await getEntries(post.data.author);
     </section>
 
     <section id="blog-post-authors" class="flex flex-col gap-4">
-      {
-        authors.map((author) => (
-          <div class="flex flex-col gap-4 max-w-xl border border-lifeBorder p-4 rounded-lg text-left">
-            <span class="italic">Author</span>
-
-            <div class="flex flex-wrap items-center gap-4">
-              <img
-                class="object-cover w-20 h-20 mt-3 mr-3 rounded-full"
-                src={
-                  typeof author.data.photo === "string"
-                    ? author.data.photo.replace(
-                        /^.*\/src\/assets\//,
-                        "/src/assets/",
-                      )
-                    : author.data.photo.src.replace(
-                        /^.*\/src\/assets\//,
-                        "/src/assets/",
-                      )
-                }
-                alt={author.data.name}
-                decoding="async"
-                loading="lazy"
-              />
-              <p itemprop="author" class="text-2xl font-bold">
-                {author.data.name}
-              </p>
-            </div>
-
-            <div>
-              <p>{author.data.bio}</p>
-            </div>
-          </div>
-        ))
-      }
+      {authors.map((author) => <CardAuthor author={author} />)}
     </section>
   </article>
 </BaseLayout>

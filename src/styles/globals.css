@@ -50,8 +50,7 @@ body {
 
 /* Adjust scroll-padding-top to give padding before the #linked content */
 html {
-  scroll-padding-top: 2.5rem;
-  /* 40px */
+  scroll-padding-top: 100px;
 }
 
 /* Change selection background */

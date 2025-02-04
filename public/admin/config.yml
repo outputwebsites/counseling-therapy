@@ -27,7 +27,7 @@ collections:
   - { label: "Featured Image", name: "image", widget: "image", hint: "Add a photo to display at the top of the post." }
   - { label: "Featured Image Caption", name: "imageAlt", widget: "string", required: false, hint: "Add a caption to describe the featured image." }
   - { label: "Publish Date", name: "date", widget: "datetime", default: "{{now}}", hint: "Choose the date and time the post was published or written." }
-  - { label: "Tags", name: "tags", widget: "list", required: false, hint: "Add comma-separated tags to help categorize your post. (Don"t press space!)" }
+  - { label: "Tags", name: "tags", widget: "list", required: false, hint: "Add comma-separated tags to help categorize your post. (Don't press space!)" }
 - name: "author" # Used in routes, e.g., /admin/collections/blog. Is also the key when fetching data from the CMS.
   label: "Authors" # Used in the admin dashboard UI
   label_singular: "Author" # Used in the admin dashboard UI
@@ -47,3 +47,14 @@ collections:
   - { label: "Short Bio", name: "bio", widget: "string", hint: "Add a short biography to display under your author credits." }
   - { label: "Long Bio", name: "biography", widget: "markdown", hint: "Add a full biography for use on an author page." }
   - { label: "Order", name: "order", widget: "string", hint: "Set the order of clinicians on the clinicians page. 1 = first, 2 = seconds, and so on..." }
+- name: "terms" # Used in routes, e.g., /admin/collections/terms. Is also the key when fetching data from the CMS.
+  label: "Terms" # Used in the admin dashboard UI
+  label_singular: "Term" # Used in the admin dashboard UI
+  description: "Terms show up on the home page and help SEO. --- NOTE: Do not create 2 terms of with the same name; keep terms unique!" # Used in the admin dashboard UI
+  identifier_field: name # The field that will be used to identify the document in the CMS
+  folder: "src/content/terms" # The path to the folder where the documents are stored
+  create: true # Allow users to create new documents in this collection
+  fields:
+  # The fields for each document
+  - { label: "Name", name: "name", widget: "string", hint: "Keep names brief - put the details in the body." }
+  - { label: "Body", name: "body", widget: "markdown", hint: "Write your term definitions in the box above." }

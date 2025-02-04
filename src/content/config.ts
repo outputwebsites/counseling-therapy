@@ -34,7 +34,16 @@ const authorsCollection = defineCollection({
 		}),
 });
 
+const termsCollection = defineCollection({
+	type: "content",
+	schema: () =>
+		z.object({
+			name: z.string(),
+		}),
+});
+
 export const collections = {
 	blog: blogsCollection,
 	author: authorsCollection,
+	terms: termsCollection,
 };

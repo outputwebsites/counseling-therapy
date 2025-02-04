@@ -1,38 +1,14 @@
 ---
 import { marked } from "marked";
+import type { CollectionEntry } from "astro:content";
 
 export interface Props {
-  name: string;
-  photo?: {
-    src: string;
-    width: number;
-    height: number;
-    format: "png" | "jpg" | "jpeg" | "tiff" | "webp" | "gif" | "svg" | "avif";
-  };
-  qualification: string;
-  email: string;
-  link_psychology_today: string;
-  link_linkedin: string;
-  link_vitadox: string;
-  biography: string;
-  slugLong: string;
-  slugShort: string;
+  author: CollectionEntry<"author">;
 }
 
-const {
-  photo,
-  name,
-  qualification,
-  email,
-  link_psychology_today,
-  link_linkedin,
-  link_vitadox,
-  biography,
-  slugLong,
-  slugShort,
-} = Astro.props;
+const { author } = Astro.props;
 const content = await marked.parse(
-  biography.replace(/\n(?=\n)/g, "\n\n<br/>\n"),
+  author.data.biography.replace(/\n(?=\n)/g, "\n\n<br/>\n"),
 );
 
 function capitalizeEmail(str) {
@@ -48,51 +24,51 @@ function capitalizeEmail(str) {
 }
 ---
 
-<div id={slugLong} class="flex flex-col gap-6">
+<div id={author.data.name} class="flex flex-col gap-6">
   <div
-    id={slugShort + "-details"}
+    id={author.data.name + "-details"}
     class="flex flex-row gap-4 items-center justify-center max-[745px]:flex-col"
   >
-    {
-      photo && (
-        <img
-          src={photo.src}
-          alt={name}
-          width={photo.width}
-          height={photo.height}
-          decoding="async"
-          loading="lazy"
-          class="rounded-full"
-        />
-      )
-    }
+    <img
+      class="object-cover w-[350px] h-[350px] mt-3 mr-3 rounded-full"
+      src={typeof author.data.photo === "object" &&
+      author.data.photo !== null &&
+      "src" in author.data.photo
+        ? author.data.photo.src.replace(/^.*\/src\/assets\//, "/src/assets/")
+        : ""}
+      alt={author.data.name}
+      decoding="async"
+      loading="lazy"
+      width="350px"
+      height="350px"
+    />
     <div class="flex flex-col gap-4">
       <div
-        class="flex flex-row items-end gap-2 max-[745px]:text-center max-[745px]:justify-center"
+        class="flex max-[745px]:flex-col items-end max-[745px]:items-center gap-2 max-[745px]:text-center max-[745px]:justify-center"
       >
-        <h3 id={slugShort}>{name}</h3>
-        <p class="text-stone-600 text-md">{qualification}</p>
+        <h3 id={author.data.name + "-name"}>{author.data.name}</h3>
+        <p class="text-stone-600 text-md">{author.data.qualifications}</p>
       </div>
       <div class="flex flex-row max-[920px]:flex-col text-center gap-4">
         {
-          email && (
+          author.data.email && (
             <a
               class="button"
               class="break-all"
-              href={"mailto:" + email}
-              title={email}
+              href={"mailto:" + author.data.email}
+              title={author.data.email}
             >
-              {capitalizeEmail(email)}
+              {capitalizeEmail(author.data.email)}
             </a>
           )
         }
       </div>
       <div class="flex flex-row max-[920px]:flex-col text-center gap-4">
         {
-          link_psychology_today && (
+          author.data.link_psychology_today && (
             <a
               class="button"
-              href={link_psychology_today}
+              href={author.data.link_psychology_today}
               title="Psychology Today"
             >
               Psychology Today
@@ -100,15 +76,15 @@ function capitalizeEmail(str) {
           )
         }
         {
-          link_linkedin && (
-            <a class="button" href={link_linkedin} title="LinkedIn">
+          author.data.link_linkedin && (
+            <a class="button" href={author.data.link_linkedin} title="LinkedIn">
               LinkedIn
             </a>
           )
         }
         {
-          link_vitadox && (
-            <a class="button" href={link_vitadox} title="Vitadox">
+          author.data.link_vitadox && (
+            <a class="button" href={author.data.link_vitadox} title="Vitadox">
               Vitadox
             </a>
           )
@@ -118,8 +94,8 @@ function capitalizeEmail(str) {
   </div>
 
   {
-    biography && (
-      <section id={slugShort + "-bio"} class="text-justify">
+    author.data.biography && (
+      <section id={author.data.name + "-bio"} class="text-justify">
         <p set:html={content} />
       </section>
     )
