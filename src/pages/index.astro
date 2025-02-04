@@ -78,17 +78,24 @@ const terms = await getCollection("terms");
             <li>Trauma Focused</li>
           </ul>
         </div>
+      </div>
+
+      <hr class="my-16" />
+
+      <div class="flex flex-col text-center max-w-[625px] mx-auto">
         <div id="terms">
           <div id="term-definitions" class="w-full mx-0">
             {
               terms.length >= 1 && (
                 <div class="flex flex-col text-justify mt-8 max-w-[625px] mx-auto">
-                  <h2 id="specialties-expertise" class="mt-8 mb-2">
-                    Specialties/Expertise
+                  <h2 id="specialties-expertise" class="mt-8 mb-2 text-center">
+                    Learn More
                   </h2>
-                  {terms.map((term) => (
-                    <CardTerm term={term} />
-                  ))}
+                  <div class="flex flex-col gap-4">
+                    {terms.map((term) => (
+                      <CardTerm term={term} />
+                    ))}
+                  </div>
                 </div>
               )
             }
