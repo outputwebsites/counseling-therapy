@@ -24,6 +24,7 @@ const detailsCollection = defineCollection({
 			linkPsychologyToday: z.string(),
 			domain: z.string(),
 			keywords: z.array(z.string()).optional(),
+			insurances: z.array(z.string()).optional(),
 		}),
 });
 
@@ -57,6 +58,14 @@ const authorsCollection = defineCollection({
 		}),
 });
 
+const treatmentsCollection = defineCollection({
+	type: "content",
+	schema: () =>
+		z.object({
+			name: z.string(),
+		}),
+});
+
 const termsCollection = defineCollection({
 	type: "content",
 	schema: () =>
@@ -69,5 +78,6 @@ export const collections = {
 	details: detailsCollection,
 	blog: blogsCollection,
 	author: authorsCollection,
+	treatments: treatmentsCollection,
 	terms: termsCollection,
 };

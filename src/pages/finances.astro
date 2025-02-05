@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "src/layouts/BaseLayout.astro";
+import CardInsurance from "@components/CardInsurance.astro";
 import { getCollection } from "astro:content";
 
 const details = await getCollection("details");
@@ -8,43 +9,35 @@ const details = await getCollection("details");
 <BaseLayout title="Finances" description={details[0].data.description}>
   <section
     id="insurances"
-    class="flex flex-col text-justify max-w-[625px] mx-auto py-20 px-3 gap-4"
+    class="flex flex-col text-center max-w-[625px] mx-auto py-20 px-3 gap-4"
   >
-    <h1 id="finances" class="text-center">Finances</h1>
+    <h1 id="finances">Finances</h1>
     <p>
       <em class="text-lg font-bold">
         NOTE:
         <em class="text-base font-normal">
-          Not all therapists take all insurances; please check with the office!
+          Not all clinicians take all insurances; please check with the office!
         </em>
       </em>
     </p>
 
-    <div class="flex flex-col text-left">
-      <ul>
-        <li>Aetna</li>
-        <li>Anthem</li>
-        <li>BlueCross</li>
-        <li>BlueShield</li>
-        <li>Cigna</li>
-        <li>Evernorth</li>
-        <li>Florida Blue</li>
-        <li>Health Advocate</li>
-        <li>Humana</li>
-        <li>Magellan</li>
-        <li>Medicare</li>
-        <li>Optum</li>
-        <li>TRICARE</li>
-        <li>United Medical Resources (UMR)</li>
-        <li>UnitedHealthcare (UHC | UBH)</li>
-      </ul>
+    <div
+      class="flex flex-wrap gap-4 text-center justify-center items-center align-middle"
+    >
+      {
+        details[0] &&
+          details[0].data.insurances &&
+          details[0].data.insurances.map((insurance) => (
+            <CardInsurance name={insurance} />
+          ))
+      }
     </div>
 
     <p>
       <em class="text-lg font-bold">
         NOTE:
         <em class="text-base font-normal">
-          Not all therapists take all insurances; please check with the office!
+          Not all clinicians take all insurances; please check with the office!
         </em>
       </em>
     </p>

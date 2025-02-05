@@ -12,10 +12,10 @@ logo_url: https://counseling-therapy.org/assets/svgs/logotype.svg # change url t
 display_url: https://Counseling-Therapy.org
 collections:
 # Define the collections that will be available in the CMS. Collections Docs = https://decapcms.org/docs/collection-folder  |  Widgets Docs = https://decapcms.org/docs/widgets
-- label: "Details" # Used in the admin dashboard UI
+- label: "Business Details" # Used in the admin dashboard UI
   name: "details" # Used in routes, e.g., /admin/collections/blog. Is also the key when fetching data from the CMS.
   files:
-  - label: "Details" # Used in the admin dashboard UI
+  - label: "Business Details" # Used in the admin dashboard UI
     name: "details" # Used in routes, e.g., /admin/collections/blog. Is also the key when fetching data from the CMS.
     file: "src/content/details/details.yml" # The path to the folder where the documents are stored
     fields:
@@ -28,6 +28,8 @@ collections:
     - label: "Address"
       name: "address"
       widget: "object"
+      collapsed: true
+      minimize_collapsed: true
       fields:
       - { label: "Address Line 1", name: "addressLineOne", widget: "string", hint: "Line one of the business address." }
       - { label: "Address Line 2", name: "addressLineTwo", widget: "string", hint: "Line two of the business address." }
@@ -45,6 +47,15 @@ collections:
       minimize_collapsed: true
       summary: "{{fields.keyword}}"
       field: { label: Keyword, name: keyword, widget: string, hint: "Keyword that describes any aspect of the business which someone may use to search for the business." }
+    - label: "Insurances"
+      name: "insurances"
+      label_singular: "insurance"
+      widget: "list"
+      add_to_top: true
+      collapsed: true
+      minimize_collapsed: true
+      summary: "{{fields.insurance}}"
+      field: { label: Insurance Name, name: insurance, widget: string, hint: "Name of the insurance company accepted. The insurance should be representative of what all clinicians may take in the office - but not all clinicians may take all insurances listed!" }
 - name: "blog" # Used in routes, e.g., /admin/collections/blog. Is also the key when fetching data from the CMS.
   label: "Blog Posts" # Used in the admin dashboard UI
   label_singular: "Blog Post" # Used in the admin dashboard UI
@@ -78,6 +89,16 @@ collections:
   - { label: "Short Bio", name: "bio", widget: "string", hint: "Add a short biography to display under your author credits." }
   - { label: "Long Bio", name: "biography", widget: "markdown", hint: "Add a full biography for use on an author page." }
   - { label: "Order", name: "order", widget: "string", hint: "Set the order of clinicians on the clinicians page. 1 = first, 2 = seconds, and so on..." }
+- name: "treatments" # Used in routes, e.g., /admin/collections/terms. Is also the key when fetching data from the CMS.
+  label: "Treatment Types" # Used in the admin dashboard UI
+  label_singular: "treatment" # Used in the admin dashboard UI
+  description: "Types show up on the home page to show users what you do. They help SEO. --- NOTE: Do not create 2 types of with the same name; keep types unique!" # Used in the admin dashboard UI
+  identifier_field: name # The field that will be used to identify the document in the CMS
+  folder: "src/content/treatments" # The path to the folder where the documents are stored
+  create: true # Allow users to create new documents in this collection
+  fields:
+  - { label: "Name", name: "name", widget: "string", hint: "Keep names brief - put the details in the body." }
+  - { label: "Body", name: "body", widget: "markdown", hint: "Write your treatment type description in the box above." }
 - name: "terms" # Used in routes, e.g., /admin/collections/terms. Is also the key when fetching data from the CMS.
   label: "Terms" # Used in the admin dashboard UI
   label_singular: "Term" # Used in the admin dashboard UI

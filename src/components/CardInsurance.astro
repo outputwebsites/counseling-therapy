@@ -1,0 +1,14 @@
+---
+export interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<p
+  id={name}
+  class="flex flex-col gap-4 max-w-2xl border border-lifeBorder p-4 rounded-lg text-center text-2xl justify-center items-center align-middle"
+>
+  {name}
+</p>

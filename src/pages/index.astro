@@ -2,9 +2,12 @@
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import CardTerm from "@components/CardTerm.astro";
+import CardTreatment from "@components/CardTreatment.astro";
+import CardInsurance from "@components/CardInsurance.astro";
 import { Icon } from "astro-icon/components";
 
 const terms = await getCollection("terms");
+const treatments = await getCollection("treatments");
 const details = await getCollection("details");
 ---
 
@@ -65,65 +68,59 @@ const details = await getCollection("details");
 
   <hr class="my-20" />
 
-  <section id="types" class="flex flex-col text-center max-w-[625px] mx-auto px-3">
-    <div class="flex flex-col text-left">
-      <h2 id="treatment-types" class="mb-4">Treatment Types</h2>
-      <ul>
-        <li>Clinical Supervision and Licensed Supervisors</li>
-        <li>Cognitive Behavioral (CBT)</li>
-        <li>Dialectical Behavior (DBT)</li>
-        <li>EMDR</li>
-        <li>Family / Marital</li>
-        <li>Family Systems</li>
-        <li>Person-Centered</li>
-        <li>Solution Focused Brief (SFBT)</li>
-        <li>Structural Family Therapy</li>
-        <li>Trauma Focused</li>
-      </ul>
-    </div>
+  <section
+    id="types"
+    class="flex flex-col text-center max-w-[625px] mx-auto px-3"
+  >
+    {
+      treatments.length >= 1 && (
+        <div class="flex flex-col text-justify max-w-[625px] mx-auto">
+          <h2 id="treatment-types" class="text-center">
+            Treatment Types
+          </h2>
+          <div class="flex flex-col mt-4 gap-4">
+            {treatments.map((treatment) => (
+              <CardTreatment treatment={treatment} />
+            ))}
+          </div>
+        </div>
+      )
+    }
   </section>
 
   <hr class="my-20" />
 
   <section
     id="insurances"
-    class="flex flex-col text-justify max-w-[625px] mx-auto px-3 gap-4"
+    class="flex flex-col text-center max-w-[625px] mx-auto px-3 gap-4"
   >
     <h2 id="finances">Finances</h2>
     <p>
       <em class="text-lg font-bold">
         NOTE:
         <em class="text-base font-normal">
-          Not all therapists take all insurances; please check with the office!
+          Not all clinicians take all insurances; please check with the office!
         </em>
       </em>
     </p>
 
-    <div class="flex flex-col text-left">
-      <ul>
-        <li>Aetna</li>
-        <li>Anthem</li>
-        <li>BlueCross</li>
-        <li>BlueShield</li>
-        <li>Cigna</li>
-        <li>Evernorth</li>
-        <li>Florida Blue</li>
-        <li>Health Advocate</li>
-        <li>Humana</li>
-        <li>Magellan</li>
-        <li>Medicare</li>
-        <li>Optum</li>
-        <li>TRICARE</li>
-        <li>United Medical Resources (UMR)</li>
-        <li>UnitedHealthcare (UHC | UBH)</li>
-      </ul>
+    <div
+      class="flex flex-wrap gap-4 text-center justify-center items-center align-middle"
+    >
+      {
+        details[0] &&
+          details[0].data.insurances &&
+          details[0].data.insurances.map((insurance) => (
+            <CardInsurance name={insurance} />
+          ))
+      }
     </div>
 
     <p>
       <em class="text-lg font-bold">
         NOTE:
         <em class="text-base font-normal">
-          Not all therapists take all insurances; please check with the office!
+          Not all clinicians take all insurances; please check with the office!
         </em>
       </em>
     </p>
@@ -131,11 +128,14 @@ const details = await getCollection("details");
 
   <hr class="my-20" />
 
-  <section id="terms" class="flex flex-col text-center max-w-[625px] mb-32 mx-auto px-3">
+  <section
+    id="terms"
+    class="flex flex-col text-center max-w-[625px] mb-32 mx-auto px-3"
+  >
     {
       terms.length >= 1 && (
         <div class="flex flex-col text-justify max-w-[625px] mx-auto">
-          <h2 id="specialties-expertise">
+          <h2 id="specialties-expertise" class="text-center">
             Learn More
           </h2>
           <div class="flex flex-col mt-4 gap-4">
