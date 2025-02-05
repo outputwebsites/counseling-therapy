@@ -12,6 +12,39 @@ logo_url: https://counseling-therapy.org/assets/svgs/logotype.svg # change url t
 display_url: https://Counseling-Therapy.org
 collections:
 # Define the collections that will be available in the CMS. Collections Docs = https://decapcms.org/docs/collection-folder  |  Widgets Docs = https://decapcms.org/docs/widgets
+- label: "Details" # Used in the admin dashboard UI
+  name: "details" # Used in routes, e.g., /admin/collections/blog. Is also the key when fetching data from the CMS.
+  files:
+  - label: "Details" # Used in the admin dashboard UI
+    name: "details" # Used in routes, e.g., /admin/collections/blog. Is also the key when fetching data from the CMS.
+    file: "src/content/details/details.yml" # The path to the folder where the documents are stored
+    fields:
+    - { label: "Name", name: "name", widget: "string", hint: "Full name of the business." }
+    - { label: "Name (Short - Part 1)", name: "nameShort1", widget: "string", hint: "Shortened name of the business (first part separated)." }
+    - { label: "Name (Short - Part 2)", name: "nameShort2", widget: "string", hint: "Shortened name of the business (second part separated)." }
+    - { label: "Email", name: "email", widget: "string", hint: "Email of the business." }
+    - { label: "Phone Number", name: "phone", widget: "string", hint: "Main/office telephone number of the business. Use (000) 000-0000 format." }
+    - { label: "Description", name: "description", widget: "text", hint: "Short description of the business. (Max 1-2 sentences (140 character max)." }
+    - label: "Address"
+      name: "address"
+      widget: "object"
+      fields:
+      - { label: "Address Line 1", name: "addressLineOne", widget: "string", hint: "Line one of the business address." }
+      - { label: "Address Line 2", name: "addressLineTwo", widget: "string", hint: "Line two of the business address." }
+      - { label: "Address City", name: "addressCity", widget: "string", hint: "City of the business address." }
+      - { label: "Address State", name: "addressState", widget: "string", hint: "State of the business address." }
+      - { label: "Address Zip", name: "addressZip", widget: "string", hint: "Zip of the business address." }
+    - { label: "Psychology Today URL", name: "linkPsychologyToday", widget: "string", hint: "Psychology Today link/URL for the business (not an individual person)." }
+    - { label: "Domain", name: "domain", widget: "string", hint: "Domain name (website link/URL) of the business." }
+    - label: "Keywords"
+      name: "keywords"
+      label_singular: "Keyword"
+      widget: "list"
+      add_to_top: true
+      collapsed: true
+      minimize_collapsed: true
+      summary: "{{fields.keyword}}"
+      field: { label: Keyword, name: keyword, widget: string, hint: "Keyword that describes any aspect of the business which someone may use to search for the business." }
 - name: "blog" # Used in routes, e.g., /admin/collections/blog. Is also the key when fetching data from the CMS.
   label: "Blog Posts" # Used in the admin dashboard UI
   label_singular: "Blog Post" # Used in the admin dashboard UI
@@ -20,7 +53,6 @@ collections:
   folder: "src/content/blog" # The path to the folder where the documents are stored
   create: true # Allow users to create new documents in this collection
   fields:
-  # The fields for each document
   - { label: "Title", name: "title", widget: "string", hint: "Keep titles brief yet descriptive." }
   - { label: "Author", name: "author", widget: relation, collection: author, multiple: true, search_fields: [ "name" ], display_fields: [ "name" ], value_field: "{{slug}}", hint: "Select the author(s) of the blog post." }
   - { label: "Body", name: "body", widget: "markdown", hint: "Write your blog post content in the box above." }
@@ -36,7 +68,6 @@ collections:
   folder: "src/content/author" # The path to the folder where the documents are stored
   create: true # Allow users to create new documents in this collection
   fields:
-  # The fields for each document
   - { label: "Name", name: "name", widget: "string", hint: "Enter your full name." }
   - { label: "Portrait Image", name: "photo", widget: "image", hint: "Add a square portrait image featuring a color head shot." }
   - { label: "Qualification(s)", name: "qualifications", widget: "string", hint: "List your qualifications as abbreviations that are comma separated." }
@@ -55,6 +86,5 @@ collections:
   folder: "src/content/terms" # The path to the folder where the documents are stored
   create: true # Allow users to create new documents in this collection
   fields:
-  # The fields for each document
   - { label: "Name", name: "name", widget: "string", hint: "Keep names brief - put the details in the body." }
   - { label: "Body", name: "body", widget: "markdown", hint: "Write your term definitions in the box above." }

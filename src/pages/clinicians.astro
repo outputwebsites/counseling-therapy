@@ -1,50 +1,47 @@
 ---
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import client from "@data/client.json";
 import Bio from "@components/Bio.astro";
 
 const clinicians = await getCollection("author");
+const details = await getCollection("details");
 ---
 
-<BaseLayout title="Meet Our Clinicians" description={client.description}>
-  <section id="content">
-    <div class="flex flex-col text-center py-10 px-3 gap-4">
-      <h1 id="Meet Our Clinicians">Meet Our Clinicians</h1>
-      <div class="flex flex-col text-justify max-w-4xl mx-auto">
-        <div
-          id="cta"
-          class="flex flex-col my-10 text-justify justify-center items-center gap-1 p-4 bg-lifeBackground"
+<BaseLayout title="Meet Our Clinicians" description={details[0].data.description}>
+  <section id="clinicians" class="flex flex-col text-center py-20 px-3 gap-4">
+    <h1 id="Meet Our Clinicians">Meet Our Clinicians</h1>
+    <div class="flex flex-col text-justify max-w-4xl mx-auto">
+      <div
+        id="cta"
+        class="flex flex-col my-10 text-justify justify-center items-center gap-1 p-4 bg-lifeBackground"
+      >
+        <p
+          class="text-center max-[920px]:text-justify max-[920px]:max-w-[468px] max-sm:max-w-[350px] mx-auto"
         >
-          <p
-            class="text-center max-[920px]:text-justify max-[920px]:max-w-[468px] max-sm:max-w-[350px] mx-auto"
-          >
-            Nothing nourishes potential and self-confidence as unconditional
-            love.
-          </p>
-          <p
-            class="text-center max-[920px]:text-justify max-[920px]:max-w-[468px] max-sm:max-w-[350px] mx-auto"
-          >
-            So then, the most important persons to extend unconditional love to
-            are ourselves.
-          </p>
-        </div>
-
-        {
-          clinicians.length >= 1 && (
-            <div
-              id="bios"
-              class="w-full mx-0 my-20 flex flex-col justify-center items-center text-center gap-40"
-            >
-              {clinicians
-                .sort((a, b) => a.data.order - b.data.order)
-                .map((clinician) => (
-                  <Bio author={clinician} />
-                ))}
-            </div>
-          )
-        }
+          Nothing nourishes potential and self-confidence as unconditional love.
+        </p>
+        <p
+          class="text-center max-[920px]:text-justify max-[920px]:max-w-[468px] max-sm:max-w-[350px] mx-auto"
+        >
+          So then, the most important persons to extend unconditional love to
+          are ourselves.
+        </p>
       </div>
+
+      {
+        clinicians.length >= 1 && (
+          <div
+            id="bios"
+            class="w-full mx-0 my-20 flex flex-col justify-center items-center text-center gap-40"
+          >
+            {clinicians
+              .sort((a, b) => a.data.order - b.data.order)
+              .map((clinician) => (
+                <Bio author={clinician} />
+              ))}
+          </div>
+        )
+      }
     </div>
   </section>
 </BaseLayout>

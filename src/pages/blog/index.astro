@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "src/layouts/BaseLayout.astro";
-import client from "@data/client.json";
 import { getCollection } from "astro:content";
 import FeaturedPost from "@components/FeaturedPost.astro";
 import CardPost from "@components/CardPost.astro";
@@ -9,23 +8,25 @@ const posts = await getCollection("blog");
 posts.sort(
   (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
 );
+const details = await getCollection("details");
 ---
 
-<BaseLayout title="Blog" description={"Blog Posts from " + client.name}>
-  <div id="blog-page">
-    <div id="blog-posts" class="w-full mx-0 my-20">
-      {posts.length === 0 && <h1>No Recent Posts</h1>}
-      {
-        posts.length >= 1 && (
-          <div class="pt-12 w-full flex flex-col justify-center items-center text-center gap-8">
-            <h1>Blog Posts</h1>
-            {posts.map((post) => (
-              <CardPost post={post} />
-            ))}
-          </div>
-        )
-      }
-    </div>
-    <FeaturedPost />
-  </div>
+<BaseLayout
+  title="Blog"
+  description={"Blog Posts from " + details[0].data.name}
+>
+  <section id="blog-posts" class="flex flex-col text-center py-20 px-3 gap-4">
+    {posts.length === 0 && <h1>No Recent Blog Posts</h1>}
+    {
+      posts.length >= 1 && (
+        <div class="w-full flex flex-col justify-center items-center text-center gap-8">
+          <h1>{posts.length > 1 ? "Blog Posts" : "Blog"}</h1>
+          {posts.map((post) => (
+            <CardPost post={post} />
+          ))}
+        </div>
+      )
+    }
+  </section>
+  <FeaturedPost />
 </BaseLayout>

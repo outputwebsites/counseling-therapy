@@ -1,52 +1,52 @@
 ---
 import BaseLayout from "src/layouts/BaseLayout.astro";
-import client from "@data/client.json";
+import { getCollection } from "astro:content";
+
+const details = await getCollection("details");
 ---
 
-<BaseLayout title="Finances" description={client.description}>
-  <section id="content">
-    <div class="flex flex-col text-center py-10 px-3 gap-4">
-      <h1 id="Finances">Finances</h1>
-
-      <p class="text-lg font-bold my-2">
-        <em>
-          NOTE:
-          <em>
-            Not all therapists take all insurances; please check with the
-            office!
-          </em>
+<BaseLayout title="Finances" description={details[0].data.description}>
+  <section
+    id="insurances"
+    class="flex flex-col text-justify max-w-[625px] mx-auto py-20 px-3 gap-4"
+  >
+    <h1 id="finances" class="text-center">Finances</h1>
+    <p>
+      <em class="text-lg font-bold">
+        NOTE:
+        <em class="text-base font-normal">
+          Not all therapists take all insurances; please check with the office!
         </em>
-      </p>
+      </em>
+    </p>
 
-      <div class="flex flex-col text-justify max-w-4xl mx-auto">
-        <ul>
-          <li>Aetna</li>
-          <li>Anthem</li>
-          <li>BlueCross</li>
-          <li>BlueShield</li>
-          <li>Cigna</li>
-          <li>Evernorth</li>
-          <li>Florida Blue</li>
-          <li>Health Advocate</li>
-          <li>Humana</li>
-          <li>Magellan</li>
-          <li>Medicare</li>
-          <li>Optum</li>
-          <li>TRICARE</li>
-          <li>United Medical Resources (UMR)</li>
-          <li>UnitedHealthcare (UHC | UBH)</li>
-        </ul>
-
-        <p class="text-lg font-bold my-8">
-          <em>
-            NOTE:
-            <em>
-              Not all therapists take all insurances; please check with the
-              office!
-            </em>
-          </em>
-        </p>
-      </div>
+    <div class="flex flex-col text-left">
+      <ul>
+        <li>Aetna</li>
+        <li>Anthem</li>
+        <li>BlueCross</li>
+        <li>BlueShield</li>
+        <li>Cigna</li>
+        <li>Evernorth</li>
+        <li>Florida Blue</li>
+        <li>Health Advocate</li>
+        <li>Humana</li>
+        <li>Magellan</li>
+        <li>Medicare</li>
+        <li>Optum</li>
+        <li>TRICARE</li>
+        <li>United Medical Resources (UMR)</li>
+        <li>UnitedHealthcare (UHC | UBH)</li>
+      </ul>
     </div>
-  </section></BaseLayout
->
+
+    <p>
+      <em class="text-lg font-bold">
+        NOTE:
+        <em class="text-base font-normal">
+          Not all therapists take all insurances; please check with the office!
+        </em>
+      </em>
+    </p>
+  </section>
+</BaseLayout>

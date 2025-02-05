@@ -1,14 +1,19 @@
 ---
 import BaseLayout from "src/layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import location from "../assets/images/media/location.png";
-import client from "@data/client.json";
+
+const details = await getCollection("details");
 ---
 
-<BaseLayout title="Contact" description={"Get in contact with " + client.name}>
-  <section id="welcome" class="flex flex-col text-center px-3 gap-4">
-    <h1 class="mt-20 max-[380px]:text-3xl" id={client.nameShort1}>
-      <strong>Contact Us</strong>
+<BaseLayout
+  title="Contact"
+  description={"Get in contact with " + details[0].data.name}
+>
+  <section id="welcome" class="flex flex-col text-center pt-20 px-3 gap-4">
+    <h1 id="Contact Us">
+      Contact Us
     </h1>
     <div
       class="flex flex-col text-center justify-center items-center mt-6 max-w-[710px] mx-auto"
@@ -21,137 +26,166 @@ import client from "@data/client.json";
       </h2>
     </div>
   </section>
-  <section id="contact-info" class="mt-16">
-    <div class="px-3 gap-8 flex flex-col text-center max-w-4xl mx-auto">
-      <div
-        class="flex flex-col text-center justify-center items-center mt-6 max-w-[710px] mx-auto"
+
+  <hr class="my-20" />
+
+  <section
+    id="contact-info"
+    class="flex flex-col text-center max-w-4xl mx-auto mt-16 px-3 gap-8"
+  >
+    <div
+      class="flex flex-col text-center justify-center items-center mt-6 max-w-[710px] mx-auto"
+    >
+      <h2
+        class="text-3xl max-[710px]:text-2xl max-[578px]:text-xl max-[394px]:max-w-[190px]"
       >
-        <h2
-          class="text-3xl max-[710px]:text-2xl max-[578px]:text-xl max-[394px]:max-w-[190px]"
-        >
-          Send an email or call.
-        </h2>
-      </div>
+        Send an email or call.
+      </h2>
+    </div>
+    <div class="flex flex-col gap-6 text-center justify-center items-center">
       <div>
         <p>Email</p>
-        <a href={`mailto:${client.email}`}>{client.email}</a>
+        <a
+          title={details[0].data.email}
+          href={`mailto:${details[0].data.email}`}>{details[0].data.email}</a
+        >
       </div>
       <div>
         <p>Phone</p>
-        <a href={`tel:${client.phoneForTel}`}>{client.phoneFormatted}</a>
+        <a
+          title={details[0].data.phone}
+          href={`tel:${details[0].data.phone.replace(/\((\d{3})\)\s(\d{3})-(\d{4})/, "$1-$2-$3")}`}
+          >{details[0].data.phone}</a
+        >
       </div>
     </div>
   </section>
-  <section id="address" class="mt-16">
-    <div class="px-3 gap-8 flex flex-col text-center max-w-4xl mx-auto">
-      <div
-        class="flex flex-col text-center justify-center items-center mt-6 max-w-[710px] mx-auto"
+
+  <hr class="my-20" />
+
+  <section
+    id="address"
+    class="flex flex-col text-center max-w-4xl mx-auto mt-16 px-3 gap-8"
+  >
+    <div
+      class="flex flex-col text-center justify-center items-center mt-6 max-w-[710px] mx-auto"
+    >
+      <h2
+        class="text-3xl max-[710px]:text-2xl max-[578px]:text-xl max-[394px]:max-w-[190px]"
       >
-        <h2
-          class="text-3xl max-[710px]:text-2xl max-[578px]:text-xl max-[394px]:max-w-[190px]"
-        >
-          Visit our office.
-        </h2>
-      </div>
-      <div>
-        <p>Visit</p>
-        <div
-          class="flex flex-col gap-x-4 gap-y-8 mx-auto justify-center w-full items-center text-center"
-        >
-          <ul class="list-none">
-            <li class="flex flex-col gap-1 text-left">
-              <a href="/contact">
-                {client.address.lineOne}<br />
-                {client.address.lineTwo}<br />
-                {client.address.city}, {client.address.state}
-                {client.address.zip}
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div
-          class="mt-6 flex flex-col gap-x-4 gap-y-8 mx-auto justify-center w-full items-center text-center"
-        >
-          <Image class="rounded-lg" src={location} alt={client.name} width="640" height="480" />
-        </div>
-      </div>
+        Visit our office.
+      </h2>
     </div>
-  </section>
-  <section id="contact-form" class="mt-24 mb-32">
-    <div class="px-3 gap-6 flex flex-col text-justify max-w-4xl mx-auto">
+    <div>
+      <p>Main Offices</p>
       <div
-        class="flex flex-col text-center justify-center items-center mt-6 max-w-[710px] mx-auto"
+        class="flex flex-col gap-x-4 gap-y-8 mx-auto justify-center w-full items-center text-center"
       >
-        <h2
-          class="text-3xl max-[710px]:text-2xl max-[578px]:text-xl max-[394px]:max-w-[190px]"
-        >
-          Send a quick message.
-        </h2>
-        <p class="text-sm text-stone-400">
-          (Sends an email to {client.email})
-        </p>
-      </div>
-      <div class="flex flex-col text-justify max-w-4xl mx-auto">
-        <form
-          class="flex flex-col gap-6"
-          id="contact-form"
-          name="contact"
-          data-netlify="true"
-          method="post"
-        >
-          <label class="flex flex-col gap-1">
-            Name
-            <input
-              required
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Name"
-              title="Name"
-              class="inputText"
-            />
-          </label>
-          <label class="flex flex-col gap-1">
-            Email
-            <input
-              required
-              type="text"
-              id="email"
-              name="email"
-              placeholder="Email"
-              title="Email"
-              class="inputText"
-            />
-          </label>
-          <label class="flex flex-col gap-1">
-            Phone
-            <input
-              required
-              type="text"
-              id="phone"
-              name="phone"
-              placeholder="Phone"
-              title="Phone"
-              class="inputText"
-            />
-          </label>
-          <label class="flex flex-col gap-1">
-            Message
-            <textarea
-              required
-              name="Message"
-              id="message"
-              placeholder="Write message..."
-              title="Message"
-              class="inputTextArea"></textarea>
-          </label>
-          <button
-            class="button !no-underline"
-            type="submit"
-            title="Submit Message">Submit Message</button
+        <ul class="list-none">
+          <li
+            class="flex flex-col gap-1 text-left max-[318px]:text-center text-xl leading-7 text-stone-600"
           >
-        </form>
+            {details[0].data.address.addressLineOne}<br />
+            {details[0].data.address.addressLineTwo}<br />
+            {details[0].data.address.addressCity}, {
+              details[0].data.address.addressState
+            }
+            {details[0].data.address.addressZip}
+          </li>
+        </ul>
       </div>
+      <div
+        class="my-8 flex flex-col gap-x-4 gap-y-8 mx-auto justify-center w-full items-center text-center"
+      >
+        <Image
+          class="rounded-lg"
+          src={location}
+          alt={details[0].data.name}
+          width="640"
+          height="480"
+        />
+      </div>
+    </div>
+  </section>
+
+  <hr class="my-20" />
+
+  <section
+    id="contact-form"
+    class="flex flex-col text-justify max-w-4xl mx-auto mt-20 mb-36 px-3 gap-6"
+  >
+    <div
+      class="flex flex-col text-center justify-center items-center mt-6 max-w-[710px] mx-auto"
+    >
+      <h2
+        class="text-3xl max-[710px]:text-2xl max-[578px]:text-xl max-[394px]:max-w-[190px]"
+      >
+        Send a quick message.
+      </h2>
+      <p class="text-sm text-stone-400">
+        (Sends an email to {details[0].data.email})
+      </p>
+    </div>
+    <div class="flex flex-col text-justify max-w-4xl mx-auto">
+      <form
+        class="flex flex-col gap-6"
+        id="contact-form"
+        name="contact"
+        data-netlify="true"
+        method="post"
+      >
+        <label class="flex flex-col gap-1">
+          Name
+          <input
+            required
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Name"
+            title="Name"
+            class="inputText"
+          />
+        </label>
+        <label class="flex flex-col gap-1">
+          Email
+          <input
+            required
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Email"
+            title="Email"
+            class="inputText"
+          />
+        </label>
+        <label class="flex flex-col gap-1">
+          Phone
+          <input
+            required
+            type="text"
+            id="phone"
+            name="phone"
+            placeholder="Phone"
+            title="Phone"
+            class="inputText"
+          />
+        </label>
+        <label class="flex flex-col gap-1">
+          Message
+          <textarea
+            required
+            name="Message"
+            id="message"
+            placeholder="Write message..."
+            title="Message"
+            class="inputTextArea"></textarea>
+        </label>
+        <button
+          class="button !no-underline"
+          type="submit"
+          title="Submit Message">Submit Message</button
+        >
+      </form>
     </div>
   </section>
 </BaseLayout>

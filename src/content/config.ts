@@ -4,6 +4,29 @@ import { z, defineCollection, reference } from "astro:content";
 // In order to be able to optimize images with Astro built-in components, like <Image />, we first must use this image helper 
 // Doc: https://docs.astro.build/en/guides/images/#images-in-content-collections
 
+const detailsCollection = defineCollection({
+	type: "data",
+	schema: () =>
+		z.object({
+			name: z.string(),
+			nameShort1: z.string(),
+			nameShort2: z.string(),
+			email: z.string(),
+			phone: z.string(),
+			description: z.string(),
+			address: z.object({
+				addressLineOne: z.string(),
+				addressLineTwo: z.string(),
+				addressCity: z.string(),
+				addressState: z.string(),
+				addressZip: z.string(),
+			}),
+			linkPsychologyToday: z.string(),
+			domain: z.string(),
+			keywords: z.array(z.string()).optional(),
+		}),
+});
+
 const blogsCollection = defineCollection({
 	type: "content",
 	schema: ({ image }) =>
@@ -43,6 +66,7 @@ const termsCollection = defineCollection({
 });
 
 export const collections = {
+	details: detailsCollection,
 	blog: blogsCollection,
 	author: authorsCollection,
 	terms: termsCollection,

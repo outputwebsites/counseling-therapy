@@ -1,3 +1,9 @@
+---
+import { getCollection } from "astro:content";
+
+const details = await getCollection("details");
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
-    <title>Counseling-Therapy.org Dashboard</title>
+    <title>{details[0].data.domain.replace('counseling-therapy', 'Counseling-Therapy')} Dashboard</title>
 
     <!--Favicons-->
     <link

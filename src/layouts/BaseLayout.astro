@@ -1,6 +1,6 @@
 ---
+import { getCollection } from "astro:content";
 import { ViewTransitions } from "astro:transitions";
-import client from "@data/client.json";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import "@fontsource-variable/albert-sans";
@@ -9,6 +9,7 @@ import albertSansWoff2 from "@fontsource-variable/albert-sans/files/albert-sans-
 import "@styles/globals.css";
 
 const { description, title } = Astro.props;
+const details = await getCollection("details");
 ---
 
 <html lang="en">
@@ -33,17 +34,17 @@ const { description, title } = Astro.props;
     <meta property="og:type" content="website" />
 
     <!-- SEO meta tags -->
-    <meta name="keywords" content={client.keywords} />
+    <meta name="keywords" content={details[0].data.keywords && details[0].data.keywords.length > 0 ? details[0].data.keywords.join(", ") : ""} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link
       rel="canonical"
-      href={`https://${client.domain}${Astro.url.pathname}`}
+      href={`https://${details[0].data.domain.toLowerCase()}${Astro.url.pathname}`}
     />
     <title>
       {
         Astro.url.pathname === "/"
-          ? `${client.name}`
-          : `${title} | ${client.name}`
+          ? `${details[0].data.name}`
+          : `${title} | ${details[0].data.name}`
       }
     </title>
     <meta property="og:title" content={title} />
@@ -56,7 +57,7 @@ const { description, title } = Astro.props;
     <meta name="twitter:description" content={description} />
     <meta
       property="og:url"
-      content={`https://${client.domain}${Astro.url.pathname}`}
+      content={`https://${details[0].data.domain.toLowerCase()}${Astro.url.pathname}`}
     />
     <meta property="og:image" content="/assets/favicons/banner.png" />
     <meta property="og:image:secure_url" content="/assets/favicons/banner.png" />
@@ -83,7 +84,7 @@ const { description, title } = Astro.props;
       sizes="180x180"
       href="/assets/favicons/apple-touch-icon.png"
     />
-    <meta name="apple-mobile-web-app-title" content={client.name} />
+    <meta name="apple-mobile-web-app-title" content={details[0].data.name} />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#ffffff" />
 
