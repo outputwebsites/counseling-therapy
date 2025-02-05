@@ -33,7 +33,7 @@ const authors = await getEntries(post.data.author);
     .replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1")
     .trim() + (post.body.split(" ").length > 20 && "...")}
 >
-  <article id="blog-post" class="max-w-4xl mx-auto p-4 mb-20">
+  <article id="blog-post" class="max-w-4xl mx-auto px-3 pb-28 pt-16 max-[460px]:pt-10">
     {
       post.data.image && (
         <picture>
@@ -43,6 +43,7 @@ const authors = await getEntries(post.data.author);
             width={post.data.image.width}
             height={post.data.image.height}
             decoding="async"
+            class="w-full h-auto rounded-lg"
           />
         </picture>
       )

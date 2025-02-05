@@ -20,7 +20,7 @@ treatment.body.replace(/\n(?=\n)/g, "\n\n<br/>\n"),
   id={treatment.data.name}
   class="flex flex-col gap-4 max-w-2xl border border-lifeBorder p-4 rounded-lg text-left"
 >
-  <h2 id={treatment.slug}>{treatment.data.name}</h2>
+  <p id={treatment.slug} class="text-2xl"><strong>{treatment.data.name}</strong></p>
   <section id={treatment.data.name + "body"} class="text-justify">
     <p set:html={content} />
   </section>
