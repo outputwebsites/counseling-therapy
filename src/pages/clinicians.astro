@@ -11,23 +11,6 @@ const details = await getCollection("details");
   <section id="clinicians" class="flex flex-col text-center py-20 px-3 gap-4">
     <h1 id="Meet Our Clinicians">Meet Our Clinicians</h1>
     <div class="flex flex-col text-justify max-w-4xl mx-auto">
-      <div
-        id="cta"
-        class="flex flex-col my-10 text-justify justify-center items-center gap-1 p-4 bg-lifeBackground"
-      >
-        <p
-          class="text-center max-[920px]:text-justify max-[920px]:max-w-[468px] max-sm:max-w-[350px] mx-auto"
-        >
-          Nothing nourishes potential and self-confidence as unconditional love.
-        </p>
-        <p
-          class="text-center max-[920px]:text-justify max-[920px]:max-w-[468px] max-sm:max-w-[350px] mx-auto"
-        >
-          So then, the most important persons to extend unconditional love to
-          are ourselves.
-        </p>
-      </div>
-
       {
         clinicians.length >= 1 && (
           <div

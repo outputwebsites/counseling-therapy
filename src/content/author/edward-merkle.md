@@ -5,7 +5,6 @@ qualifications: LMHC
 email: edward@counseling-therapy.org
 link_psychology_today: https://psychologytoday.com/us/therapists/edward-merkle-port-orange-fl/299014
 link_linkedin: https://linkedin.com/in/edward-merkle-0946a1125
-link_vitadox: https://vitadox.com/doctor/port-orange-port-orange-fl-32127/edward-merkle-ma/qebQJAj8xWbT7dJvEqGi8F
 bio: I am a person first and therapist second. Working on problems is serious
   but I feel having a little humor and focusing on strengths can make the
   process more normal. I have the wisdom and experience with a youthful spirit

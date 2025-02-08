@@ -4,8 +4,7 @@ photo: src/assets/images/media/liana.png
 qualifications: LCSW, RPT
 email: liana@counseling-therapy.org
 link_psychology_today: https://psychologytoday.com/us/therapists/liana-menendez-port-orange-fl/701796
-link_linkedin: n/a
-link_vitadox: https://vitadox.com/doctor/port-orange-fl-32127/liana-n-menendez-lcsw/EjCQUfC55d35vETAbnsBqe
+link_linkedin: ""
 bio: As a Licensed Clinical Social Worker, I take pride in providing accessible,
   quality comprehensive collaborative mental and behavioral health services to
   improve the quality of life of clients and families. I am dedicated to working

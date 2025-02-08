@@ -5,17 +5,19 @@ qualifications: LCSW
 email: marilyn@counseling-therapy.org
 link_psychology_today: https://psychologytoday.com/us/therapists/marilyn-deluera-port-orange-fl/997752
 link_linkedin: https://linkedin.com/in/marilyn-deluera-789892252
-link_vitadox: https://vitadox.com/doctor/daytona-beach-fl-32117/marilyn-b-deluera-lcsw/9EqthASVGSDEyEMkkwNkpR
 bio: What do you want from therapy? How can I help you? We'll discuss all that
   and talk about options and changes and what your ideal life would look like.
   My goal is listening and helping you to heal the broken places! The second is
   helping you develop the strength and courage to be all that you want to be!
 biography: >-
-  Greetings! I’m a Licensed Clinical Social Worker (LCSW) who enjoys meeting
-  people of all ages. Every person is different; their life experiences are
-  different and their needs and goals are different. What works for one person
-  will not work for another. I use an eclectic approach that allows me to treat
-  each individual according to their own unique needs and wants.
+  > Nothing nourishes potential and self-confidence as unconditional love.
+
+  >
+
+  > So then, the most important person to extend unconditional love to is oneself.
+
+
+  Greetings! I’m a Licensed Clinical Social Worker (LCSW) who enjoys meeting people of all ages. Every person is different; their life experiences are different and their needs and goals are different. What works for one person will not work for another. I use an eclectic approach that allows me to treat each individual according to their own unique needs and wants.
 
 
   Life is filled with ups and downs and our life experiences make us into who we are. If we’re trying to learn how to make better choices, it helps to look at decisions we’ve made in the past. How did those experiences, even the ones from childhood, affect us? Examining those things can make a big difference in how we move forward.
@@ -32,6 +34,7 @@ biography: >-
 
   Preferred Modalities:
 
+
   * EMDR
 
   * Person-Centered
@@ -42,6 +45,7 @@ biography: >-
 
 
   Specializing in:
+
 
   * Anxiety
 

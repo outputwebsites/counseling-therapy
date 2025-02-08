@@ -65,7 +65,7 @@ function capitalizeEmail(str) {
       </div>
       <div class="flex flex-row max-[920px]:flex-col text-center gap-4">
         {
-          author.data.link_psychology_today && (
+          (author.data.link_psychology_today || author.data.link_psychology_today !== "") && (
             <a
               class="button"
               href={author.data.link_psychology_today}
@@ -76,16 +76,9 @@ function capitalizeEmail(str) {
           )
         }
         {
-          author.data.link_linkedin && (
+          (author.data.link_linkedin || author.data.link_linkedin !== "") && (
             <a class="button" href={author.data.link_linkedin} title="LinkedIn">
               LinkedIn
-            </a>
-          )
-        }
-        {
-          author.data.link_vitadox && (
-            <a class="button" href={author.data.link_vitadox} title="Vitadox">
-              Vitadox
             </a>
           )
         }

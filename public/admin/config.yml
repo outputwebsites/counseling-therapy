@@ -81,11 +81,10 @@ collections:
   fields:
   - { label: "Name", name: "name", widget: "string", hint: "Enter your full name." }
   - { label: "Portrait Image", name: "photo", widget: "image", hint: "Add a square portrait image featuring a color head shot." }
-  - { label: "Qualification(s)", name: "qualifications", widget: "string", hint: "List your qualifications as abbreviations that are comma separated." }
+  - { label: "Qualification(s)", name: "qualifications", required: false, widget: "string", hint: "List your qualifications as abbreviations that are comma separated." }
   - { label: "Email", name: "email", widget: "string", hint: "Add your public contact email." }
-  - { label: "Psychology Today Link", name: "link_psychology_today", widget: "string", hint: "Add a link to your Psychology Today page." }
-  - { label: "LinkedIn Link", name: "link_linkedin", widget: "string", hint: "Add a link to your LinkedIn page." }
-  - { label: "Vitadox Link", name: "link_vitadox", widget: "string", hint: "Add a link to your Vitadox page." }
+  - { label: "Psychology Today Link", name: "link_psychology_today", required: false, widget: "string", hint: "Add a link to your Psychology Today page." }
+  - { label: "LinkedIn Link", name: "link_linkedin", widget: "string", required: false, hint: "Add a link to your LinkedIn page." }
   - { label: "Short Bio", name: "bio", widget: "string", hint: "Add a short biography to display under your author credits." }
   - { label: "Long Bio", name: "biography", widget: "markdown", hint: "Add a full biography for use on an author page." }
   - { label: "Order", name: "order", widget: "string", hint: "Set the order of clinicians on the clinicians page. 1 = first, 2 = seconds, and so on..." }
