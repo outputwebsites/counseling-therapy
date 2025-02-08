@@ -44,7 +44,7 @@ const { post } = Astro.props;
         .join(" ")
         .replace(/[#*_\`]/g, "")
         .replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1")
-        .trim() + (post.body.split(" ").length > 20 && "...")
+        .trim() + (post.body.split(" ").length > 20 ? "..." : "")
     }
   </p>
   <a title={post.data.title} href={"/blog/" + post.slug}>Continue Reading...</a>

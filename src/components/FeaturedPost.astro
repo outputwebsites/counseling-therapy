@@ -18,9 +18,14 @@ const featuredPosts = posts.filter((post) =>
         <strong>Featured Posts</strong>
       </h2>
       <div class="flex flex-col gap-8">
-        {featuredPosts.map((post) => (
-          <CardPost post={post} />
-        ))}
+        {featuredPosts
+          .sort(
+            (a, b) =>
+              new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
+          )
+          .map((post) => (
+            <CardPost post={post} />
+          ))}
       </div>
     </div>
   )

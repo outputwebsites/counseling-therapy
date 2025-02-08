@@ -265,6 +265,27 @@ header {
   transition: all 0.125s ease;
 }
 
+#header-info {
+  position: absolute;
+  top: 96px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: #e0dcd638 1px solid;
+  background-color: #fff8f0e8;
+  backdrop-filter: blur(10px);
+  transition: all 0.125s ease;
+}
+
+@media screen and (max-width: 460px) {
+  #header-info {
+    top: 77px;
+  }
+}
+
 .navigation {
   display: flex;
   gap: 1rem 0.2rem;
@@ -272,6 +293,10 @@ header {
 
 @media screen and (max-width: 920px) {
   header {
+    display: block;
+  }
+  
+  #header-info {
     display: block;
   }
 

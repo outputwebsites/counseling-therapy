@@ -2,8 +2,9 @@ name: "Counseling-Therapy: NSB • Port Orange • Daytona"
 nameShort1: Counseling-Therapy
 nameShort2: NSB • Port Orange • Daytona
 email: Help@Counseling-Therapy.org
-phone: (386) 703-1885
-description: Quality source of counseling and therapy in New Smyrna Beach, Port Orange, and Daytona.
+phone: (386) 416-9767
+description: Quality source of counseling and therapy in New Smyrna Beach, Port
+  Orange, and Daytona.
 address:
   addressLineOne: 4770 South Ridgewood Avenue
   addressLineTwo: Suite 2
@@ -13,24 +14,27 @@ address:
 linkPsychologyToday: https://psychologytoday.com/us/therapists/counseling-therapy-new-smyrna-port-orange-daytona-port-orange-fl/1141839
 domain: Counseling-Therapy.org
 keywords:
-- Counseling
-- Therapy
-- NSB
-- Port Orange
-- Daytona Beach
+  - Counseling
+  - Therapy
+  - NSB
+  - Port Orange
+  - Daytona Beach
 insurances:
-- Aetna
-- Anthem
-- BlueShield
-- BlueCross
-- Cigna
-- Evernorth
-- Florida Blue
-- Health Advocate
-- Humana
-- Magellan
-- Medicare
-- Optum
-- TRICARE
-- United Medical Resources (UMR)
-- UnitedHealthcare (UHC | UBH)
+  - Aetna
+  - Anthem
+  - BlueShield
+  - BlueCross
+  - Cigna
+  - Evernorth
+  - Florida Blue
+  - Florida Health Care Plans (FHCP)
+  - Health Advocate
+  - Health First
+  - Humana
+  - Magellan
+  - Medicare
+  - Optum
+  - Self-Pay
+  - TRICARE
+  - United Medical Resources (UMR)
+  - UnitedHealthcare (UHC | UBH)

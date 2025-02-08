@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import { ViewTransitions } from "astro:transitions";
 import Header from "@components/Header.astro";
+import HeaderInfo from "@components/HeaderInfo.astro";
 import Footer from "@components/Footer.astro";
 import "@fontsource-variable/albert-sans";
 import albertSansWoff2 from "@fontsource-variable/albert-sans/files/albert-sans-latin-wght-normal.woff2?url";
@@ -100,6 +101,7 @@ const details = await getCollection("details");
       >Click To Skip To Main Content</a
     >
     <Header />
+    <HeaderInfo />
     <main id="main" class="mt-24">
       <slot />
     </main>

@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+
+const details = await getCollection("details");
+---
+
+<div id="header-info" class="z-40">
+  <div class="flex gap-2 items-center w-full justify-center">
+    Call: 
+    <a
+      class="max-[535px]:text-base no-underline"
+      title={details[0].data.phone}
+      href={`tel:${details[0].data.phone.replace(/\((\d{3})\)\s(\d{3})-(\d{4})/, "$1-$2-$3")}`}
+      >{details[0].data.phone}</a
+    >
+  </div>
+</div>

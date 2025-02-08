@@ -12,16 +12,33 @@ export interface Props {
 
 const { treatment } = Astro.props;
 const content = await marked.parse(
-treatment.body.replace(/\n(?=\n)/g, "\n\n<br/>\n"),
+  treatment.body.replace(/\n(?=\n)/g, "\n\n<br/>\n"),
 );
 ---
 
-<article
-  id={treatment.data.name}
-  class="flex flex-col gap-4 max-w-2xl border border-lifeBorder p-4 rounded-lg text-left"
->
-  <p id={treatment.slug} class="text-2xl"><strong>{treatment.data.name}</strong></p>
-  <section id={treatment.data.name + "body"} class="text-justify">
-    <p set:html={content} />
-  </section>
-</article>
+<details class="border border-lifeBorder rounded-lg [&_svg]:open:-rotate-180">
+  <!-- disabled the summary's default triangle/arrow -->
+  <summary
+    class="flex cursor-pointer list-none items-center gap-4 p-4 text-2xl"
+  >
+    <div>
+      <!-- added custom triangle/arrow svg -->
+      <svg
+        class="rotate-0 transform text-lifeMain transition-all duration-300"
+        fill="none"
+        height="30"
+        width="30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="3"
+        viewBox="0 0 24 24"
+      >
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+    <p class="text-left"><strong>{treatment.data.name}</strong></p>
+  </summary>
+
+  <div class="px-4 pb-4"><p set:html={content} /></div>
+</details>

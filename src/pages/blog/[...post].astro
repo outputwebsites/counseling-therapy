@@ -20,7 +20,7 @@ const content = await marked.parse(
   post.body.replace(/\n(?=\n)/g, "\n\n<br/>\n"),
 );
 
-const authors = await getEntries(post.data.author);
+const authors = (await getEntries(post.data.author)).filter(author => author.collection === "author");
 ---
 
 <BaseLayout
@@ -112,7 +112,7 @@ const authors = await getEntries(post.data.author);
       <p set:html={content} />
     </section>
 
-    <section id="blog-post-authors" class="flex flex-col gap-4">
+    <section id="blog-post-authors" class="flex flex-col gap-4 justify-center items-center">
       {authors.map((author) => <CardAuthor author={author} />)}
     </section>
   </article>
