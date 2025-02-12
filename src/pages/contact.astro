@@ -65,7 +65,7 @@ const details = await getCollection("details");
 
   <section
     id="address"
-    class="flex flex-col text-center max-w-4xl mx-auto mt-16 px-3 gap-8"
+    class="flex flex-col text-center max-w-4xl mx-auto mt-16 mb-36 px-3 gap-8"
   >
     <div
       class="flex flex-col text-center justify-center items-center mt-6 max-w-[710px] mx-auto"
@@ -105,87 +105,6 @@ const details = await getCollection("details");
           height="480"
         />
       </div>
-    </div>
-  </section>
-
-  <hr class="my-20" />
-
-  <section
-    id="contact-form"
-    class="flex flex-col text-justify max-w-4xl mx-auto mt-20 mb-36 px-3 gap-6"
-  >
-    <div
-      class="flex flex-col text-center justify-center items-center mt-6 max-w-[710px] mx-auto"
-    >
-      <h2
-        class="text-3xl max-[710px]:text-2xl max-[578px]:text-xl max-[394px]:max-w-[190px]"
-      >
-        Send a quick message.
-      </h2>
-      <p class="text-sm text-stone-400">
-        (Sends an email to {details[0].data.email})
-      </p>
-    </div>
-    <div class="flex flex-col text-justify max-w-4xl mx-auto">
-      <form
-        class="flex flex-col gap-6"
-        id="contact-form"
-        name="contact"
-        data-netlify="true"
-        method="post"
-      >
-        <label class="flex flex-col gap-1">
-          Name
-          <input
-            required
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Name"
-            title="Name"
-            class="inputText"
-          />
-        </label>
-        <label class="flex flex-col gap-1">
-          Email
-          <input
-            required
-            type="text"
-            id="email"
-            name="email"
-            placeholder="Email"
-            title="Email"
-            class="inputText"
-          />
-        </label>
-        <label class="flex flex-col gap-1">
-          Phone
-          <input
-            required
-            type="text"
-            id="phone"
-            name="phone"
-            placeholder="Phone"
-            title="Phone"
-            class="inputText"
-          />
-        </label>
-        <label class="flex flex-col gap-1">
-          Message
-          <textarea
-            required
-            name="Message"
-            id="message"
-            placeholder="Write message..."
-            title="Message"
-            class="inputTextArea"></textarea>
-        </label>
-        <button
-          class="button !no-underline"
-          type="submit"
-          title="Submit Message">Submit Message</button
-        >
-      </form>
     </div>
   </section>
 </BaseLayout>

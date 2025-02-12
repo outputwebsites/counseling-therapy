@@ -2,7 +2,7 @@
 title: Thoughts on Intrusive Thoughts
 author:
   - marilyn-deluera
-image: src/assets/images/media/water.jpg
+image: src/assets/images/media/water.png
 date: 2025-01-10T03:49:00.000Z
 ---
 ***YOUR FEELINGS ARE VALID*** - the happy ones, the hopeful ones, the enthusiastic ones, the proud ones, even the feelings that scream or whisper: afraid, angry, sad, abandoned, resentful, unfair, the sky is falling. The parade of fearful and negative feelings goes on and on. Where do all these thoughts come from? It’s enough to be depressing!

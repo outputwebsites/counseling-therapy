@@ -22,22 +22,25 @@ const details = await getCollection("details");
         class="text-white w-full overflow-hidden flex flex-1 flex-col align-top items-start justify-items-start justify-start h-[666px] bg-center bg-cover bg-local bg-no-repeat bg-[url('/assets/images/bb.jpg')]"
       >
         <div
-          class="flex flex-col gap-6 mt-6 mx-auto align-middle items-center text-center w-full py-6 text-xl bg-[#00000060] rounded-sm"
+          class="flex flex-col mt-10 mx-auto align-middle items-center text-center w-full py-7 bg-[#00000042] backdrop-blur"
         >
-          <p
-            class="tracking-wide leading-normal max-[730px]:text-lg max-[668px]:max-w-[310px] max-[400px]:max-w-[200px]"
-          >
-            Therapy is about where you are and where you want to go. <br />It is
-            about acceptance of your values and the goals that you seek.
-          </p>
+          <div class="flex flex-col gap-3 align-middle items-center text-center max-[850px]:max-w-[440px] max-[460px]:max-w-[290px] max-[460px]:gap-6">
+            <p class="merienda tracking-wide leading-normal text-2xl">
+              Therapy is about where you are and where you want to go.
+            </p>
+            <p class="merienda tracking-wide leading-normal text-2xl">
+              It is about acceptance of your values and the goals that you seek.
+            </p>
+          </div>
         </div>
         <div
           class="flex flex-col grow gap-6 mt-6 mx-auto align-middle items-end justify-end text-center max-w-[730px] px-12 py-6 text-xl rounded-full"
         >
           <a
-            class="bg-[#00000060] hover:bg-[#00000030] rounded-full p-4"
+            class="bg-[#00000050] hover:bg-[#00000020] backdrop-blur rounded-full p-4 shadow"
             href="#welcome"
             title="Continue Reading"
+            aria-label="Continue Reading"
           >
             <i class="menuIcon"><Icon name="arrow" /></i>
           </a>
@@ -68,7 +71,10 @@ const details = await getCollection("details");
 
   <hr class="my-20" />
 
-  <section id="homepage-content" class="flex flex-col md:flex-row text-center max-w-[1000px] mx-auto">
+  <section
+    id="homepage-content"
+    class="flex flex-col md:flex-row text-center max-w-[1000px] mx-auto"
+  >
     <section
       id="types"
       class="flex flex-col text-center max-w-[515px] mx-auto px-3"
@@ -114,7 +120,7 @@ const details = await getCollection("details");
         <em class="text-lg font-bold">
           NOTE:
           <em class="text-base font-normal">
-            Not all clinicians take all insurances; <br/>please check with the
+            Not all clinicians take all insurances; <br />please check with the
             office!
           </em>
         </em>
