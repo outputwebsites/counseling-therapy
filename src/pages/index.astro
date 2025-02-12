@@ -16,7 +16,7 @@ const details = await getCollection("details");
   description={details[0].data.description}
 >
   <section id="hero" class="w-full border-b pt-12">
-    <div id="hero-container" class="w-full max-w-[1000px] m-auto">
+    <div id="hero-container" class="w-full m-auto">
       <div
         id="hero-content"
         class="text-white w-full overflow-hidden flex flex-1 flex-col align-top items-start justify-items-start justify-start h-[666px] bg-center bg-cover bg-local bg-no-repeat bg-[url('/assets/images/bb.jpg')]"
@@ -25,10 +25,10 @@ const details = await getCollection("details");
           class="flex flex-col mt-10 mx-auto align-middle items-center text-center w-full py-7 bg-[#00000042] backdrop-blur"
         >
           <div class="flex flex-col gap-3 align-middle items-center text-center max-[850px]:max-w-[440px] max-[460px]:max-w-[290px] max-[460px]:gap-6">
-            <p class="merienda tracking-wide leading-normal text-2xl">
+            <p class="merienda tracking-wide leading-normal text-2xl drop-shadow">
               Therapy is about where you are and where you want to go.
             </p>
-            <p class="merienda tracking-wide leading-normal text-2xl">
+            <p class="merienda tracking-wide leading-normal text-2xl drop-shadow">
               It is about acceptance of your values and the goals that you seek.
             </p>
           </div>
@@ -66,6 +66,54 @@ const details = await getCollection("details");
         Schedule sessions in person or on-line. <br />Children will only be seen
         in person.
       </h2>
+    </div>
+  </section>
+  <section
+    id="footer-contact"
+    class="mt-16 mb-24 flex flex-col gap-x-4 gap-y-16 justify-between w-full mx-auto"
+  >
+    <div
+      class="flex max-lg:flex-col gap-20 text-center justify-center items-start align-middle mx-auto"
+    >
+      <div
+        class="flex max-sm:flex-col gap-20 text-center justify-center items-start align-middle mx-auto"
+      >
+        <div class="flex flex-col gap-1 text-center mx-auto">
+          <p>Phone</p>
+          <a
+            title={details[0].data.phone}
+            href={`tel:${details[0].data.phone.replace(/\((\d{3})\)\s(\d{3})-(\d{4})/, "$1-$2-$3")}`}
+          >
+            {details[0].data.phone}
+          </a>
+        </div>
+        <div class="flex flex-col gap-1 text-center mx-auto">
+          <p>Email</p>
+          <a
+            title={details[0].data.email}
+            href={`mailto:${details[0].data.email.toLowerCase()}`}
+          >
+            {details[0].data.email}
+          </a>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1 text-center mx-auto">
+        <p>Office</p>
+        <div class="flex flex-col gap-x-4 gap-y-1 mx-auto text-center">
+          <a
+            title="Visit our office"
+            href="/contact#contact-info"
+            class="flex flex-col gap-1 text-left max-[318px]:text-center"
+          >
+            {details[0].data.address.addressLineOne}<br />
+            {details[0].data.address.addressLineTwo}<br />
+            {details[0].data.address.addressCity}, {
+              details[0].data.address.addressState
+            }
+            {details[0].data.address.addressZip}
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
