@@ -9,11 +9,11 @@ export default {
 				sans: ["Albert Sans Variable", ...defaultTheme.fontFamily.sans],
 			},
 			colors: {
-				lifeMain: "#E5A134", // hovered links, primary (daisyUI)
-				lifeMainDark: "#CC9E16", // links, secondary (daisyUI)
-				lifeMainDarker: "#A3730D", // active links, focused links, info (daisyUI)
-				lifeBackground: "#FFF9F2", // background color for header and footer
-				lifeBorder: "#F8F2EC" // border color for header and footer
+				lifeMain: "#0284C7", // sky-600 hovered links, primary (daisyUI)
+				lifeMainDark: "#075985", // sky-800 - links, secondary (daisyUI)
+				lifeMainDarker: "#0C4A6E", // sky-900 active links, focused links, info (daisyUI)
+				lifeBackground: "#F5EEDF", // like light tan - background color for header and footer
+				lifeBorder: "#F8F2EC" // like light grey - border color for header and footer
 			}
 		}
 	},

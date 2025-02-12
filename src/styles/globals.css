@@ -272,16 +272,25 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 20px 10px 5px;
   border-bottom: #e0dcd638 1px solid;
   background-color: #fff8f0e8;
   backdrop-filter: blur(10px);
   transition: all 0.125s ease;
 }
 
+.navigation {
+  display: flex;
+  gap: 1rem 0.2rem;
+}
+
+.menuIcon {
+  cursor: pointer;
+}
+
 #header-info {
   position: absolute;
-  top: 96px;
+  top: 70px;
   left: 0;
   width: 100%;
   display: flex;
@@ -294,18 +303,12 @@ header {
   transition: all 0.125s ease;
 }
 
-@media screen and (max-width: 460px) {
-  #header-info {
-    top: 77px;
-  }
+.menuIcon [data-icon] {
+  height: 40px;
+  width: 40px;
 }
 
-.navigation {
-  display: flex;
-  gap: 1rem 0.2rem;
-}
-
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 800px) {
   header {
     display: block;
   }
@@ -325,15 +328,6 @@ header {
   .logo {
     display: flex;
     justify-content: space-between;
-  }
-
-  .menuIcon {
-    cursor: pointer;
-  }
-
-  .menuIcon [data-icon] {
-    height: 40px;
-    width: 40px;
   }
 
   .navMenu {
@@ -360,16 +354,5 @@ header {
 
   header:has(.navMenu input[type="checkbox"]:checked) .menuX {
     display: inline-block;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .menuIcon [data-icon] {
-    height: 32px;
-    width: 32px;
-  }
-
-  #navName {
-    max-width: 214px;
   }
 }

@@ -15,20 +15,26 @@ const details = await getCollection("details");
   title={details[0].data.name}
   description={details[0].data.description}
 >
-  <section id="hero" class="w-full border-b pt-12">
+  <section id="hero" class="w-full border-b pt-12 mt-[-64px]">
     <div id="hero-container" class="w-full m-auto">
       <div
         id="hero-content"
         class="text-white w-full overflow-hidden flex flex-1 flex-col align-top items-start justify-items-start justify-start h-[666px] bg-center bg-cover bg-local bg-no-repeat bg-[url('/assets/images/bb.jpg')]"
       >
         <div
-          class="flex flex-col mt-10 mx-auto align-middle items-center text-center w-full py-7 bg-[#00000042] backdrop-blur"
+          class="flex flex-col mt-10 mx-auto align-middle items-center text-center w-full py-7 bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-30 backdrop-saturate-100 backdrop-contrast-100"
         >
-          <div class="flex flex-col gap-3 align-middle items-center text-center max-[850px]:max-w-[440px] max-[460px]:max-w-[290px] max-[460px]:gap-6">
-            <p class="merienda tracking-wide leading-normal text-2xl drop-shadow">
+          <div
+            class="flex flex-col gap-3 align-middle items-center text-center max-[850px]:max-w-[440px] max-[460px]:max-w-[290px] max-[460px]:gap-6"
+          >
+            <p
+              class="merienda tracking-wide leading-normal text-2xl drop-shadow"
+            >
               Therapy is about where you are and where you want to go.
             </p>
-            <p class="merienda tracking-wide leading-normal text-2xl drop-shadow">
+            <p
+              class="merienda tracking-wide leading-normal text-2xl drop-shadow"
+            >
               It is about acceptance of your values and the goals that you seek.
             </p>
           </div>
@@ -37,7 +43,7 @@ const details = await getCollection("details");
           class="flex flex-col grow gap-6 mt-6 mx-auto align-middle items-end justify-end text-center max-w-[730px] px-12 py-6 text-xl rounded-full"
         >
           <a
-            class="bg-[#00000050] hover:bg-[#00000020] backdrop-blur rounded-full p-4 shadow"
+            class="bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-30 hover:bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100 rounded-full p-4 shadow"
             href="#welcome"
             title="Continue Reading"
             aria-label="Continue Reading"
@@ -54,9 +60,9 @@ const details = await getCollection("details");
       <strong>Welcome to <br />{details[0].data.nameShort1}</strong>
     </h1>
     <div
-      class="flex flex-col text-center justify-center items-center my-8 gap-8 max-w-[710px] mx-auto"
+      class="flex flex-col text-center justify-center items-center my-8 gap-8 mx-auto"
     >
-      <h2 class="max-[694px]:text-3xl max-[580px]:max-w-[326px]">
+      <h2 class="max-[694px]:text-3xl max-[580px]:max-w-[326px] merienda">
         We are looking forward to meeting you.
       </h2>
 
@@ -68,7 +74,7 @@ const details = await getCollection("details");
       </h2>
     </div>
   </section>
-  <section
+  <!-- <section
     id="footer-contact"
     class="mt-16 mb-24 flex flex-col gap-x-4 gap-y-16 justify-between w-full mx-auto"
   >
@@ -117,7 +123,64 @@ const details = await getCollection("details");
     </div>
   </section>
 
-  <hr class="my-20" />
+  <hr class="my-20" /> -->
+
+  <section id="contact-hero" class="w-full mt-16 mb-32">
+    <div id="contact-hero-container" class="w-full m-auto">
+      <div
+        id="contact-hero-content"
+        class="text-white w-full overflow-hidden flex flex-1 flex-col align-top items-center justify-items-center justify-center bg-center bg-cover bg-local bg-no-repeat bg-[url('/assets/images/bg.png')]"
+      >
+        <div
+          class="flex flex-col mx-auto align-middle items-center text-center w-full py-8 bg-stone-200 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-5 backdrop-saturate-100 backdrop-contrast-100"
+        >
+          <div
+            class="flex max-lg:flex-col gap-20 text-center justify-center items-start align-middle mx-auto"
+          >
+            <div
+              class="flex max-sm:flex-col gap-20 text-center justify-center items-start align-middle mx-auto"
+            >
+              <div class="flex flex-col gap-1 text-center mx-auto">
+                <strong class="text-black">Phone</strong>
+                <a
+                  title={details[0].data.phone}
+                  href={`tel:${details[0].data.phone.replace(/\((\d{3})\)\s(\d{3})-(\d{4})/, "$1-$2-$3")}`}
+                >
+                  {details[0].data.phone}
+                </a>
+              </div>
+              <div class="flex flex-col gap-1 text-center mx-auto">
+                <strong class="text-black">Email</strong>
+                <a
+                  title={details[0].data.email}
+                  href={`mailto:${details[0].data.email.toLowerCase()}`}
+                >
+                  {details[0].data.email}
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col gap-1 text-center mx-auto">
+              <strong class="text-black">Office</strong>
+              <div class="flex flex-col gap-x-4 gap-y-1 mx-auto text-center">
+                <a
+                  title="Visit our office"
+                  href="/contact#contact-info"
+                  class="flex flex-col gap-1 text-left max-[318px]:text-center"
+                >
+                  {details[0].data.address.addressLineOne}<br />
+                  {details[0].data.address.addressLineTwo}<br />
+                  {details[0].data.address.addressCity}, {
+                    details[0].data.address.addressState
+                  }
+                  {details[0].data.address.addressZip}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section
     id="homepage-content"
