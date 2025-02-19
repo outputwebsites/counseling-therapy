@@ -16,32 +16,36 @@ const content = await marked.parse(
 );
 ---
 
-<details class="border border-lifeBorder bg-white rounded-lg [&_summary]:open:bg-[#f8f8f8] [&_svg]:open:-rotate-180 overflow-hidden duration-150">
+<details
+  class="border border-lifeBorder bg-white rounded-lg [&_summary]:open:bg-[#f8f8f8] [&_svg]:open:-rotate-180 overflow-hidden duration-150"
+>
   <!-- disabled the summary's default triangle/arrow -->
   <summary
     class="flex cursor-pointer list-none items-center gap-4 p-4 text-2xl bg-white hover:!bg-lifeBorder duration-150"
   >
-  <div class="flex flex-col items-center gap-4 w-full mx-auto">
-    <div class="flex gap-4 justify-between align-middle items-center w-full">
-      <div class="flex flex-col items-center gap-0 bg-lifeMainDark p-1 rounded-full shadow-md">
-        <!-- added custom triangle/arrow svg -->
-        <svg
-          class="rotate-0 transform text-white transition-all duration-300"
-          fill="none"
-          height="30"
-          width="30"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="3"
-          viewBox="0 0 24 24"
+    <div class="flex flex-col items-center gap-4 w-full mx-auto">
+      <div class="flex gap-4 justify-between align-middle items-center w-full">
+        <div
+          class="flex flex-col items-center gap-0 bg-lifeMainDark p-1 rounded-full shadow-md"
         >
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
+          <!-- added custom triangle/arrow svg -->
+          <svg
+            class="rotate-0 transform text-white transition-all duration-300"
+            fill="none"
+            height="30"
+            width="30"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3"
+            viewBox="0 0 24 24"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+        <p class="text-left text-2xl w-full">{treatment.data.name}</p>
       </div>
-      <p class="text-left text-2xl w-full">{treatment.data.name}</p>
     </div>
-  </div>
   </summary>
 
   <div class="p-4"><p set:html={content} /></div>

@@ -137,14 +137,15 @@ const details = await getCollection("details");
     </div>
   </section>
 
-  <section id="clinicians" class="flex flex-col text-center pt-4 pb-20 px-3 gap-4">
+  <section
+    id="clinicians"
+    class="flex flex-col text-center pt-4 pb-20 px-3 gap-4"
+  >
     <h1 id="Meet Our Clinicians">Meet Our Clinicians</h1>
     <div class="flex flex-col text-justify max-w-4xl mx-auto">
       {
         clinicians.length >= 1 && (
-          <div
-            class="w-full mx-0 flex flex-row max-[626px]:flex-wrap justify-center items-center text-center gap-4"
-          >
+          <div class="w-full mx-0 flex flex-row max-[626px]:flex-wrap justify-center items-center text-center gap-4">
             {clinicians
               .sort((a, b) => a.data.order - b.data.order)
               .map((clinician) => (
@@ -159,8 +160,8 @@ const details = await getCollection("details");
   <hr class="my-20" />
 
   <section
-    id="treatment-types"
-    class="flex flex-col md:flex-row text-center max-w-[1000px] mx-auto"
+    id="types-and-finances"
+    class="flex flex-col md:flex-row gap-x-2 lg:gap-x-16 text-center max-w-[1000px] mx-auto"
   >
     <section
       id="types"

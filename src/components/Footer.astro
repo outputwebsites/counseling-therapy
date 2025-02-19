@@ -15,7 +15,10 @@ const currentYear = getCurrentYear();
     id="footer-container"
     class="flex flex-col lg:flex-row justify-center item-start max-md:items-middle lg:items-start align-top w-full gap-20 mx-auto max-w-screen-lg"
   >
-    <section id="footer-logo" class="flex flex-col text-center justify-center align-middle items-center sm:min-w-[350px] px-3">
+    <section
+      id="footer-logo"
+      class="flex flex-col text-center justify-center align-middle items-center sm:min-w-[350px] px-3"
+    >
       <a title={details[0].data.name} href="/">
         <img
           src="/assets/svgs/logotype_color.svg"
@@ -28,9 +31,14 @@ const currentYear = getCurrentYear();
         />
       </a>
     </section>
-    <section id="footer-details" class="flex flex-col md:flex-row gap-20 text-center justify-center items-start max-md:items-center align-middle w-full mx-auto">
+    <section
+      id="footer-details"
+      class="flex flex-col md:flex-row gap-20 text-center justify-center items-start max-md:items-center align-middle w-full mx-auto"
+    >
       <section id="footer-links" class="flex text-center px-3">
-        <div class="flex flex-col gap-x-20 gap-y-10 mx-auto text-left max-lg:text-center">
+        <div
+          class="flex flex-col gap-x-20 gap-y-10 mx-auto text-left max-lg:text-center"
+        >
           <h2>Links</h2>
           <ul
             class="list-none flex flex-col gap-x-20 gap-y-14 text-left max-lg:text-center"
@@ -38,7 +46,11 @@ const currentYear = getCurrentYear();
             {
               navData.map((entry) => (
                 <li>
-                  <a title={entry.title} href={entry.href} class="whitespace-nowrap">
+                  <a
+                    title={entry.title}
+                    href={entry.href}
+                    class="whitespace-nowrap"
+                  >
                     {entry.title}
                   </a>
                 </li>
@@ -51,8 +63,10 @@ const currentYear = getCurrentYear();
         id="footer-contact"
         class="flex flex-col gap-x-4 gap-y-10 justify-center max-md:justify-between text-left max-md:text-center align-middle items-start max-md:items-center max-md:w-full max-md:mx-auto"
       >
-      <h2 class="max-md:px-3">Contact</h2>
-      <div class="flex flex-col gap-x-20 gap-y-14 max-md:mx-auto text-left max-md:text-center items-start max-md:items-center">
+        <h2 class="max-md:px-3">Contact</h2>
+        <div
+          class="flex flex-col gap-x-20 gap-y-14 max-md:mx-auto text-left max-md:text-center items-start max-md:items-center"
+        >
           <div
             class="flex flex-col gap-x-20 gap-y-14 text-left max-md:text-center justify-center max-lg:justify-start items-start align-middle mx-auto"
           >

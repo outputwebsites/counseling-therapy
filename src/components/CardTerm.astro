@@ -2,7 +2,6 @@
 import { marked } from "marked";
 export interface Props {
   term: {
-    slug: string;
     data: {
       name: string;
     };
@@ -20,7 +19,9 @@ const content = await marked.parse(
   id={term.data.name}
   class="flex flex-col gap-4 max-w-2xl border border-lifeBorder p-4 rounded-lg text-left"
 >
-  <p id={term.slug} class="text-2xl"><strong>{term.data.name}</strong></p>
+  <p id={term.data.name + "name"} class="text-2xl">
+    <strong>{term.data.name}</strong>
+  </p>
   <section id={term.data.name + "body"} class="text-justify">
     <p set:html={content} />
   </section>
