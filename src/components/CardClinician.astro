@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+export interface Props {
+  author: CollectionEntry<"author">;
+}
+
+const { author } = Astro.props;
+---
+
+<div
+  class="flex flex-col gap-4 max-w-xl border border-lifeBorder py-4 px-4 rounded-lg text-center justify-center items-center align-middle max-[626px]:min-w-[226px]"
+>
+  <div class="flex flex-col items-center gap-4">
+    <img
+      class="object-cover w-24 h-24 mt-3 mr-3 rounded-full"
+      src={typeof author.data.photo === "object" &&
+      author.data.photo !== null &&
+      "src" in author.data.photo
+        ? author.data.photo.src.replace(/^.*\/src\/assets\//, "/src/assets/")
+        : ""}
+      alt={author.data.name}
+      decoding="async"
+      loading="lazy"
+    />
+    <div class="flex flex-col items-center gap-2">
+      <a title={author.data.name} href={"/clinicians#" + author.data.name}
+        ><p itemprop="author" id={author.data.name + "-name"} class="text-2xl">
+          <strong>{author.data.name}</strong>
+        </p></a
+      >
+      <p class="text-stone-600 text-md">{author.data.qualifications}</p>
+    </div>
+  </div>
+</div>

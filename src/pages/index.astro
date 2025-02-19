@@ -4,8 +4,10 @@ import { getCollection } from "astro:content";
 import CardTerm from "@components/CardTerm.astro";
 import CardTreatment from "@components/CardTreatment.astro";
 import CardInsurance from "@components/CardInsurance.astro";
+import CardClinician from "@components/CardClinician.astro";
 import { Icon } from "astro-icon/components";
 
+const clinicians = await getCollection("author");
 const terms = await getCollection("terms");
 const treatments = await getCollection("treatments");
 const details = await getCollection("details");
@@ -60,7 +62,7 @@ const details = await getCollection("details");
       class="max-[380px]:text-3xl font-extralight"
       id={details[0].data.nameShort1}
     >
-      Welcome to <br /><em>{details[0].data.nameShort1}</em>
+      Welcome to <br />{details[0].data.nameShort1}
     </h1>
     <div
       class="flex flex-col text-center justify-center items-center my-8 gap-8 mx-auto"
@@ -85,10 +87,10 @@ const details = await getCollection("details");
         class="text-white w-full overflow-hidden flex flex-1 flex-col align-top items-center justify-items-center justify-center bg-center bg-cover bg-local bg-no-repeat bg-[url('/assets/images/bg.png')] mask-to-t"
       >
         <div
-          class="my-20 lg:my-12 pt-12 pb-16 lg:pt-6 lg:pb-8 flex flex-col mx-auto align-middle items-center text-center w-full bg-stone-200 bg-clip-padding mask-to-t-10 backdrop-filter backdrop-blur bg-opacity-5 backdrop-saturate-100 backdrop-contrast-100"
+          class="my-20 lg:my-12 pt-12 pb-16 lg:pt-6 lg:pb-8 flex flex-col mx-auto align-middle items-center text-center justify-center w-full bg-stone-200 bg-clip-padding mask-to-t-10 backdrop-filter backdrop-blur bg-opacity-5 backdrop-saturate-100 backdrop-contrast-100"
         >
           <div
-            class="flex max-lg:flex-col gap-x-20 gap-y-16 text-center justify-center items-start align-middle mx-auto"
+            class="flex max-lg:flex-col gap-x-20 gap-y-16 text-center justify-center items-center align-middle"
           >
             <div
               class="flex max-sm:flex-col gap-x-20 gap-y-16 text-center justify-center items-start align-middle mx-auto"
@@ -135,8 +137,29 @@ const details = await getCollection("details");
     </div>
   </section>
 
+  <section id="clinicians" class="flex flex-col text-center pt-4 pb-20 px-3 gap-4">
+    <h1 id="Meet Our Clinicians">Meet Our Clinicians</h1>
+    <div class="flex flex-col text-justify max-w-4xl mx-auto">
+      {
+        clinicians.length >= 1 && (
+          <div
+            class="w-full mx-0 flex flex-row max-[626px]:flex-wrap justify-center items-center text-center gap-4"
+          >
+            {clinicians
+              .sort((a, b) => a.data.order - b.data.order)
+              .map((clinician) => (
+                <CardClinician author={clinician} />
+              ))}
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <hr class="my-20" />
+
   <section
-    id="homepage-content"
+    id="treatment-types"
     class="flex flex-col md:flex-row text-center max-w-[1000px] mx-auto"
   >
     <section
@@ -164,10 +187,10 @@ const details = await getCollection("details");
     <hr class="my-20 md:hidden" />
 
     <section
-      id="insurances"
+      id="finances"
       class="flex flex-col text-center max-w-[625px] md:max-w-[438px] mx-auto px-3 gap-4"
     >
-      <h2 id="finances">Finances</h2>
+      <h2 id="insurances">Finances</h2>
       <div
         class="flex flex-wrap gap-4 text-center justify-center items-center align-middle"
       >

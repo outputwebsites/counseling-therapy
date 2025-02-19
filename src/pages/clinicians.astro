@@ -2,20 +2,45 @@
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import Bio from "@components/Bio.astro";
+import CardClinician from "@components/CardClinician.astro";
 
 const clinicians = await getCollection("author");
 const details = await getCollection("details");
 ---
 
-<BaseLayout title="Meet Our Clinicians" description={details[0].data.description}>
-  <section id="clinicians" class="flex flex-col text-center py-20 px-3 gap-4">
-    <h1 id="Meet Our Clinicians">Meet Our Clinicians</h1>
+<BaseLayout
+  title="Meet Our Clinicians"
+  description={details[0].data.description}
+>
+  <section
+    id="clinicians"
+    class="flex flex-col text-center pt-20 pb-40 px-3 gap-40"
+  >
+    <div class="flex flex-col text-center gap-10">
+      <h1 id="Meet Our Clinicians">Meet Our Clinicians</h1>
+      <div class="flex flex-col text-justify max-w-4xl mx-auto">
+        {
+          clinicians.length >= 1 && (
+            <div class="w-full mx-0 flex flex-row max-[626px]:flex-wrap justify-center items-center text-center gap-4">
+              {clinicians
+                .sort((a, b) => a.data.order - b.data.order)
+                .map((clinician) => (
+                  <CardClinician author={clinician} />
+                ))}
+            </div>
+          )
+        }
+      </div>
+    </div>
+
+    <hr />
+
     <div class="flex flex-col text-justify max-w-4xl mx-auto">
       {
         clinicians.length >= 1 && (
           <div
             id="bios"
-            class="w-full mx-0 my-20 flex flex-col justify-center items-center text-center gap-40"
+            class="w-full mx-0 flex flex-col justify-center items-center text-center gap-40"
           >
             {clinicians
               .sort((a, b) => a.data.order - b.data.order)
