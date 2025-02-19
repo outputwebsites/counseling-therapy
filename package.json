@@ -1,7 +1,7 @@
 {
   "name": "counseling-therapy",
   "type": "module",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "scripts": {
     "astro": "astro dev",
     "decap": "npx decap-server",

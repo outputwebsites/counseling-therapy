@@ -24,7 +24,7 @@ const { author } = Astro.props;
       loading="lazy"
     />
     <div class="flex flex-col items-center gap-2">
-      <a title={author.data.name} href={"/clinicians#" + author.data.name}
+      <a title={author.data.name} href={"/clinicians/#" + author.data.name}
         ><p itemprop="author" id={author.data.name + "-name"} class="text-2xl">
           <strong>{author.data.name}</strong>
         </p></a
