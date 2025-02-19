@@ -14,7 +14,7 @@ const { description, title } = Astro.props;
 const details = await getCollection("details");
 ---
 
-<html lang="en" transition:name="root" transition:animate="none">
+<html lang="en">
   <head>
     <!-- View Transitions support -->
     <ClientRouter />
@@ -111,7 +111,7 @@ const details = await getCollection("details");
     >
     <Header />
     <HeaderInfo />
-    <main id="main" class="mt-[70px] pt-16" transition:animate="fade">
+    <main id="main" class="mt-[80px] max-[800px]:mt-[70px] pt-16">
       <slot />
     </main>
     <Footer />

@@ -298,7 +298,7 @@ header {
 
 #header-info {
   position: absolute;
-  top: 70px;
+  top: 80px;
   left: 0;
   width: 100%;
   display: flex;
@@ -323,6 +323,7 @@ header {
   
   #header-info {
     display: block;
+    top: 70px;
   }
 
   .navigation {
