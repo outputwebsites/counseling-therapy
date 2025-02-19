@@ -17,7 +17,7 @@ import { Icon } from "astro-icon/components";
         height="60"
         aria-hidden="true"
         decoding="async"
-        class="bg-transparent drop-shadow"
+        class="bg-transparent drop-shadow hover:opacity-70 duration-150"
         loading="eager"
       />
     </a>
@@ -32,11 +32,11 @@ import { Icon } from "astro-icon/components";
   <ul class="navigation list-none">
     {
       navData.map((item) => (
-        <li>
+        <li class="w-full h-full flex justify-center items-center text-center">
           <a
             href={item.href}
             title={item.title}
-            class="py-2 px-4 w-full h-full flex justify-center items-center text-center text-lg break-keep whitespace-nowrap no-underline"
+            class="py-2 px-4 rounded-md w-full h-full flex justify-center items-center text-center text-lg break-keep whitespace-nowrap no-underline"
           >
             {item.title}
           </a>

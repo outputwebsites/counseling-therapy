@@ -9,10 +9,13 @@ const currentYear = getCurrentYear();
 
 <footer
   id="footer"
-  class="bg-lifeBackground border-t border-lifeBorder pt-16 pb-2 px-3 flex flex-col justify-center items-center"
+  class="bg-lifeBackground border-t border-lifeBorder pt-16 pb-2 flex flex-col justify-center items-center"
 >
-  <section id="footer-container" class="flex flex-col w-full gap-20">
-    <section id="footer-logo" class="flex flex-col items-center">
+  <section
+    id="footer-container"
+    class="flex flex-col lg:flex-row justify-center item-start max-md:items-middle lg:items-start align-top w-full gap-20 mx-auto max-w-screen-lg"
+  >
+    <section id="footer-logo" class="flex flex-col text-center justify-center align-middle items-center sm:min-w-[350px] px-3">
       <a title={details[0].data.name} href="/">
         <img
           src="/assets/svgs/logotype_color.svg"
@@ -25,70 +28,73 @@ const currentYear = getCurrentYear();
         />
       </a>
     </section>
-    <section id="footer-links" class="flex text-center mb-8">
-      <div class="flex flex-col mx-auto text-center">
-        <ul
-          class="list-none flex flex-row max-sm:flex-col gap-x-20 max-lg:gap-x-14 gap-y-12 text-center"
-        >
-          {
-            navData.map((entry) => (
-              <li>
-                <a title={entry.title} href={entry.href}>
-                  {entry.title}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-    </section>
-    <section
-      id="footer-contact"
-      class="flex flex-col gap-x-4 gap-y-16 justify-between w-full mx-auto"
-    >
-      <div
-        class="flex max-lg:flex-col gap-20 text-center justify-center items-start align-middle mx-auto"
+    <section id="footer-details" class="flex flex-col md:flex-row gap-20 text-center justify-center items-start max-md:items-center align-middle w-full mx-auto">
+      <section id="footer-links" class="flex text-center px-3">
+        <div class="flex flex-col gap-x-20 gap-y-10 mx-auto text-left max-lg:text-center">
+          <h2>Links</h2>
+          <ul
+            class="list-none flex flex-col gap-x-20 gap-y-14 text-left max-lg:text-center"
+          >
+            {
+              navData.map((entry) => (
+                <li>
+                  <a title={entry.title} href={entry.href} class="whitespace-nowrap">
+                    {entry.title}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </section>
+      <section
+        id="footer-contact"
+        class="flex flex-col gap-x-4 gap-y-10 justify-center max-md:justify-between text-left max-md:text-center align-middle items-start max-md:items-center max-md:w-full max-md:mx-auto"
       >
-        <div
-          class="flex max-sm:flex-col gap-20 text-center justify-center items-start align-middle mx-auto"
-        >
-          <div class="flex flex-col gap-1 text-center mx-auto">
-            <strong>Phone</strong>
-            <a
-              title={details[0].data.phone}
-              href={`tel:${details[0].data.phone.replace(/\((\d{3})\)\s(\d{3})-(\d{4})/, "$1-$2-$3")}`}
-            >
-              {details[0].data.phone}
-            </a>
+      <h2 class="max-md:px-3">Contact</h2>
+      <div class="flex flex-col gap-x-20 gap-y-14 max-md:mx-auto text-left max-md:text-center items-start max-md:items-center">
+          <div
+            class="flex flex-col gap-x-20 gap-y-14 text-left max-md:text-center justify-center max-lg:justify-start items-start align-middle mx-auto"
+          >
+            <div class="flex flex-col gap-1 max-md:mx-auto max-md:px-3">
+              <h3 class="text-xl">Phone</h3>
+              <a
+                title={details[0].data.phone}
+                href={`tel:${details[0].data.phone.replace(/\((\d{3})\)\s(\d{3})-(\d{4})/, "$1-$2-$3")}`}
+              >
+                {details[0].data.phone}
+              </a>
+            </div>
+            <div class="flex flex-col gap-1 max-md:mx-auto">
+              <h3 class="text-xl">Email</h3>
+              <a
+                title={details[0].data.email}
+                href={`mailto:${details[0].data.email.toLowerCase()}`}
+                class="whitespace-nowrap"
+              >
+                {details[0].data.email}
+              </a>
+            </div>
           </div>
-          <div class="flex flex-col gap-1 text-center mx-auto">
-            <strong>Email</strong>
-            <a
-              title={details[0].data.email}
-              href={`mailto:${details[0].data.email.toLowerCase()}`}
-            >
-              {details[0].data.email}
-            </a>
+          <div class="flex flex-col gap-1 max-md:mx-auto max-md:px-3">
+            <h3 class="text-xl">Office</h3>
+            <div class="flex flex-col gap-x-4 gap-y-1 max-md:mx-auto">
+              <a
+                title="Visit our office"
+                href="/contact#contact-info"
+                class="flex flex-col gap-1 text-left max-[318px]:text-center md:whitespace-nowrap"
+              >
+                {details[0].data.address.addressLineOne}<br />
+                {details[0].data.address.addressLineTwo}<br />
+                {details[0].data.address.addressCity}, {
+                  details[0].data.address.addressState
+                }
+                {details[0].data.address.addressZip}
+              </a>
+            </div>
           </div>
         </div>
-        <div class="flex flex-col gap-1 text-center mx-auto">
-          <strong>Office</strong>
-          <div class="flex flex-col gap-x-4 gap-y-1 mx-auto text-center">
-            <a
-              title="Visit our office"
-              href="/contact#contact-info"
-              class="flex flex-col gap-1 text-left max-[318px]:text-center"
-            >
-              {details[0].data.address.addressLineOne}<br />
-              {details[0].data.address.addressLineTwo}<br />
-              {details[0].data.address.addressCity}, {
-                details[0].data.address.addressState
-              }
-              {details[0].data.address.addressZip}
-            </a>
-          </div>
-        </div>
-      </div>
+      </section>
     </section>
   </section>
 

@@ -22,7 +22,7 @@ const details = await getCollection("details");
         class="text-white w-full overflow-hidden flex flex-1 flex-col align-top items-start justify-items-start justify-start h-[666px] bg-center bg-cover bg-local bg-no-repeat bg-[url('/assets/images/bb.jpg')]"
       >
         <div
-          class="flex flex-col mt-10 mx-auto align-middle items-center text-center w-full py-7 bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-30 backdrop-saturate-100 backdrop-contrast-100"
+          class="flex flex-col mt-10 mx-auto align-middle items-center text-center w-full py-7 bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-20 backdrop-saturate-100 backdrop-contrast-100"
         >
           <div
             class="flex flex-col gap-3 align-middle items-center text-center max-[850px]:max-w-[440px] max-[460px]:max-w-[290px] max-[460px]:gap-6"
@@ -43,7 +43,7 @@ const details = await getCollection("details");
           class="flex flex-col grow gap-6 mt-6 mx-auto align-middle items-end justify-end text-center max-w-[730px] px-12 py-6 text-xl rounded-full"
         >
           <a
-            class="bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-30 hover:bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100 rounded-full p-4 shadow"
+            class="bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-30 hover:bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100 rounded-full p-4 shadow duration-150"
             href="#welcome"
             title="Continue Reading"
             aria-label="Continue Reading"
@@ -55,9 +55,12 @@ const details = await getCollection("details");
     </div>
   </section>
 
-  <section id="welcome" class="flex flex-col text-center px-3 gap-4">
-    <h1 class="mt-32 max-[380px]:text-3xl" id={details[0].data.nameShort1}>
-      <strong>Welcome to <br />{details[0].data.nameShort1}</strong>
+  <section id="welcome" class="mt-32 flex flex-col text-center px-3 gap-4">
+    <h1
+      class="max-[380px]:text-3xl font-extralight"
+      id={details[0].data.nameShort1}
+    >
+      Welcome to <br /><em>{details[0].data.nameShort1}</em>
     </h1>
     <div
       class="flex flex-col text-center justify-center items-center my-8 gap-8 mx-auto"
@@ -67,63 +70,13 @@ const details = await getCollection("details");
       </h2>
 
       <h2
-        class="text-3xl max-[710px]:text-2xl max-[578px]:text-xl max-[394px]:max-w-[190px]"
+        class="text-3xl max-[710px]:text-2xl max-[578px]:text-xl max-[394px]:max-w-[190px] font-extralight"
       >
         Schedule sessions in person or on-line. <br />Children will only be seen
         in person.
       </h2>
     </div>
   </section>
-  <!-- <section
-    id="footer-contact"
-    class="mt-16 mb-24 flex flex-col gap-x-4 gap-y-16 justify-between w-full mx-auto"
-  >
-    <div
-      class="flex max-lg:flex-col gap-20 text-center justify-center items-start align-middle mx-auto"
-    >
-      <div
-        class="flex max-sm:flex-col gap-20 text-center justify-center items-start align-middle mx-auto"
-      >
-        <div class="flex flex-col gap-1 text-center mx-auto">
-          <p>Phone</p>
-          <a
-            title={details[0].data.phone}
-            href={`tel:${details[0].data.phone.replace(/\((\d{3})\)\s(\d{3})-(\d{4})/, "$1-$2-$3")}`}
-          >
-            {details[0].data.phone}
-          </a>
-        </div>
-        <div class="flex flex-col gap-1 text-center mx-auto">
-          <p>Email</p>
-          <a
-            title={details[0].data.email}
-            href={`mailto:${details[0].data.email.toLowerCase()}`}
-          >
-            {details[0].data.email}
-          </a>
-        </div>
-      </div>
-      <div class="flex flex-col gap-1 text-center mx-auto">
-        <p>Office</p>
-        <div class="flex flex-col gap-x-4 gap-y-1 mx-auto text-center">
-          <a
-            title="Visit our office"
-            href="/contact#contact-info"
-            class="flex flex-col gap-1 text-left max-[318px]:text-center"
-          >
-            {details[0].data.address.addressLineOne}<br />
-            {details[0].data.address.addressLineTwo}<br />
-            {details[0].data.address.addressCity}, {
-              details[0].data.address.addressState
-            }
-            {details[0].data.address.addressZip}
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="my-20" /> -->
 
   <section id="contact-hero" class="w-full mt-16 mb-32">
     <div id="contact-hero-container" class="w-full m-auto">
@@ -132,16 +85,16 @@ const details = await getCollection("details");
         class="text-white w-full overflow-hidden flex flex-1 flex-col align-top items-center justify-items-center justify-center bg-center bg-cover bg-local bg-no-repeat bg-[url('/assets/images/bg.png')]"
       >
         <div
-          class="flex flex-col mx-auto align-middle items-center text-center w-full py-8 bg-stone-200 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-5 backdrop-saturate-100 backdrop-contrast-100"
+          class="my-20 pt-4 pb-6 flex flex-col mx-auto align-middle items-center text-center w-full bg-stone-200 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-5 backdrop-saturate-100 backdrop-contrast-100"
         >
           <div
-            class="flex max-lg:flex-col gap-20 text-center justify-center items-start align-middle mx-auto"
+            class="flex max-lg:flex-col gap-x-20 gap-y-16 text-center justify-center items-start align-middle mx-auto"
           >
             <div
-              class="flex max-sm:flex-col gap-20 text-center justify-center items-start align-middle mx-auto"
+              class="flex max-sm:flex-col gap-x-20 gap-y-16 text-center justify-center items-start align-middle mx-auto"
             >
               <div class="flex flex-col gap-1 text-center mx-auto">
-                <strong class="text-black">Phone</strong>
+                <h2 class="text-black text-xl font-light">Phone</h2>
                 <a
                   title={details[0].data.phone}
                   href={`tel:${details[0].data.phone.replace(/\((\d{3})\)\s(\d{3})-(\d{4})/, "$1-$2-$3")}`}
@@ -150,7 +103,7 @@ const details = await getCollection("details");
                 </a>
               </div>
               <div class="flex flex-col gap-1 text-center mx-auto">
-                <strong class="text-black">Email</strong>
+                <h2 class="text-black text-xl font-light">Email</h2>
                 <a
                   title={details[0].data.email}
                   href={`mailto:${details[0].data.email.toLowerCase()}`}
@@ -160,7 +113,7 @@ const details = await getCollection("details");
               </div>
             </div>
             <div class="flex flex-col gap-1 text-center mx-auto">
-              <strong class="text-black">Office</strong>
+              <h2 class="text-black text-xl font-light">Office</h2>
               <div class="flex flex-col gap-x-4 gap-y-1 mx-auto text-center">
                 <a
                   title="Visit our office"

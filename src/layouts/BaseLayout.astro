@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import Header from "@components/Header.astro";
 import HeaderInfo from "@components/HeaderInfo.astro";
 import Footer from "@components/Footer.astro";
@@ -14,10 +14,10 @@ const { description, title } = Astro.props;
 const details = await getCollection("details");
 ---
 
-<html lang="en">
+<html lang="en" transition:name="root" transition:animate="none">
   <head>
     <!-- View Transitions support -->
-    <ViewTransitions />
+    <ClientRouter />
 
     <!-- Preloads font -->
     <link
@@ -100,7 +100,7 @@ const details = await getCollection("details");
     >
     <Header />
     <HeaderInfo />
-    <main id="main" class="mt-[70px] pt-16">
+    <main id="main" class="mt-[70px] pt-16" transition:animate="fade">
       <slot />
     </main>
     <Footer />

@@ -55,7 +55,7 @@ html {
 
 /* Change selection background */
 ::selection {
-  @apply bg-lifeMainDarker text-white;
+  @apply bg-lifeMain text-white;
   text-shadow: none;
 }
 
