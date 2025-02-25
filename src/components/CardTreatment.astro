@@ -2,7 +2,6 @@
 import { marked } from "marked";
 export interface Props {
   treatment: {
-    slug: string;
     data: {
       name: string;
     };
@@ -17,11 +16,12 @@ const content = await marked.parse(
 ---
 
 <details
+  id={treatment.data.name}
   class="border border-lifeBorder bg-white rounded-lg [&_summary]:open:bg-[#f8f8f8] [&_svg]:open:-rotate-180 overflow-hidden duration-150"
 >
   <!-- disabled the summary's default triangle/arrow -->
   <summary
-    class="flex cursor-pointer list-none items-center gap-4 p-4 text-2xl bg-white hover:!bg-lifeBorder duration-150"
+    class="flex min-h-[98px] cursor-pointer list-none items-center gap-4 p-4 text-2xl bg-white hover:!bg-lifeBorder duration-150"
   >
     <div class="flex flex-col items-center gap-4 w-full mx-auto">
       <div class="flex gap-4 justify-between align-middle items-center w-full">

@@ -15,14 +15,38 @@ const content = await marked.parse(
 );
 ---
 
-<article
+<details
   id={term.data.name}
-  class="flex flex-col gap-4 max-w-2xl border border-lifeBorder p-4 rounded-lg text-left"
+  class="border border-lifeBorder bg-white rounded-lg [&_summary]:open:bg-[#f8f8f8] [&_svg]:open:-rotate-180 overflow-hidden duration-150 grow min-w-full w-full lg:min-w-[325px] lg:max-w-[325px]"
 >
-  <p id={term.data.name + "name"} class="text-2xl">
-    <strong>{term.data.name}</strong>
-  </p>
-  <section id={term.data.name + "body"} class="text-justify">
-    <p set:html={content} />
-  </section>
-</article>
+  <!-- disabled the summary's default triangle/arrow -->
+  <summary
+    class="flex grow min-w-full w-full min-h-[98px] cursor-pointer list-none align-middle justify-center items-center gap-4 p-4 text-2xl bg-white hover:!bg-lifeBorder duration-150"
+  >
+    <div class="flex flex-col items-center gap-4 grow min-w-full w-full mx-auto">
+      <div class="flex gap-4 justify-between align-middle items-center w-full">
+        <div
+          class="flex flex-col items-center gap-0 bg-lifeMainDark p-1 rounded-full shadow-md"
+        >
+          <!-- added custom triangle/arrow svg -->
+          <svg
+            class="rotate-0 transform text-white transition-all duration-300"
+            fill="none"
+            height="30"
+            width="30"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3"
+            viewBox="0 0 24 24"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+        <p class="text-left text-2xl w-full">{term.data.name}</p>
+      </div>
+    </div>
+  </summary>
+
+  <div class="p-4 text-justify min-h-[300px] max-h-[300px] scrollbar overflow-scroll"><p set:html={content} /></div>
+</details>

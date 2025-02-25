@@ -8,21 +8,12 @@ const details = await getCollection("details");
 
 <BaseLayout title="Finances" description={details[0].data.description}>
   <section
-    id="insurances"
-    class="flex flex-col text-center max-w-[625px] mx-auto py-20 px-3 gap-4"
+    id="finances"
+    class="flex flex-col mx-auto mt-20 mb-40 px-6 gap-4 justify-center text-center items-center align-middle"
   >
-    <h1 id="finances">Finances</h1>
-    <p>
-      <em class="text-lg font-bold">
-        NOTE:
-        <em class="text-base font-normal">
-          Not all clinicians take all insurances; please check with the office!
-        </em>
-      </em>
-    </p>
-
+    <h2 id="insurances">Insurances</h2>
     <div
-      class="flex flex-wrap gap-4 text-center justify-center items-center align-middle"
+      class="flex flex-wrap max-w-[1420px] gap-4 text-center justify-center items-center align-middle"
     >
       {
         details[0] &&
@@ -33,13 +24,23 @@ const details = await getCollection("details");
       }
     </div>
 
-    <p>
+    <p class="text-stone-500">
       <em class="text-lg font-bold">
         NOTE:
         <em class="text-base font-normal">
-          Not all clinicians take all insurances; please check with the office!
+          Check with your provider for copay and deductible! <br />Not all clinicians take all insurances; please check with the
+          office!
         </em>
       </em>
     </p>
+
+    <h2 id="self-pay" class="mt-16">Self-Pay</h2>
+    <div
+      id="self-pay-info"
+      class="flex flex-col gap-4 border border-lifeBackground p-4 rounded-lg text-center justify-center items-center align-middle grow"
+    >
+      <p class="mt-2 text-2xl">$100 per session</p>
+      <p class="text-stone-500"><em>We work with you on a sliding scale to <br />provide services that match your budget.</em></p>
+    </div>
   </section>
 </BaseLayout>

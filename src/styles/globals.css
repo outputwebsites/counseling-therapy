@@ -365,3 +365,22 @@ header {
     display: inline-block;
   }
 }
+
+/* Scrollbar for inner content like a tooltip modal */
+.scrollbar::-webkit-scrollbar {
+  @apply w-1.5 h-1.5;
+}
+.scrollbar::-webkit-scrollbar-track {
+  @apply rounded-[3px];
+  background: rgba(231, 229, 228, 0.3);
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-stone-200 rounded-[3px];
+}
+.scrollbar-hide::-webkit-scrollbar {
+  @apply hidden;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
