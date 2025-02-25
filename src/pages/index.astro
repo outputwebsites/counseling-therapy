@@ -80,7 +80,7 @@ const details = await getCollection("details");
     </div>
   </section>
 
-  <section id="contact-hero" class="w-full mt-20 mb-32">
+  <section id="contact-hero" class="w-full mt-20 mb-28">
     <div id="contact-hero-container" class="w-full m-auto">
       <div
         id="contact-hero-content"
@@ -137,10 +137,7 @@ const details = await getCollection("details");
     </div>
   </section>
 
-  <section
-    id="clinicians"
-    class="flex flex-col text-center pt-4 pb-20 px-3 gap-4"
-  >
+  <section id="clinicians" class="flex flex-col text-center px-3 gap-4">
     <h1 id="Meet Our Clinicians">Meet Our Clinicians</h1>
     <div class="flex flex-col text-justify max-w-4xl mx-auto">
       {
@@ -157,58 +154,67 @@ const details = await getCollection("details");
     </div>
   </section>
 
-  <hr class="mt-20 mb-32" />
+  <section id="types-terms-hero" class="w-full">
+    <div id="types-terms-hero-container" class="w-full m-auto">
+      <div
+        id="types-terms-hero-content"
+        class="w-full flex flex-1 flex-col align-top items-center justify-items-center justify-center bg-center bg-cover bg-local bg-no-repeat bg-[url('/assets/images/bg.png')] mask-to-t-10"
+      >
+        <div
+          class="py-20 flex flex-col mx-auto align-middle items-center text-center justify-center w-full mask-to-t-10"
+        >
+          <section
+            id="types-and-terms"
+            class="flex flex-col lg:flex-row gap-x-2 lg:gap-x-16 max-w-[1620px] mx-auto justify-between text-center item-center lg:items-start align-middle px-3 my-52"
+          >
+            <section
+              id="types"
+              class="flex flex-col max-w-[515px] mx-auto max-lg:px-3 justify-center text-center items-center align-middle"
+            >
+              {
+                treatments.length >= 1 && (
+                  <div class="flex flex-col text-justify">
+                    <h2 id="treatment-types" class="text-center">
+                      Treatment Types
+                    </h2>
+                    <div class="flex flex-col mt-4 gap-4">
+                      {treatments
+                        .sort((a, b) => a.data.name.localeCompare(b.data.name))
+                        .map((treatment) => (
+                          <CardTreatment treatment={treatment} />
+                        ))}
+                    </div>
+                  </div>
+                )
+              }
+            </section>
 
-  <section
-    id="types-and-terms"
-    class="flex flex-col lg:flex-row gap-x-2 lg:gap-x-16 max-w-[1620px] mx-auto justify-between text-center item-center lg:items-start align-middle"
-  >
-    <section
-      id="types"
-      class="flex flex-col max-w-[515px] mx-auto max-lg:px-3 justify-center text-center items-center align-middle"
-    >
-      {
-        treatments.length >= 1 && (
-          <div class="flex flex-col text-justify">
-            <h2 id="treatment-types" class="text-center">
-              Treatment Types
-            </h2>
-            <div class="flex flex-col mt-4 gap-4">
-              {treatments
-                .sort((a, b) => a.data.name.localeCompare(b.data.name))
-                .map((treatment) => (
-                  <CardTreatment treatment={treatment} />
-                ))}
-            </div>
-          </div>
-        )
-      }
-    </section>
+            <hr class="my-20 lg:hidden" />
 
-    <hr class="my-20 lg:hidden" />
-
-    <section
-      id="terms"
-      class="flex flex-wrap mx-auto max-lg:px-3 justify-center text-center items-center align-middle"
-    >
-      {
-        terms.length >= 1 && (
-          <div class="flex flex-col max-w-[491px] lg:max-w-[800px] mx-auto justify-center items-center text-center align-middle grow w-full place-items-center">
-            <h2 id="specialties-expertise" class="text-center">
-              Specialties & Expertise
-            </h2>
-            <div class="flex flex-wrap mt-4 gap-4 mx-auto min-[1270px]:max-w-fit max-[1270px]:max-w-[491px] justify-center items-start text-center align-middle grow w-full place-items-start">
-              {terms.map((term) => (
-                <CardTerm term={term} />
-              ))}
-            </div>
-          </div>
-        )
-      }
-    </section>
+            <section
+              id="terms"
+              class="flex flex-wrap mx-auto max-lg:px-3 justify-center text-center items-center align-middle"
+            >
+              {
+                terms.length >= 1 && (
+                  <div class="flex flex-col max-w-[491px] lg:max-w-[800px] mx-auto justify-center items-center text-center align-middle grow w-full place-items-center">
+                    <h2 id="specialties-expertise" class="text-center">
+                      Specialties & Expertise
+                    </h2>
+                    <div class="flex flex-wrap mt-4 gap-4 mx-auto min-[1270px]:max-w-fit max-[1270px]:max-w-[491px] justify-center items-start text-center align-middle grow w-full place-items-start">
+                      {terms.map((term) => (
+                        <CardTerm term={term} />
+                      ))}
+                    </div>
+                  </div>
+                )
+              }
+            </section>
+          </section>
+        </div>
+      </div>
+    </div>
   </section>
-
-  <hr class="my-32" />
 
   <section
     id="finances"
@@ -246,7 +252,8 @@ const details = await getCollection("details");
       <p class="text-stone-500">
         <em
           >We work with you on a sliding scale to <br />provide services that
-          match your budget.</em>
+          match your budget.</em
+        >
       </p>
     </div>
   </section>
