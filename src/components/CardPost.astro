@@ -24,15 +24,17 @@ const { post } = Astro.props;
 >
   {
     post.data.image && (
-      <img
-        src={post.data.image.src}
-        alt={post.data.imageAlt ? post.data.imageAlt : post.data.title}
-        width={post.data.image.width}
-        height={post.data.image.height}
-        decoding="async"
-        loading="lazy"
-        class="rounded-lg"
-      />
+      <a title={post.data.title} href={"/blog/" + post.slug}>
+        <img
+          src={post.data.image.src}
+          alt={post.data.imageAlt ? post.data.imageAlt : post.data.title}
+          width={post.data.image.width}
+          height={post.data.image.height}
+          decoding="async"
+          loading="lazy"
+          class="rounded-lg"
+        />
+      </a>
     )
   }
   <h2 id={post.data.title}>{post.data.title}</h2>
@@ -47,5 +49,7 @@ const { post } = Astro.props;
         .trim() + (post.body.split(" ").length > 20 ? "..." : "")
     }
   </p>
-  <a title={post.data.title} href={"/blog/" + post.slug}>Continue Reading...</a>
+  <a class="text-2xl" title={post.data.title} href={"/blog/" + post.slug}
+    >Continue Reading...</a
+  >
 </article>

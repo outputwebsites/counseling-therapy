@@ -9,22 +9,24 @@ const { author } = Astro.props;
 ---
 
 <div
-  class="flex flex-col gap-4 max-w-xl border border-lifeBorder p-4 rounded-lg text-left"
+  class="flex flex-col gap-4 grow border border-lifeBorder p-4 rounded-lg text-left"
 >
   <span class="italic">Author</span>
 
   <div class="flex max-sm:flex-col items-center max-sm:items-start gap-4">
-    <img
-      class="object-cover w-24 h-24 mt-3 mr-3 rounded-full"
-      src={typeof author.data.photo === "object" &&
-      author.data.photo !== null &&
-      "src" in author.data.photo
-        ? author.data.photo.src.replace(/^.*\/src\/assets\//, "/src/assets/")
-        : ""}
-      alt={author.data.name}
-      decoding="async"
-      loading="lazy"
-    />
+    <a title={author.data.name} href={"/clinicians/#" + author.data.name}
+      ><img
+        class="object-cover w-24 h-24 mt-3 mr-3 rounded-full"
+        src={typeof author.data.photo === "object" &&
+        author.data.photo !== null &&
+        "src" in author.data.photo
+          ? author.data.photo.src.replace(/^.*\/src\/assets\//, "/src/assets/")
+          : ""}
+        alt={author.data.name}
+        decoding="async"
+        loading="lazy"
+      /></a
+    >
     <div class="flex flex-col items-start gap-2">
       <a title={author.data.name} href={"/clinicians/#" + author.data.name}
         ><p itemprop="author" id={author.data.name + "-name"} class="text-2xl">

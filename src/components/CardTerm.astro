@@ -23,7 +23,9 @@ const content = await marked.parse(
   <summary
     class="flex grow min-w-full w-full min-h-[98px] cursor-pointer list-none align-middle justify-center items-center gap-4 p-4 text-2xl bg-white hover:!bg-lifeBorder duration-150"
   >
-    <div class="flex flex-col items-center gap-4 grow min-w-full w-full mx-auto">
+    <div
+      class="flex flex-col items-center gap-4 grow min-w-full w-full mx-auto"
+    >
       <div class="flex gap-4 justify-between align-middle items-center w-full">
         <div
           class="flex flex-col items-center gap-0 bg-lifeMainDark p-1 rounded-full shadow-md"
@@ -48,5 +50,9 @@ const content = await marked.parse(
     </div>
   </summary>
 
-  <div class="p-4 text-justify min-h-[300px] max-h-[300px] scrollbar overflow-scroll"><p set:html={content} /></div>
+  <div
+    class="p-4 text-justify min-h-[300px] max-h-[300px] scrollbar overflow-scroll"
+  >
+    <p set:html={content} />
+  </div>
 </details>

@@ -33,7 +33,7 @@ const authors = (await getEntries(post.data.author)).filter(author => author.col
     .replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1")
     .trim() + (post.body.split(" ").length > 20 && "...")}
 >
-  <article id="blog-post" class="max-w-4xl mx-auto px-3 pb-28 pt-16 max-[460px]:pt-10">
+  <article id="blog-post" class="max-w-4xl mx-auto px-3 pb-32 pt-16 max-[460px]:pt-10">
     {
       post.data.image && (
         <picture>
@@ -108,11 +108,11 @@ const authors = (await getEntries(post.data.author)).filter(author => author.col
       </div>
     </div>
 
-    <section id="blog-post-content" class="my-8">
+    <section id="blog-post-content" class="my-8 overflow-auto">
       <p set:html={content} />
     </section>
 
-    <section id="blog-post-authors" class="flex flex-col gap-4 justify-center items-center">
+    <section id="blog-post-authors" class="mt-2 flex flex-col gap-4 justify-left items-start">
       {authors.map((author) => <CardAuthor author={author} />)}
     </section>
   </article>
