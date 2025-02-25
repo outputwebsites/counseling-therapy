@@ -24,9 +24,9 @@ _[Website, Web Design]_
 
 **Some rights reserved.**
 
-Use of [the code for the Counseling-Therapy.org Website](https://github.com/outputwebsites/stater "Counseling-Therapy.org GitHub Repository") is licensed under the [MIT License](https://mit.edu/~amini/LICENSE.md "Official MIT License").
+Use of [the code for the Counseling-Therapy.org Website](https://github.com/outputwebsites/stater "Counseling-Therapy.org GitHub Repository") is licensed under the [Creative Commons Zero v1.0 Universal license](https://creativecommons.org/publicdomain/zero/1.0).
 
-This website uses the [Output Starter Kit](https://github.com/outputwebsites/stater "Output Starter Kit GitHub Repository"). Use of [the code for the Output Starter Kit](https://github.com/outputwebsites/stater "Output Starter Kit GitHub Repository") is licensed under the [MIT License](https://mit.edu/~amini/LICENSE.md "Official MIT License").
+This website uses the [Output Starter Kit](https://github.com/outputwebsites/stater "Output Starter Kit GitHub Repository"). Use of [the code for the Output Starter Kit](https://github.com/outputwebsites/stater "Output Starter Kit GitHub Repository") is licensed under the [Creative Commons Zero v1.0 Universal license](https://creativecommons.org/publicdomain/zero/1.0).
 
 The [Output Starter Kit](https://github.com/outputwebsites/stater "Output Starter Kit GitHub Repository") is forked from [Intermediate Astro v4 Decap CMS](https://github.com/CodeStitchOfficial/Intermediate-Astro-v4-Decap-CMS "Intermediate Astro v4 Decap CMS GitHub Repository") (created and maintained by [BuckyBuck135](https://github.com/BuckyBuck135)) which is forked from the [CodeStitch Intermediate-Website-Kit-LESS](https://github.com/CodeStitchOfficial/Intermediate-Website-Kit-LESS "CodeStitch Intermediate-Website-Kit-LESS GitHub Repository").
 
