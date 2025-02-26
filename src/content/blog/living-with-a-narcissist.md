@@ -2,7 +2,7 @@
 title: Living with a Narcissist
 author:
   - edward-merkle
-image: src/assets/images/media/water.png
+image: src/assets/images/media/img_2656.jpeg
 date: 2025-02-26T13:36:00.000Z
 ---
 Living with a narcissist can be an emotionally exhausting and challenging experience. Narcissistic individuals often possess traits such as grandiosity, a lack of empathy, and an intense need for admiration. Their behavior can significantly impact the emotional well-being of those around them, leading to feelings of inadequacy, frustration, and confusion. However, understanding how to cope and manage interactions with a narcissist can help mitigate some of the negative effects of this relationship. Here are some strategies to consider:
