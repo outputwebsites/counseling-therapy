@@ -2,7 +2,7 @@
 title: Windows of Joy
 author:
   - marilyn-deluera
-image: src/assets/images/media/img_2656.jpeg
+image: src/assets/images/media/turtles-on-trunk.jpg
 date: 2025-03-22T14:10:00.000Z
 ---
 
