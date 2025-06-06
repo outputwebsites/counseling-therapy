@@ -9,11 +9,11 @@ const details = await getCollection("details");
 <BaseLayout title="Finances" description={details[0].data.description}>
   <section
     id="finances"
-    class="flex flex-col mx-auto mt-20 mb-40 px-6 gap-4 justify-center text-center items-center align-middle"
+    class="flex flex-col justify-center items-center gap-4 mx-auto mt-20 mb-40 px-6 text-center align-middle"
   >
     <h2 id="insurances">Insurances</h2>
     <div
-      class="flex flex-wrap max-w-[1420px] gap-4 text-center justify-center items-center align-middle"
+      class="flex flex-wrap justify-center items-center gap-4 max-w-[1420px] text-center align-middle"
     >
       {
         details[0] &&
@@ -25,9 +25,9 @@ const details = await getCollection("details");
     </div>
 
     <p class="text-stone-500">
-      <em class="text-lg font-bold">
+      <em class="font-bold text-lg">
         NOTE:
-        <em class="text-base font-normal">
+        <em class="font-normal text-base">
           Check with your provider for copay and deductible! <br />Not all
           clinicians take all insurances; please check with the office!
         </em>
@@ -37,10 +37,10 @@ const details = await getCollection("details");
     <h2 id="self-pay" class="mt-16">Self-Pay</h2>
     <div
       id="self-pay-info"
-      class="flex flex-col gap-4 border border-lifeBackground p-4 rounded-lg text-center justify-center items-center align-middle grow"
+      class="flex flex-col justify-center items-center gap-4 p-4 border border-lifeBackground rounded-lg text-center align-middle grow"
     >
       <p class="mt-2 text-2xl">$100 per session</p>
-      <p class="text-stone-500">
+      <p class="max-sm:max-w-52 text-stone-500">
         <em
           >We work with you on a sliding scale to <br />provide services that
           match your budget.</em

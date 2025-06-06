@@ -11,15 +11,15 @@ const details = await getCollection("details");
   title="Contact"
   description={"Get in contact with " + details[0].data.name}
 >
-  <section id="welcome" class="flex flex-col text-center pt-20 px-3 gap-4">
+  <section id="welcome" class="flex flex-col gap-4 px-3 pt-20 text-center">
     <h1 id="Contact Us">Contact Us</h1>
     <div
-      class="flex flex-col text-center justify-center items-center mt-6 max-w-[710px] mx-auto"
+      class="flex flex-col justify-center items-center mx-auto mt-6 max-w-[710px] text-center"
     >
       <h2
-        class="text-3xl max-[710px]:text-2xl max-[578px]:text-xl max-[394px]:max-w-[190px] my-8"
+        class="my-8 max-[394px]:max-w-[190px] max-[578px]:text-xl max-[710px]:text-2xl text-3xl"
       >
-        Schedule sessions in person or on-line. <br />Children will only be seen
+        Schedule sessions in person or online. <br />Children will only be seen
         in person.
       </h2>
     </div>
@@ -29,18 +29,18 @@ const details = await getCollection("details");
 
   <section
     id="contact-info"
-    class="flex flex-col text-center max-w-4xl mx-auto mt-16 px-3 gap-8"
+    class="flex flex-col gap-8 mx-auto mt-16 px-3 max-w-4xl text-center"
   >
     <div
-      class="flex flex-col text-center justify-center items-center mt-6 max-w-[710px] mx-auto"
+      class="flex flex-col justify-center items-center mx-auto mt-6 max-w-[710px] text-center"
     >
       <h2
-        class="text-3xl max-[710px]:text-2xl max-[578px]:text-xl max-[394px]:max-w-[190px]"
+        class="max-[394px]:max-w-[190px] max-[578px]:text-xl max-[710px]:text-2xl text-3xl"
       >
         Send an email or call.
       </h2>
     </div>
-    <div class="flex flex-col gap-6 text-center justify-center items-center">
+    <div class="flex flex-col justify-center items-center gap-6 text-center">
       <div>
         <p>Email</p>
         <a
@@ -63,13 +63,13 @@ const details = await getCollection("details");
 
   <section
     id="address"
-    class="flex flex-col text-center max-w-4xl mx-auto mt-16 mb-36 px-3 gap-8"
+    class="flex flex-col gap-8 mx-auto mt-16 mb-36 px-3 max-w-4xl text-center"
   >
     <div
-      class="flex flex-col text-center justify-center items-center mt-6 max-w-[710px] mx-auto"
+      class="flex flex-col justify-center items-center mx-auto mt-6 max-w-[710px] text-center"
     >
       <h2
-        class="text-3xl max-[710px]:text-2xl max-[578px]:text-xl max-[394px]:max-w-[190px]"
+        class="max-[394px]:max-w-[190px] max-[578px]:text-xl max-[710px]:text-2xl text-3xl"
       >
         Visit our office.
       </h2>
@@ -77,11 +77,11 @@ const details = await getCollection("details");
     <div>
       <p>Main Offices</p>
       <div
-        class="flex flex-col gap-x-4 gap-y-8 mx-auto justify-center w-full items-center text-center"
+        class="flex flex-col justify-center items-center gap-x-4 gap-y-8 mx-auto w-full text-center"
       >
         <ul class="list-none">
           <li
-            class="flex flex-col gap-1 text-left max-[318px]:text-center text-xl leading-7 text-stone-600"
+            class="flex flex-col gap-1 text-stone-600 text-xl text-left max-[318px]:text-center leading-7"
           >
             {details[0].data.address.addressLineOne}<br />
             {details[0].data.address.addressLineTwo}<br />
@@ -93,7 +93,7 @@ const details = await getCollection("details");
         </ul>
       </div>
       <div
-        class="my-8 flex flex-col gap-x-4 gap-y-8 mx-auto justify-center w-full items-center text-center"
+        class="flex flex-col justify-center items-center gap-x-4 gap-y-8 mx-auto my-8 w-full text-center"
       >
         <picture>
           <Image

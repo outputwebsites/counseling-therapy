@@ -17,35 +17,35 @@ const details = await getCollection("details");
   title={details[0].data.name}
   description={details[0].data.description}
 >
-  <section id="hero" class="w-full border-b pt-12 mt-[-64px]">
-    <div id="hero-container" class="w-full m-auto">
+  <section id="hero" class="mt-[-64px] pt-12 border-b w-full">
+    <div id="hero-container" class="m-auto w-full">
       <div
         id="hero-content"
-        class="text-white w-full overflow-hidden flex flex-1 flex-col align-top items-start justify-items-start justify-start h-[666px] bg-center bg-cover bg-local bg-no-repeat bg-[url('/assets/images/bb.jpg')]"
+        class="flex flex-col flex-1 justify-start justify-items-start items-start bg-[url('/assets/images/bb.jpg')] bg-cover bg-no-repeat bg-center bg-local w-full h-[666px] overflow-hidden text-white align-top"
       >
         <div
-          class="flex flex-col mt-10 mx-auto align-middle items-center text-center w-full py-7 bg-gray-500 bg-clip-padding mask-to-t backdrop-filter backdrop-blur bg-opacity-20 backdrop-saturate-100 backdrop-contrast-100"
+          class="flex flex-col items-center bg-gray-500 bg-clip-padding mask-to-t bg-opacity-20 backdrop-blur backdrop-filter backdrop-contrast-100 backdrop-saturate-100 mx-auto mt-10 py-7 w-full text-center align-middle"
         >
           <div
-            class="flex flex-col gap-3 align-middle items-center text-center max-[850px]:max-w-[440px] max-[460px]:max-w-[290px] max-[460px]:gap-6"
+            class="flex flex-col items-center gap-3 max-[460px]:gap-6 max-[460px]:max-w-[290px] max-[850px]:max-w-[440px] text-center align-middle"
           >
             <p
-              class="merienda tracking-wide leading-normal text-2xl drop-shadow"
+              class="drop-shadow text-2xl leading-normal tracking-wide merienda"
             >
               Therapy is about where you are and where you want to go.
             </p>
             <p
-              class="merienda tracking-wide leading-normal text-2xl drop-shadow"
+              class="drop-shadow text-2xl leading-normal tracking-wide merienda"
             >
               It is about acceptance of your values and the goals that you seek.
             </p>
           </div>
         </div>
         <div
-          class="flex flex-col grow gap-6 mt-6 mx-auto align-middle items-end justify-end text-center max-w-[730px] px-12 py-6 text-xl rounded-full"
+          class="flex flex-col justify-end items-end gap-6 mx-auto mt-6 px-12 py-6 rounded-full max-w-[730px] text-xl text-center align-middle grow"
         >
           <a
-            class="bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-30 hover:bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100 rounded-full p-4 shadow duration-150"
+            class="bg-gray-500 bg-clip-padding bg-opacity-30 hover:bg-opacity-10 shadow backdrop-blur backdrop-filter backdrop-contrast-100 backdrop-saturate-100 p-4 rounded-full duration-150"
             href="#welcome"
             title="Continue Reading"
             aria-label="Continue Reading"
@@ -57,46 +57,46 @@ const details = await getCollection("details");
     </div>
   </section>
 
-  <section id="welcome" class="mt-32 flex flex-col text-center px-3 gap-4">
+  <section id="welcome" class="flex flex-col gap-4 mt-32 px-3 text-center">
     <h1
-      class="max-[380px]:text-3xl font-extralight"
+      class="font-extralight max-[380px]:text-3xl"
       id={details[0].data.nameShort1}
     >
       Welcome to <br />{details[0].data.nameShort1}
     </h1>
     <div
-      class="flex flex-col text-center justify-center items-center my-8 gap-8 mx-auto"
+      class="flex flex-col justify-center items-center gap-8 mx-auto my-8 text-center"
     >
-      <h2 class="max-[694px]:text-3xl max-[580px]:max-w-[326px] merienda">
+      <h2 class="max-[580px]:max-w-[326px] max-[694px]:text-3xl merienda">
         We are looking forward to meeting you.
       </h2>
 
       <h2
-        class="text-3xl max-[710px]:text-2xl max-[578px]:text-xl max-[394px]:max-w-[190px] font-extralight"
+        class="max-[394px]:max-w-[190px] font-extralight max-[578px]:text-xl max-[710px]:text-2xl text-3xl"
       >
-        Schedule sessions in person or on-line. <br />Children will only be seen
+        Schedule sessions in person or online. <br />Children will only be seen
         in person.
       </h2>
     </div>
   </section>
 
-  <section id="contact-hero" class="w-full mt-20 mb-28">
-    <div id="contact-hero-container" class="w-full m-auto">
+  <section id="contact-hero" class="mt-20 mb-28 w-full">
+    <div id="contact-hero-container" class="m-auto w-full">
       <div
         id="contact-hero-content"
-        class="text-white w-full overflow-hidden flex flex-1 flex-col align-top items-center justify-items-center justify-center bg-center bg-cover bg-local bg-no-repeat bg-[url('/assets/images/bg.png')] mask-to-t"
+        class="flex flex-col flex-1 justify-center justify-items-center items-center bg-[url('/assets/images/bg.png')] mask-to-t bg-cover bg-no-repeat bg-center bg-local w-full overflow-hidden text-white align-top"
       >
         <div
-          class="my-20 lg:my-12 pt-12 pb-16 lg:pt-6 lg:pb-8 flex flex-col mx-auto align-middle items-center text-center justify-center w-full bg-stone-200 bg-clip-padding mask-to-t-10 backdrop-filter backdrop-blur bg-opacity-5 backdrop-saturate-100 backdrop-contrast-100"
+          class="flex flex-col justify-center items-center bg-stone-200 bg-clip-padding mask-to-t-10 bg-opacity-5 backdrop-blur backdrop-filter backdrop-contrast-100 backdrop-saturate-100 mx-auto my-20 lg:my-12 pt-12 lg:pt-6 pb-16 lg:pb-8 w-full text-center align-middle"
         >
           <div
-            class="flex max-lg:flex-col gap-x-20 gap-y-16 text-center justify-center items-center align-middle"
+            class="flex max-lg:flex-col justify-center items-center gap-x-20 gap-y-16 text-center align-middle"
           >
             <div
-              class="flex max-sm:flex-col gap-x-20 gap-y-16 text-center justify-center items-start align-middle mx-auto"
+              class="flex max-sm:flex-col justify-center items-start gap-x-20 gap-y-16 mx-auto text-center align-middle"
             >
-              <div class="flex flex-col gap-1 text-center mx-auto">
-                <h2 class="text-black text-xl font-light">Phone</h2>
+              <div class="flex flex-col gap-1 mx-auto text-center">
+                <h2 class="font-light text-black text-xl">Phone</h2>
                 <a
                   title={details[0].data.phone}
                   href={`tel:${details[0].data.phone.replace(/\((\d{3})\)\s(\d{3})-(\d{4})/, "$1-$2-$3")}`}
@@ -104,8 +104,8 @@ const details = await getCollection("details");
                   {details[0].data.phone}
                 </a>
               </div>
-              <div class="flex flex-col gap-1 text-center mx-auto">
-                <h2 class="text-black text-xl font-light">Email</h2>
+              <div class="flex flex-col gap-1 mx-auto text-center">
+                <h2 class="font-light text-black text-xl">Email</h2>
                 <a
                   title={details[0].data.email}
                   href={`mailto:${details[0].data.email.toLowerCase()}`}
@@ -114,8 +114,8 @@ const details = await getCollection("details");
                 </a>
               </div>
             </div>
-            <div class="flex flex-col gap-1 text-center mx-auto">
-              <h2 class="text-black text-xl font-light">Office</h2>
+            <div class="flex flex-col gap-1 mx-auto text-center">
+              <h2 class="font-light text-black text-xl">Office</h2>
               <div class="flex flex-col gap-x-4 gap-y-1 mx-auto text-center">
                 <a
                   title="Visit our office"
@@ -137,12 +137,12 @@ const details = await getCollection("details");
     </div>
   </section>
 
-  <section id="clinicians" class="flex flex-col text-center px-3 gap-4">
+  <section id="clinicians" class="flex flex-col gap-4 px-3 text-center">
     <h1 id="Meet Our Clinicians">Meet Our Clinicians</h1>
-    <div class="flex flex-col text-justify max-w-4xl mx-auto">
+    <div class="flex flex-col mx-auto max-w-4xl text-justify">
       {
         clinicians.length >= 1 && (
-          <div class="w-full mx-0 flex flex-row max-[626px]:flex-wrap justify-center items-center text-center gap-4">
+          <div class="flex flex-row max-[626px]:flex-wrap justify-center items-center gap-4 mx-0 w-full text-center">
             {clinicians
               .sort((a, b) => a.data.order - b.data.order)
               .map((clinician) => (
@@ -155,21 +155,21 @@ const details = await getCollection("details");
   </section>
 
   <section id="types-terms-hero" class="w-full">
-    <div id="types-terms-hero-container" class="w-full m-auto">
+    <div id="types-terms-hero-container" class="m-auto w-full">
       <div
         id="types-terms-hero-content"
-        class="w-full flex flex-1 flex-col align-top items-center justify-items-center justify-center bg-center bg-cover bg-local bg-no-repeat bg-[url('/assets/images/bg.png')] mask-to-t-10"
+        class="flex flex-col flex-1 justify-center justify-items-center items-center bg-[url('/assets/images/bg.png')] mask-to-t-10 bg-cover bg-no-repeat bg-center bg-local w-full align-top"
       >
         <div
-          class="py-20 flex flex-col mx-auto align-middle items-center text-center justify-center w-full mask-to-t-10"
+          class="flex flex-col justify-center items-center mask-to-t-10 mx-auto py-20 w-full text-center align-middle"
         >
           <section
             id="types-and-terms"
-            class="flex flex-col lg:flex-row gap-x-2 lg:gap-x-16 max-w-[1620px] mx-auto justify-between text-center item-center lg:items-start align-middle px-3 my-52"
+            class="flex lg:flex-row flex-col justify-between lg:items-start gap-x-2 lg:gap-x-16 mx-auto my-52 px-3 max-w-[1620px] text-center align-middle item-center"
           >
             <section
               id="types"
-              class="flex flex-col max-w-[515px] mx-auto max-lg:px-3 justify-center text-center items-center align-middle"
+              class="flex flex-col justify-center items-center mx-auto max-lg:px-3 max-w-[515px] text-center align-middle"
             >
               {
                 treatments.length >= 1 && (
@@ -177,7 +177,7 @@ const details = await getCollection("details");
                     <h2 id="treatment-types" class="text-center">
                       Treatment Types
                     </h2>
-                    <div class="flex flex-col mt-4 gap-4">
+                    <div class="flex flex-col gap-4 mt-4">
                       {treatments
                         .sort((a, b) => a.data.name.localeCompare(b.data.name))
                         .map((treatment) => (
@@ -189,19 +189,19 @@ const details = await getCollection("details");
               }
             </section>
 
-            <hr class="my-20 lg:hidden" />
+            <hr class="lg:hidden my-20" />
 
             <section
               id="terms"
-              class="flex flex-wrap mx-auto max-lg:px-3 justify-center text-center items-center align-middle"
+              class="flex flex-wrap justify-center items-center mx-auto max-lg:px-3 text-center align-middle"
             >
               {
                 terms.length >= 1 && (
-                  <div class="flex flex-col max-w-[491px] lg:max-w-[800px] mx-auto justify-center items-center text-center align-middle grow w-full place-items-center">
+                  <div class="flex flex-col justify-center items-center place-items-center mx-auto w-full max-w-[491px] lg:max-w-[800px] text-center align-middle grow">
                     <h2 id="specialties-expertise" class="text-center">
                       Specialties & Expertise
                     </h2>
-                    <div class="flex flex-wrap mt-4 gap-4 mx-auto min-[1270px]:max-w-fit max-[1270px]:max-w-[491px] justify-center items-start text-center align-middle grow w-full place-items-start">
+                    <div class="flex flex-wrap justify-center items-start place-items-start gap-4 mx-auto mt-4 w-full max-[1270px]:max-w-[491px] min-[1270px]:max-w-fit text-center align-middle grow">
                       {terms.map((term) => (
                         <CardTerm term={term} />
                       ))}
@@ -218,11 +218,11 @@ const details = await getCollection("details");
 
   <section
     id="finances"
-    class="flex flex-col mx-auto mb-40 px-6 gap-4 justify-center text-center items-center align-middle"
+    class="flex flex-col justify-center items-center gap-4 mx-auto mb-40 px-6 text-center align-middle"
   >
     <h2 id="insurances">Insurances</h2>
     <div
-      class="flex flex-wrap max-w-[1420px] gap-4 text-center justify-center items-center align-middle"
+      class="flex flex-wrap justify-center items-center gap-4 max-w-[1420px] text-center align-middle"
     >
       {
         details[0] &&
@@ -234,9 +234,9 @@ const details = await getCollection("details");
     </div>
 
     <p class="text-stone-500">
-      <em class="text-lg font-bold">
+      <em class="font-bold text-lg">
         NOTE:
-        <em class="text-base font-normal">
+        <em class="font-normal text-base">
           Check with your provider for copay and deductible! <br />Not all
           clinicians take all insurances; please check with the office!
         </em>
@@ -246,10 +246,10 @@ const details = await getCollection("details");
     <h2 id="self-pay" class="mt-16">Self-Pay</h2>
     <div
       id="self-pay-info"
-      class="flex flex-col gap-4 border border-lifeBackground p-4 rounded-lg text-center justify-center items-center align-middle grow"
+      class="flex flex-col justify-center items-center gap-4 p-4 border border-lifeBackground rounded-lg text-center align-middle grow"
     >
       <p class="mt-2 text-2xl">$100 per session</p>
-      <p class="text-stone-500">
+      <p class="max-sm:max-w-52 text-stone-500">
         <em
           >We work with you on a sliding scale to <br />provide services that
           match your budget.</em

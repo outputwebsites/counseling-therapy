@@ -1,7 +1,7 @@
 {
   "name": "counseling-therapy",
   "type": "module",
-  "version": "1.5.7",
+  "version": "1.6.0",
   "scripts": {
     "astro": "astro dev",
     "decap": "npx decap-server",
@@ -12,11 +12,11 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/tailwind": "^6.0.0",
+    "@astrojs/sitemap": "^3.4.1",
+    "@astrojs/tailwind": "^6.0.2",
     "@fontsource-variable/albert-sans": "^5.1.1",
     "@fontsource-variable/merienda": "^5.1.1",
-    "astro": "^5.5.2",
+    "astro": "^5.9.0",
     "astro-icon": "^1.1.5",
     "autoprefixer": "^10.4.20",
     "decap-server": "^3.2.0",

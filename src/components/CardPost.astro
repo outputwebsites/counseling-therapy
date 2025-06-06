@@ -20,7 +20,7 @@ const { post } = Astro.props;
 
 <article
   id={post.slug}
-  class="flex flex-col gap-4 max-w-2xl border border-lifeBorder p-4 rounded-lg text-left"
+  class="flex flex-col gap-4 p-4 border border-lifeBorder rounded-lg max-w-2xl text-left"
 >
   {
     post.data.image && (
@@ -32,12 +32,13 @@ const { post } = Astro.props;
           height={post.data.image.height}
           decoding="async"
           loading="lazy"
-          class="rounded-lg"
+          class="rounded-lg w-full min-h-32 max-h-60 object-cover"
+          style="aspect-ratio: 16/9;"
         />
       </a>
     )
   }
-  <h2 id={post.data.title}>{post.data.title}</h2>
+  <a title={post.data.title} href={"/blog/" + post.slug}><h2 id={post.data.title}>{post.data.title}</h2></a>
   <p>
     {
       post.body

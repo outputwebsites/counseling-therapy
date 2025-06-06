@@ -1,7 +1,7 @@
 ---
 name: Liana Menendez
 photo: src/assets/images/media/liana.png
-qualifications: LCSW, RPT
+qualifications: LCSW
 email: liana@counseling-therapy.org
 link_psychology_today: https://psychologytoday.com/us/therapists/liana-menendez-port-orange-fl/701796
 link_linkedin: ""
@@ -18,7 +18,7 @@ biography: >-
   mental health.
 
 
-  I am a Licensed Clinical Social Worker, Certified Clinical Trauma Professional, Registered Play Therapist, and EMDR trained.
+  I am a Licensed Clinical Social Worker, Certified Clinical Trauma Professional, and EMDR trained.
 
 
   Life is sometimes messy and confusing. Experiences and painful memories weave through aspects of our lives and can be overwhelming and unbearable for anyone. Even when problems aren't so big and it would be helpful to talk to someone, I am available to listen, assist, and support your growth and well-being.
